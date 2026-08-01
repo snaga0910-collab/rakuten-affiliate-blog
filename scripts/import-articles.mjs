@@ -66,6 +66,15 @@ function main() {
       title = lines[0].replace(/^#\s+/, "").trim();
       body = lines.slice(1).join("\n").replace(/^\s+/, "");
     }
+    // 記事内に <!-- meta-description: ... --> があればメタ説明として採用し、本文からは除去
+    let description = "";
+    const mdMatch = body.match(/<!--\s*meta-description:\s*([\s\S]*?)-->/i);
+    if (mdMatch) {
+      description = mdMatch[1].trim().replace(/\s+/g, " ");
+      body = body.replace(mdMatch[0], "").replace(/^\s+/, "");
+    } else {
+      description = firstParagraph(body);
+    }
     let category = CATEGORY[slug] || "";
     if (!category) {
       const pj = path.join(full, "products.json");
@@ -78,9 +87,11 @@ function main() {
     const fm =
       "---\n" +
       `title: ${JSON.stringify(title)}\n` +
-      `description: ${JSON.stringify(firstParagraph(body))}\n` +
+      `description: ${JSON.stringify(description)}\n` +
       `category: ${JSON.stringify(category)}\n` +
       `date: ${JSON.stringify(fmtDate(date))}\n` +
+      // 取り込み日を最終更新日として記録（価格・評価の鮮度を示す）
+      `updated: ${JSON.stringify(new Date().toISOString().slice(0, 10))}\n` +
       "---\n\n";
     fs.writeFileSync(path.join(CONTENT_DIR, `${slug}.md`), fm + body, "utf8");
     console.log(`  ✓ ${slug}.md  (${category} / ${fmtDate(date)})`);

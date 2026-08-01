@@ -25,10 +25,30 @@ export default async function ArticlePage({
 }) {
   const { slug } = await params;
   if (!getSlugs().includes(slug)) notFound();
-  const { meta, html } = await getArticle(slug);
+  const { meta, html, faqs } = await getArticle(slug);
+
+  // FAQ の構造化データ（検索結果での表示は検索エンジン側の判断による）
+  const faqJsonLd =
+    faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: { "@type": "Answer", text: f.answer },
+          })),
+        }
+      : null;
 
   return (
     <article className="article">
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <nav className="breadcrumb">
         <Link href="/">← 一覧に戻る</Link>
       </nav>
@@ -36,9 +56,9 @@ export default async function ArticlePage({
         {meta.category && <span className="article-cat">{meta.category}</span>}
         <h1>{meta.title}</h1>
         <p className="article-date">
-          {meta.date}
+          公開 {meta.date}
           {meta.updated && meta.updated !== meta.date
-            ? `（更新: ${meta.updated}）`
+            ? ` ／ 最終更新 ${meta.updated}`
             : ""}
         </p>
       </header>

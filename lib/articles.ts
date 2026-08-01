@@ -43,15 +43,35 @@ export function getAllArticles(): ArticleMeta[] {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+export type Faq = { question: string; answer: string };
+
+/** 本文の「よくある質問」セクションから Q/A を抜き出す（FAQPage 構造化データ用）。 */
+export function extractFaqs(markdown: string): Faq[] {
+  // 「## よくある質問」から次の H2 までを対象にする
+  const section = markdown.match(
+    /^##\s+よくある質問[^\n]*\n([\s\S]*?)(?=^##\s|\Z)/m
+  );
+  if (!section) return [];
+  const faqs: Faq[] = [];
+  // **Q. 質問** \n A. 回答  の形式を拾う
+  const re = /\*\*Q\.\s*(.+?)\*\*\s*\n\s*A\.\s*([^\n]+)/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(section[1])) !== null) {
+    faqs.push({ question: m[1].trim(), answer: m[2].trim() });
+  }
+  return faqs;
+}
+
 export async function getArticle(
   slug: string
-): Promise<{ meta: ArticleMeta; html: string }> {
+): Promise<{ meta: ArticleMeta; html: string; faqs: Faq[] }> {
   const { data, content } = matter(readRaw(slug));
+  const faqs = extractFaqs(content);
   let html = await marked.parse(content);
   // アフィリンク等の外部リンクは別タブ＋rel="sponsored"（SEO/規約対応）
   html = html.replace(
     /<a href="(https?:\/\/[^"]+)"/g,
     '<a href="$1" target="_blank" rel="sponsored nofollow noopener"'
   );
-  return { meta: toMeta(slug, data), html };
+  return { meta: toMeta(slug, data), html, faqs };
 }
