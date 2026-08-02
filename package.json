@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "import": "node scripts/import-articles.mjs",
-    "note": "node scripts/to-note.mjs"
+    "note": "node scripts/to-note.mjs",
+    "thumb": "node scripts/make-thumbnails.mjs",
+    "pins": "node scripts/make-pins.mjs",
+    "pintext": "node scripts/make-pin-text.mjs",
+    "metrics": "node scripts/metrics.mjs"
   },
   "dependencies": {
     "next": "^15.1.6",
@@ -20,6 +24,7 @@
     "typescript": "^5.7.3",
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.7",
-    "@types/react-dom": "^19.0.3"
+    "@types/react-dom": "^19.0.3",
+    "playwright": "^1.58.2"
   }
 }

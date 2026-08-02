@@ -31,11 +31,22 @@ fi
 SLUG="$1"
 MODE="${2:-draft}"
 ARTICLE="$BLOG_DIR/note-out/$SLUG.md"
+THUMB="$BLOG_DIR/thumbnails/$SLUG.png"
 
 if [ ! -f "$ARTICLE" ]; then
   echo "❌ 記事が見つかりません: $ARTICLE"
   echo "   先に 'npm run note' で変換してください。"
   exit 1
+fi
+
+# サムネイルが無ければ生成しておく（npm run thumb 相当）
+if [ ! -f "$THUMB" ]; then
+  echo "サムネイルが無いため生成します..."
+  (cd "$BLOG_DIR" && node scripts/make-thumbnails.mjs "$SLUG") || true
+fi
+if [ ! -f "$THUMB" ]; then
+  echo "⚠ サムネイルを用意できませんでした。サムネなしで投稿します。"
+  THUMB=""
 fi
 
 if [ ! -f "$NOTE_POST_MCP_STATE_PATH" ]; then
@@ -45,6 +56,7 @@ if [ ! -f "$NOTE_POST_MCP_STATE_PATH" ]; then
 fi
 
 echo "記事: $ARTICLE"
+echo "サムネ: ${THUMB:-なし}"
 echo "モード: $MODE"
 cd "$POSTER_DIR"
-exec node scripts/publish-hybrid.js "$ARTICLE" "" "$MODE"
+exec node scripts/publish-hybrid.js "$ARTICLE" "$THUMB" "$MODE"

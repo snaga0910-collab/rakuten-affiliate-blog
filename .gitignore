@@ -9,3 +9,7 @@ next-env.d.ts
 
 # note用の変換出力（記事本体はcontent/が正）
 /note-out
+
+# 生成画像（原稿から再生成できる）
+/thumbnails
+/pins/*.png

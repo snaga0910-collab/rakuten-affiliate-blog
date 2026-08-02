@@ -34,7 +34,11 @@ function tableToList(lines) {
   const rows = lines
     .filter((l) => l.trim().startsWith("|"))
     .map((l) =>
-      l.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim())
+      stripBold(l.trim())
+        .replace(/^\|/, "")
+        .replace(/\|$/, "")
+        .split("|")
+        .map((c) => c.trim())
     );
   if (rows.length < 2) return [];
   const header = rows[0];
@@ -62,6 +66,17 @@ function tableToList(lines) {
     out.push("");
   }
   return out;
+}
+
+/** 太字記法(**...**)を外して素のテキストにする。
+ *
+ * note の投稿ツールは太字を Ctrl+B の切り替えで入力するが、日本語だと
+ * 切り替え時に直前の1文字がその場に確定されず、後続ブロックの先頭へ
+ * 移動してしまう（例:「配合タイプは」→「配合タイは」＋別の場所に「プ」）。
+ * note 側では太字は装飾にすぎないので、記法ごと外して確実性を取る。
+ */
+function stripBold(line) {
+  return line.replace(/\*\*(.+?)\*\*/g, "$1");
 }
 
 /** リンク記法を「テキスト＋生URL」に展開する。 */
@@ -97,7 +112,7 @@ function convert(slug) {
     }
     // 水平線は note では不要
     if (/^\s*---\s*$/.test(line)) continue;
-    out.push(...expandLinks(line));
+    out.push(...expandLinks(stripBold(line)));
   }
 
   // note用のフロントマター（Note投稿くんが読む形式）
