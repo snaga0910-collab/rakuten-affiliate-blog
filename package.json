@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "import": "node scripts/import-articles.mjs"
+    "import": "node scripts/import-articles.mjs",
+    "note": "node scripts/to-note.mjs"
   },
   "dependencies": {
     "next": "^15.1.6",
