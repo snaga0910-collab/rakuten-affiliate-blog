@@ -24,5 +24,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
+    // 運営者情報・ポリシーは更新頻度が低いので優先度を下げて掲載する
+    {
+      url: `${base}/about`,
+      lastModified: day(new Date()),
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
+    },
+    {
+      url: `${base}/privacy`,
+      lastModified: day(new Date()),
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    },
   ];
 }

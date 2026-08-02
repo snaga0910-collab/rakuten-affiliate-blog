@@ -49,6 +49,10 @@ export default function RootLayout({
         <main className="container">{children}</main>
         <footer className="site-footer">
           <div className="container">
+            <nav className="footer-nav">
+              <Link href="/about">運営者について</Link>
+              <Link href="/privacy">プライバシーポリシー</Link>
+            </nav>
             <p className="disclosure">{SITE.affiliateDisclosure}</p>
             <p className="copyright">
               © {new Date().getFullYear()} {SITE.name}
