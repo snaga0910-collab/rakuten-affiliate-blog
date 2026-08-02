@@ -1,5 +1,10 @@
 // サイト全体の設定。名前・説明はここを変えれば全ページに反映される。
 export const SITE = {
+  // 公開URL。Vercelでデプロイ後に発行されるURL（独自ドメインを設定したらそれ）に差し替える。
+  // 環境変数 NEXT_PUBLIC_SITE_URL があればそれを優先する。
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    "https://rakuten-affiliate-blog.vercel.app",
   name: "ひとり暮らしの消耗品ノート",
   tagline: "一人暮らし会社員の、買い替え消耗品を正直に比較",
   description:

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllArticles, getArticle, getSlugs } from "@/lib/articles";
+import { SITE } from "@/lib/site";
 
 export function generateStaticParams() {
   return getSlugs().map((slug) => ({ slug }));
@@ -15,7 +16,26 @@ export async function generateMetadata({
   const { slug } = await params;
   const found = getAllArticles().find((a) => a.slug === slug);
   if (!found) return {};
-  return { title: found.title, description: found.description };
+  const path = `/articles/${slug}`;
+  return {
+    title: found.title,
+    description: found.description,
+    // note にも同じ記事を載せるため、正規URLはこのブログだと明示しておく
+    alternates: { canonical: path },
+    openGraph: {
+      type: "article",
+      url: path,
+      title: found.title,
+      description: found.description,
+      publishedTime: found.date,
+      modifiedTime: found.updated || found.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: found.title,
+      description: found.description,
+    },
+  };
 }
 
 export default async function ArticlePage({
@@ -41,8 +61,24 @@ export default async function ArticlePage({
         }
       : null;
 
+  // 記事の構造化データ（公開日・更新日を検索エンジンに伝える）
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: meta.title,
+    description: meta.description,
+    datePublished: meta.date,
+    dateModified: meta.updated || meta.date,
+    mainEntityOfPage: `${SITE.url.replace(/\/$/, "")}/articles/${slug}`,
+    publisher: { "@type": "Organization", name: SITE.name },
+  };
+
   return (
     <article className="article">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {faqJsonLd && (
         <script
           type="application/ld+json"
