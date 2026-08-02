@@ -24,9 +24,11 @@ export const metadata: Metadata = {
     description: SITE.description,
   },
   robots: { index: true, follow: true },
-  // Google Search Console の所有権確認用（削除すると確認状態が外れる）
+  // 各サービスの所有権確認用（削除すると確認状態が外れる）
   verification: {
     google: "i6ziGw1Ek3jdQcGwdtBBt_SVwC0AQBzoqptVQSUP9MY",
+    // Pinterest のドメイン認証（リッチピン・分析の有効化に必要）
+    other: { "p:domain_verify": "d6f7c662868ac988c8a1d2d258dfe010" },
   },
 };
 
