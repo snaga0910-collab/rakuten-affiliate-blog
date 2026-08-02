@@ -24,6 +24,10 @@ export const metadata: Metadata = {
     description: SITE.description,
   },
   robots: { index: true, follow: true },
+  // Google Search Console の所有権確認用（削除すると確認状態が外れる）
+  verification: {
+    google: "i6ziGw1Ek3jdQcGwdtBBt_SVwC0AQBzoqptVQSUP9MY",
+  },
 };
 
 export default function RootLayout({
