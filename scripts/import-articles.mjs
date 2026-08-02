@@ -20,6 +20,8 @@ const CATEGORY = {
   "coffee-drip": "コーヒー",
   "water-filter": "浄水器",
   "diatomite-bathmat": "バスマット",
+  "laundry-detergent": "洗濯洗剤",
+  "dishwasher-detergent": "食洗機洗剤",
 };
 
 function fmtDate(yyyymmdd) {

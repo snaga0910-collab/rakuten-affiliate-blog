@@ -23,6 +23,7 @@ const KEYWORDS = {
   "coffee-drip": ["ドリップコーヒー", "おうちカフェ", "在宅ワーク", "コーヒー", "節約"],
   "water-filter": ["浄水器", "カートリッジ", "ブリタ", "クリンスイ", "一人暮らし"],
   "diatomite-bathmat": ["バスマット", "珪藻土", "速乾", "お風呂", "一人暮らし"],
+  "laundry-detergent": ["洗濯洗剤", "部屋干し", "生乾き臭", "洗濯", "一人暮らし"],
 };
 
 const BOARD = {
@@ -31,6 +32,7 @@ const BOARD = {
   "coffee-drip": "おうちコーヒー",
   "water-filter": "浄水器・水まわり",
   "diatomite-bathmat": "バスマット・お風呂まわり",
+  "laundry-detergent": "一人暮らしの洗濯・柔軟剤えらび",
 };
 
 const VARIANT_LABEL = { price: "価格訴求", pain: "悩み訴求", compare: "比較訴求" };
