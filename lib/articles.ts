@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { marked } from "marked";
+import { renderArticle } from "./render";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -62,16 +62,18 @@ export function extractFaqs(markdown: string): Faq[] {
   return faqs;
 }
 
+/** 記事のコスト比較グラフ（あれば）をインラインSVGで返す。 */
+function costChart(slug: string): string | undefined {
+  const f = path.join(process.cwd(), "public", "charts", `${slug}-cost.svg`);
+  return fs.existsSync(f) ? fs.readFileSync(f, "utf8") : undefined;
+}
+
 export async function getArticle(
   slug: string
 ): Promise<{ meta: ArticleMeta; html: string; faqs: Faq[] }> {
   const { data, content } = matter(readRaw(slug));
   const faqs = extractFaqs(content);
-  let html = await marked.parse(content);
-  // アフィリンク等の外部リンクは別タブ＋rel="sponsored"（SEO/規約対応）
-  html = html.replace(
-    /<a href="(https?:\/\/[^"]+)"/g,
-    '<a href="$1" target="_blank" rel="sponsored nofollow noopener"'
-  );
+  // 比較表・付箋・手順・Q&A をデザイン案A のパーツに変換する
+  const html = renderArticle(content, slug, costChart(slug));
   return { meta: toMeta(slug, data), html, faqs };
 }
