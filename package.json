@@ -11,7 +11,8 @@
     "thumb": "node scripts/make-thumbnails.mjs",
     "pins": "node scripts/make-pins.mjs",
     "pintext": "node scripts/make-pin-text.mjs",
-    "metrics": "node scripts/metrics.mjs"
+    "metrics": "node scripts/metrics.mjs",
+    "charts": "node scripts/make-charts.mjs"
   },
   "dependencies": {
     "next": "^15.1.6",

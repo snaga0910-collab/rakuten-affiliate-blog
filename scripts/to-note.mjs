@@ -62,7 +62,8 @@ function tableToList(lines) {
       details.push(`${key} ${val}`);
     }
     if (details.length) out.push(details.join(" ／ "));
-    if (link) out.push(link[2]); // 生URL（noteが自動リンク化）
+    // URLの前後に空行を入れる（note がリンクカードに変換する条件）
+    if (link) out.push("", link[2]);
     out.push("");
   }
   return out;
@@ -79,7 +80,14 @@ function stripBold(line) {
   return line.replace(/\*\*(.+?)\*\*/g, "$1");
 }
 
-/** リンク記法を「テキスト＋生URL」に展開する。 */
+/** リンク記法を「テキスト＋生URL」に展開する。
+ *
+ * note は「前後が空行の単独URL」だけをリンクカードに変換する。
+ * 直前の行にテキストがあると変換されず、長い生URLがそのまま本文に残って
+ * 誤字のように見えてしまう。そのためURLの前後に必ず空行を入れる。
+ *
+ * 参考文献など、本文の流れでURLを出したくない箇所は SKIP_URL_IN で落とす。
+ */
 function expandLinks(line) {
   const links = [...line.matchAll(/\[([^\]]+)\]\(([^)]+)\)/g)];
   if (links.length === 0) return [line];
@@ -89,7 +97,11 @@ function expandLinks(line) {
     text = text.replace(m[0], m[1]);
     urls.push(m[2]);
   }
-  return [text, ...urls];
+  // テキスト → 空行 → URL（1行1つ・間に空行）→ 空行
+  const out = [text];
+  for (const u of urls) out.push("", u);
+  out.push("");
+  return out;
 }
 
 function convert(slug) {
@@ -112,7 +124,19 @@ function convert(slug) {
     }
     // 水平線は note では不要
     if (/^\s*---\s*$/.test(line)) continue;
-    out.push(...expandLinks(stripBold(line)));
+
+    const clean = stripBold(line);
+    // 参考文献など、楽天以外のURLは本文に出さない（生URLが誤字に見えるため）。
+    // リンク文字だけ残し、出典名は文章として読めるようにする。
+    if (/^\s*-\s*\[/.test(clean) && !clean.includes("hb.afl.rakuten")) {
+      out.push(clean.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"));
+      continue;
+    }
+    if (clean.includes("（参考:") && !clean.includes("hb.afl.rakuten")) {
+      out.push(clean.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"));
+      continue;
+    }
+    out.push(...expandLinks(clean));
   }
 
   // note用のフロントマター（Note投稿くんが読む形式）

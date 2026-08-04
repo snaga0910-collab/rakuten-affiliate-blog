@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 286" role="img" aria-label="1杯あたりのコスト比較">
+<style>
+  .ttl{font:600 15px "Hiragino Sans","Noto Sans JP",system-ui,sans-serif;fill:#1c1f23}
+  .sub{font:400 12px "Hiragino Sans",system-ui,sans-serif;fill:#6d6a65}
+  .lbl{font:400 13px "Hiragino Sans","Noto Sans JP",system-ui,sans-serif;fill:#3b3f45}
+  .val{font:600 13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#3b3f45;font-variant-numeric:tabular-nums}
+  .valhi{fill:#8a5a2b}
+  .track{fill:#eeece8}
+  .bar{fill:#8a5a2b;opacity:.42}
+  .bar.hi{opacity:1}
+  .rng{fill:#8a5a2b;opacity:.18}
+  @media (prefers-color-scheme:dark){
+    .ttl{fill:#e8e6e1}.sub{fill:#9a968f}.lbl{fill:#c9c6c1}.val{fill:#c9c6c1}
+    .track{fill:#2b2e33}
+  }
+</style>
+<text x="0" y="20" class="ttl">1杯あたりのコスト比較</text>
+<text x="0" y="38" class="sub">数値は内容量と一般的な使用量からの概算（記事本文の比較表と同じ値）</text>
+
+  <text x="0" y="71" class="lbl">UCC 職人の珈琲 ス…</text>
+  <rect x="178" y="58" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="58" width="234.33846153846156" height="22" rx="4" class="bar hi"/>
+  <text x="422.33846153846156" y="74" class="val valhi">32円</text>
+  <text x="0" y="111" class="lbl">澤井珈琲 2種飲み比べ…</text>
+  <rect x="178" y="98" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="98" width="322.2153846153846" height="22" rx="4" class="bar"/>
+  <text x="510.2153846153846" y="114" class="val">44円</text>
+  <text x="0" y="151" class="lbl">カフェ工房 有機栽培コ…</text>
+  <rect x="178" y="138" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="138" width="336.8615384615385" height="22" rx="4" class="bar"/>
+  <text x="524.8615384615384" y="154" class="val">46円</text>
+  <text x="0" y="191" class="lbl">キーコーヒー ドリップ…</text>
+  <rect x="178" y="178" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="178" width="388.1230769230769" height="22" rx="4" class="bar"/>
+  <text x="576.123076923077" y="194" class="val">53円</text>
+  <text x="0" y="231" class="lbl">辻本珈琲 デカフェ 3…</text>
+  <rect x="178" y="218" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="218" width="476" height="22" rx="4" class="bar"/>
+  <text x="664" y="234" class="val">65円</text>
+</svg>

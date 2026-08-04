@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 326" role="img" aria-label="1回あたりのコスト比較">
+<style>
+  .ttl{font:600 15px "Hiragino Sans","Noto Sans JP",system-ui,sans-serif;fill:#1c1f23}
+  .sub{font:400 12px "Hiragino Sans",system-ui,sans-serif;fill:#6d6a65}
+  .lbl{font:400 13px "Hiragino Sans","Noto Sans JP",system-ui,sans-serif;fill:#3b3f45}
+  .val{font:600 13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#3b3f45;font-variant-numeric:tabular-nums}
+  .valhi{fill:#6b4fbb}
+  .track{fill:#eeece8}
+  .bar{fill:#6b4fbb;opacity:.42}
+  .bar.hi{opacity:1}
+  .rng{fill:#6b4fbb;opacity:.18}
+  @media (prefers-color-scheme:dark){
+    .ttl{fill:#e8e6e1}.sub{fill:#9a968f}.lbl{fill:#c9c6c1}.val{fill:#c9c6c1}
+    .track{fill:#2b2e33}
+  }
+</style>
+<text x="0" y="20" class="ttl">1回あたりのコスト比較</text>
+<text x="0" y="38" class="sub">数値は内容量と一般的な使用量からの概算（記事本文の比較表と同じ値）</text>
+
+  <text x="0" y="71" class="lbl">レノア 超消臭1WEE…</text>
+  <rect x="178" y="58" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="58" width="126.93333333333334" height="22" rx="4" class="bar hi"/>
+  <text x="314.93333333333334" y="74" class="val valhi">4円</text>
+  <text x="0" y="111" class="lbl">ハミング消臭実感 部屋…</text>
+  <rect x="178" y="98" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="98" width="158.66666666666666" height="22" rx="4" class="bar"/>
+  <text x="346.66666666666663" y="114" class="val">5円</text>
+  <text x="0" y="151" class="lbl">ラボン フレンチマカロン</text>
+  <rect x="178" y="138" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="138" width="222.13333333333333" height="22" rx="4" class="bar"/>
+  <text x="410.1333333333333" y="154" class="val">7円</text>
+  <text x="0" y="191" class="lbl">ファーファ ファインフ…</text>
+  <rect x="178" y="178" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="178" width="253.86666666666667" height="22" rx="4" class="bar"/>
+  <text x="441.8666666666667" y="194" class="val">8円</text>
+  <text x="0" y="231" class="lbl">ソフラン プレミアム消…</text>
+  <rect x="178" y="218" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="218" width="317.3333333333333" height="22" rx="4" class="bar"/>
+  <text x="505.3333333333333" y="234" class="val">10円</text>
+  <text x="0" y="271" class="lbl">ランドリン ボタニカル</text>
+  <rect x="178" y="258" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="258" width="476" height="22" rx="4" class="bar"/>
+  <text x="664" y="274" class="val">15円</text>
+</svg>

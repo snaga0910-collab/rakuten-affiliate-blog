@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 206" role="img" aria-label="1個あたりのコスト比較">
+<style>
+  .ttl{font:600 15px "Hiragino Sans","Noto Sans JP",system-ui,sans-serif;fill:#1c1f23}
+  .sub{font:400 12px "Hiragino Sans",system-ui,sans-serif;fill:#6d6a65}
+  .lbl{font:400 13px "Hiragino Sans","Noto Sans JP",system-ui,sans-serif;fill:#3b3f45}
+  .val{font:600 13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#3b3f45;font-variant-numeric:tabular-nums}
+  .valhi{fill:#1f8a7a}
+  .track{fill:#eeece8}
+  .bar{fill:#1f8a7a;opacity:.42}
+  .bar.hi{opacity:1}
+  .rng{fill:#1f8a7a;opacity:.18}
+  @media (prefers-color-scheme:dark){
+    .ttl{fill:#e8e6e1}.sub{fill:#9a968f}.lbl{fill:#c9c6c1}.val{fill:#c9c6c1}
+    .track{fill:#2b2e33}
+  }
+</style>
+<text x="0" y="20" class="ttl">1個あたりのコスト比較</text>
+<text x="0" y="38" class="sub">数値は内容量と一般的な使用量からの概算（記事本文の比較表と同じ値）</text>
+
+  <text x="0" y="71" class="lbl">ブリタ マクストラプロ…</text>
+  <rect x="178" y="58" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="58" width="199.4413407821229" height="22" rx="4" class="bar hi"/>
+  <text x="387.4413407821229" y="74" class="val valhi">975円</text>
+  <text x="0" y="111" class="lbl">クリンスイ CBC03…</text>
+  <rect x="178" y="98" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="98" width="306.0146110872368" height="22" rx="4" class="bar"/>
+  <text x="494.0146110872368" y="114" class="val">1496円</text>
+  <text x="0" y="151" class="lbl">トレビーノ カセッティ…</text>
+  <rect x="178" y="138" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="138" width="476" height="22" rx="4" class="bar"/>
+  <text x="664" y="154" class="val">2327円</text>
+</svg>
