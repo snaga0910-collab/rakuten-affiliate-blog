@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 246" role="img" aria-label="1個あたりのコスト比較">
+<style>
+  .ttl{font:600 15px "Hiragino Sans","Noto Sans JP",system-ui,sans-serif;fill:#1c1f23}
+  .sub{font:400 12px "Hiragino Sans",system-ui,sans-serif;fill:#6d6a65}
+  .lbl{font:400 13px "Hiragino Sans","Noto Sans JP",system-ui,sans-serif;fill:#3b3f45}
+  .val{font:600 13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#3b3f45;font-variant-numeric:tabular-nums}
+  .valhi{fill:#2e7d5b}
+  .track{fill:#eeece8}
+  .bar{fill:#2e7d5b;opacity:.42}
+  .bar.hi{opacity:1}
+  .rng{fill:#2e7d5b;opacity:.18}
+  @media (prefers-color-scheme:dark){
+    .ttl{fill:#e8e6e1}.sub{fill:#9a968f}.lbl{fill:#c9c6c1}.val{fill:#c9c6c1}
+    .track{fill:#2b2e33}
+  }
+</style>
+<text x="0" y="20" class="ttl">1個あたりのコスト比較</text>
+<text x="0" y="38" class="sub">数値は内容量と一般的な使用量からの概算（記事本文の比較表と同じ値）</text>
+
+  <text x="0" y="71" class="lbl">ecostore オート</text>
+  <rect x="178" y="58" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="58" width="144.8695652173913" height="22" rx="4" class="bar hi"/>
+  <text x="332.8695652173913" y="74" class="val valhi">7円</text>
+  <text x="0" y="111" class="lbl">キュキュット 食洗機専用</text>
+  <rect x="178" y="98" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="98" width="165.56521739130434" height="22" rx="4" class="bar"/>
+  <text x="353.5652173913044" y="114" class="val">8円</text>
+  <text x="0" y="151" class="lbl">フィニッシュ ビッグパッ</text>
+  <rect x="178" y="138" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="138" width="248.3478260869565" height="22" rx="4" class="bar"/>
+  <text x="436.3478260869565" y="154" class="val">12円</text>
+  <text x="0" y="191" class="lbl">フィニッシュ オールイン</text>
+  <rect x="178" y="178" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="178" width="476" height="22" rx="4" class="bar"/>
+  <text x="664" y="194" class="val">23円</text>
+</svg>

@@ -24,6 +24,7 @@ const KEYWORDS = {
   "water-filter": ["浄水器", "カートリッジ", "ブリタ", "クリンスイ", "一人暮らし"],
   "diatomite-bathmat": ["バスマット", "珪藻土", "速乾", "お風呂", "一人暮らし"],
   "laundry-detergent": ["洗濯洗剤", "部屋干し", "生乾き臭", "洗濯", "一人暮らし"],
+  "dishwasher-detergent": ["食洗機", "食洗機用洗剤", "時短家事", "キッチン", "一人暮らし"],
 };
 
 const BOARD = {
@@ -33,6 +34,7 @@ const BOARD = {
   "water-filter": "浄水器・水まわり",
   "diatomite-bathmat": "バスマット・お風呂まわり",
   "laundry-detergent": "一人暮らしの洗濯・柔軟剤えらび",
+  "dishwasher-detergent": "キッチンの時短",
 };
 
 const VARIANT_LABEL = { price: "価格訴求", pain: "悩み訴求", compare: "比較訴求" };
