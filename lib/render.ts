@@ -88,15 +88,17 @@ function renderLedger(lines: string[], list: Product[]): string {
     const meta = p
       ? `<div class="pshop num">★${p.rating.toFixed(1)}・${p.review.toLocaleString()}件／${esc(p.shop)}</div>`
       : "";
+    // data-label は、狭い画面でテーブルをカード表示にするときの見出しに使う
     const cells = r.slice(1).map((c, i) => {
       const idx = i + 1;
+      const label = ` data-label="${esc(header[idx] ?? "")}"`;
       if (idx === costIdx) {
         const isMin = costOf(r) === min;
-        return `<td class="cost">${esc(c)}${isMin ? '<span class="best">最小</span>' : ""}</td>`;
+        return `<td class="cost"${label}>${esc(c)}${isMin ? '<span class="best">最小</span>' : ""}</td>`;
       }
-      return `<td${/^[\d,]+円$/.test(c) ? ' class="num"' : ""}>${inline(c)}</td>`;
+      return `<td class="${/^[\d,]+円$/.test(c) ? "num" : ""}"${label}>${inline(c)}</td>`;
     }).join("");
-    return `<tr><td class="tcell">${img}</td><td><div class="pname">${
+    return `<tr><td class="tcell">${img}</td><td class="tname"><div class="pname">${
       href ? `<a href="${href}" target="_blank" rel="sponsored nofollow noopener">${esc(label)}</a>` : esc(label)
     }</div>${meta}</td>${cells}</tr>`;
   }).join("");

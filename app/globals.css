@@ -145,10 +145,12 @@ body {
   padding-left: 15px; border-left: 4px solid var(--tab); line-height: 1.6;
 }
 .article-body h4 { font-size: 15.5px; margin: 24px 0 8px; }
+/* 強調＝マーカー。
+ * 記事には太字が多いので、帯を濃く広く敷くと画面が黄色だらけになり
+ * かえって読みにくい。下寄りの細い帯にして「線を引いた」程度に留める。 */
 .article-body strong {
   font-weight: 700;
-  background: linear-gradient(transparent 58%, var(--marker) 58%, var(--marker) 94%, transparent 94%);
-  padding: 0 2px;
+  background: linear-gradient(transparent 72%, var(--marker) 72%, var(--marker) 96%, transparent 96%);
 }
 .article-body ul, .article-body ol { padding-left: 1.5em; margin: 0 0 22px; }
 .article-body li { margin-bottom: 9px; }
@@ -251,11 +253,66 @@ body {
   display: grid; place-items: center; font-size: 12px; font-weight: 800;
 }
 
+/* --- スマホ：読みやすさを最優先で詰める --- */
 @media (max-width: 700px) {
-  body { font-size: 15.5px; }
-  .container { padding: 0 18px 0 40px; }
-  .container::before { left: 26px; }
-  .article-body h2 { margin-left: -40px; padding-left: 40px; font-size: 18px; }
-  .pa-fit { grid-template-columns: 1fr; }
+  body {
+    font-size: 16.5px;      /* 小さいと読み進められないので本文は大きめに */
+    line-height: 1.9;
+  }
+  /* 左右の余白を揃え、本文の幅を稼ぐ（方眼の赤罫は細く残す） */
+  .container { padding: 0 16px 0 24px; }
+  .container::before { left: 12px; opacity: .38; }
+
+  .article-body h2 {
+    margin-left: -24px; padding: 10px 16px 10px 24px;
+    font-size: 18.5px; line-height: 1.45;
+  }
+  .article-body h3 { font-size: 17px; }
+  .article-body p { margin-bottom: 20px; }
+  .pa-fit { grid-template-columns: 1fr; gap: 8px; }
+  .article-head h1 { line-height: 1.5; }
+
+  /* 比較表：横に長い表はスマホで追えないため、1商品=1カードに積む */
+  .pa-ledger { overflow: visible; }
+  .pa-ledger table { min-width: 0; display: block; }
+  .pa-ledger thead { display: none; }
+  .pa-ledger tbody { display: grid; gap: 12px; }
+  .pa-ledger tr {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 4px 12px;
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--pen);
+    padding: 14px;
+    box-shadow: 3px 3px 0 rgba(36, 48, 59, .07);
+  }
+  .pa-ledger tbody tr:nth-child(odd) { background: var(--paper-card); }
+  .pa-ledger td { border: 0; padding: 0; }
+  .pa-ledger .tcell { grid-row: span 2; }
+  .pa-ledger .thumb { width: 72px; height: 72px; }
+  .pa-ledger .tname { align-self: center; }
+  .pa-ledger .pname { font-size: 15px; }
+  /* 3列目以降は「項目名：値」の形で name の下に流し込む */
+  .pa-ledger td:not(.tcell):not(.tname) {
+    grid-column: 2;
+    display: flex; gap: 10px; align-items: baseline;
+    font-size: 14px; line-height: 1.7;
+    padding-top: 7px; border-top: 1px dashed var(--rule);
+  }
+  .pa-ledger td:not(.tcell):not(.tname)::before {
+    content: attr(data-label);
+    flex: none; width: 76px;
+    font-size: 11.5px; font-weight: 700; color: var(--ink-2);
+    letter-spacing: .02em;
+  }
+  .pa-ledger .cost { font-size: 17px; }
+}
+
+/* もっと狭い端末では画像を上に置いて横幅を全部本文に使う */
+@media (max-width: 400px) {
+  .pa-ledger tr { grid-template-columns: 1fr; }
+  .pa-ledger .tcell { grid-row: auto; }
+  .pa-ledger td:not(.tcell):not(.tname) { grid-column: 1; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
