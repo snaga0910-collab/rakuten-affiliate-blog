@@ -22,6 +22,7 @@ const CATEGORY = {
   "diatomite-bathmat": "バスマット",
   "laundry-detergent": "洗濯洗剤",
   "dishwasher-detergent": "食洗機洗剤",
+  "toothbrush-head": "替えブラシ",
 };
 
 function fmtDate(yyyymmdd) {

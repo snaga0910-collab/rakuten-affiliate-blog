@@ -25,6 +25,7 @@ const KEYWORDS = {
   "diatomite-bathmat": ["バスマット", "珪藻土", "速乾", "お風呂", "一人暮らし"],
   "laundry-detergent": ["洗濯洗剤", "部屋干し", "生乾き臭", "洗濯", "一人暮らし"],
   "dishwasher-detergent": ["食洗機", "食洗機用洗剤", "時短家事", "キッチン", "一人暮らし"],
+  "toothbrush-head": ["電動歯ブラシ", "替えブラシ", "オーラルB", "ソニッケアー", "オーラルケア"],
 };
 
 const BOARD = {
@@ -41,13 +42,13 @@ const VARIANT_LABEL = { price: "価格訴求", pain: "悩み訴求", compare: "�
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rakuten-affiliate-blog.vercel.app";
 
-function description(slug, variant, copy) {
+function description(slug, variant, copy, count) {
   const v = copy[variant];
   const kw = KEYWORDS[slug] || [];
   const body = `${v.lead}。${v.points.join("。")}。`;
   const tags = kw.map((k) => `#${k}`).join(" ");
   // 説明文は200字以内が扱いやすい
-  let text = `${v.head.replace(/\n/g, "")}｜${body} 実際の価格とレビューをもとに6商品を比較しました。${tags}`;
+  let text = `${v.head.replace(/\n/g, "")}｜${body} 実際の価格とレビューをもとに${count}商品を比較しました。${tags}`;
   if (text.length > 200) text = text.slice(0, 197) + "…";
   return text;
 }
@@ -70,6 +71,8 @@ for (const slug of slugs) {
   const { data } = matter(fs.readFileSync(path.join(CONTENT_DIR, `${slug}.md`), "utf8"));
   const copy = PIN_COPY[slug];
   const url = `${SITE_URL}/articles/${slug}`;
+  // 「比較6選」のように記事タイトルへ入っている件数を使う
+  const count = (String(data.title).match(/比較(\d+)選/) || [])[1] || "6";
   lines.push(`## ${data.title}`, "", `- ボード: **${BOARD[slug] || "未設定"}**`, `- リンク先: ${url}`, "");
   for (const variant of ["price", "pain", "compare"]) {
     const v = copy[variant];
@@ -82,7 +85,7 @@ for (const slug of slugs) {
       "```",
       "**説明文**",
       "```",
-      description(slug, variant, copy),
+      description(slug, variant, copy, count),
       "```",
       ""
     );

@@ -10,5 +10,6 @@ export const CATEGORY_STYLE = {
   "diatomite-bathmat": { bg: "#f6f2ec", accent: "#a2703f", emoji: "🛁" },
   "laundry-detergent": { bg: "#eef4fa", accent: "#2f6fae", emoji: "🫧" },
   "dishwasher-detergent": { bg: "#eef7f1", accent: "#2e7d5b", emoji: "🍽️" },
+  "toothbrush-head": { bg: "#f2f6f9", accent: "#33708f", emoji: "🪥" },
   _default: { bg: "#f4f5f7", accent: "#bf0000", emoji: "🛒" },
 };
