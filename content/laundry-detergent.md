@@ -176,7 +176,7 @@ A. 月1回が目安です。槽の裏の汚れが衣類に移ると、洗剤を�
 
 ### あわせて使いたい関連アイテム
 
-洗剤を見直したら、次は[部屋干し向けの柔軟剤](https://rakuten-affiliate-blog.vercel.app/articles/fabric-softener)で仕上げの消臭と香りを足すと効果的です。さらに、においの根本原因になりがちな槽の汚れには、月1回の**洗濯槽クリーナー**もあわせて検討してください。（※関連リンクは楽天で「柔軟剤 部屋干し」「洗濯槽 クリーナー」を検索して差し込み）
+洗剤を見直したら、次は[部屋干し向けの柔軟剤](https://rakuten-affiliate-blog.vercel.app/articles/fabric-softener)で仕上げの消臭と香りを足すと効果的です。洗剤も柔軟剤も変えたのに臭うなら、残っている原因は洗濯槽です。[洗濯槽クリーナーの比較](https://rakuten-affiliate-blog.vercel.app/articles/washer-cleaner)にまとめました。
 
 ### 参考文献・情報源
 

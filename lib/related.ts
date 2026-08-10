@@ -27,7 +27,7 @@ export const THEMES: Theme[] = [
     id: "laundry",
     name: "洗濯",
     note: "部屋干しのにおい対策",
-    slugs: ["fabric-softener", "laundry-detergent"],
+    slugs: ["fabric-softener", "laundry-detergent", "washer-cleaner"],
   },
   {
     id: "kitchen",

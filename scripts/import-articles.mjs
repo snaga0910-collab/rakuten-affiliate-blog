@@ -23,6 +23,7 @@ const CATEGORY = {
   "laundry-detergent": "洗濯洗剤",
   "dishwasher-detergent": "食洗機洗剤",
   "toothbrush-head": "替えブラシ",
+  "washer-cleaner": "洗濯槽クリーナー",
 };
 
 function fmtDate(yyyymmdd) {

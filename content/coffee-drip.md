@@ -180,7 +180,7 @@ A. 濃さは落ちますが可能です。ただし推奨は1袋1杯なので、
 
 ### あわせて使いたい関連アイテム
 
-コーヒーをさらに楽しみたくなったら、豆から挽く**コーヒーミル**や、湯量をコントロールしやすい**ドリップケトル**もそろえると、味の再現性が上がります。（※関連リンクは楽天で「コーヒーミル」「ドリップケトル」を検索して差し込み）
+豆から挽いて味を作りたくなったら[手動のコーヒーミル](https://hb.afl.rakuten.co.jp/hgc/g00u5otm.p2w40a15.g00u5otm.p2w41270/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Funiwalk%2Ftoa-tm-hcfml-001%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Funiwalk%2Fi%2F10000205%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（2,380円・★4.28／レビュー436件）、湯量を細く落としたいなら[細口のドリップケトル](https://hb.afl.rakuten.co.jp/hgc/g00pui9m.p2w40b19.g00pui9m.p2w4137e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-kurashi%2F76033%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fe-kurashi%2Fi%2F10037463%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（8,980円・★4.39／レビュー1,074件）。どちらもドリップバッグには不要ですが、粉から淹れる段階に進むと味の再現性が変わります。
 
 ### 参考文献・情報源
 

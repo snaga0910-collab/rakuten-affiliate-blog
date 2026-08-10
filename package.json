@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "import": "node scripts/import-articles.mjs",
+    "products": "node scripts/import-products.mjs",
     "note": "node scripts/to-note.mjs",
     "thumb": "node scripts/make-thumbnails.mjs",
     "pins": "node scripts/make-pins.mjs",

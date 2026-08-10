@@ -180,7 +180,7 @@ A. 毎回でなくても問題ありません。タオルの吸水性が落ち�
 
 ### あわせて使いたい関連アイテム
 
-部屋干しのにおい対策は、柔軟剤だけでなく[部屋干し用の洗濯洗剤](https://rakuten-affiliate-blog.vercel.app/articles/laundry-detergent)との組み合わせで差が出ます。さらに、においの根本原因になりがちな洗濯槽の汚れには、定期的な**洗濯槽クリーナー**も効果的です。（※関連リンクは楽天で「洗濯洗剤 部屋干し」「洗濯槽 クリーナー」を検索して差し込み）
+部屋干しのにおい対策は、柔軟剤だけでなく[部屋干し用の洗濯洗剤](https://rakuten-affiliate-blog.vercel.app/articles/laundry-detergent)との組み合わせで差が出ます。それでも消えないときは、においの発生源が洗濯槽の裏側にある可能性があります。[洗濯槽クリーナーの比較](https://rakuten-affiliate-blog.vercel.app/articles/washer-cleaner)で、塩素系と酸素系の違いを1回あたり183円から整理しました。
 
 ### 参考文献・情報源
 

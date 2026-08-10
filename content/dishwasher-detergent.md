@@ -178,7 +178,7 @@ A. 湿気で固まるので、密閉できる容器に移すのがおすすめ�
 
 ### あわせて使いたい関連アイテム
 
-庫内のにおいが取れなくなったときは、**食洗機用の庫内クリーナー**が効きます。仕上がりの水滴が気になる場合は、**乾燥仕上げ剤（リンス剤）**という選択肢もあります。（※関連リンクは楽天で「食洗機 庫内クリーナー」「食洗機 乾燥仕上げ剤」を検索して差し込み）
+庫内のにおいが洗剤を変えても取れないときは[食洗機用の庫内クリーナー](https://hb.afl.rakuten.co.jp/hgc/g00tp3gm.p2w40bee.g00tp3gm.p2w415e7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fazest1%2F4595640296099-0%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fazest1%2Fi%2F10000389%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1,000円・★4.6／レビュー166件）。洗い上がりに白い水滴の跡が残るなら[乾燥仕上げ剤（リンス剤）](https://hb.afl.rakuten.co.jp/hgc/g00twl4m.p2w40947.g00twl4m.p2w416ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjimo%2Fskxwj002jp-1%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjimo%2Fi%2F10000298%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（2,999円・★4.42／レビュー31件）が効きます。どちらも洗剤とは役割が違うので、洗剤選びで解決しなかった不満に使う位置づけです。
 
 ### 参考文献・情報源
 
