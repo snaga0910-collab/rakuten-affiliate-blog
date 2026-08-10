@@ -247,7 +247,7 @@
 
 ## 電動歯ブラシの替えブラシ比較6選｜同じ純正でも1本あたり3倍ちがう
 
-- ボード: **未設定**
+- ボード: **オーラルケアの選び方**
 - リンク先: https://rakuten-affiliate-blog.vercel.app/articles/toothbrush-head
 
 ### [ ] 価格訴求（画像: `pins/toothbrush-head-price.png`）

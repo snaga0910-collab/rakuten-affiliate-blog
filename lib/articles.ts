@@ -18,6 +18,11 @@ function readRaw(slug: string): string {
   return fs.readFileSync(path.join(CONTENT_DIR, `${slug}.md`), "utf8");
 }
 
+/** frontmatter を除いた本文。関連記事の判定（lib/related.ts）から使う。 */
+export function readContent(slug: string): string {
+  return matter(readRaw(slug)).content;
+}
+
 function toMeta(slug: string, data: Record<string, unknown>): ArticleMeta {
   return {
     slug,
@@ -69,11 +74,13 @@ function costChart(slug: string): string | undefined {
 }
 
 export async function getArticle(
-  slug: string
+  slug: string,
+  /** 比較表・グラフの直後に差し込む、次の記事への導線（lib/related.ts が組み立てる） */
+  nextStepHtml?: string
 ): Promise<{ meta: ArticleMeta; html: string; faqs: Faq[] }> {
   const { data, content } = matter(readRaw(slug));
   const faqs = extractFaqs(content);
   // 比較表・付箋・手順・Q&A をデザイン案A のパーツに変換する
-  const html = renderArticle(content, slug, costChart(slug));
+  const html = renderArticle(content, slug, costChart(slug), nextStepHtml);
   return { meta: toMeta(slug, data), html, faqs };
 }

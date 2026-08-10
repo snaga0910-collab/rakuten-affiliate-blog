@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllArticles, getArticle, getSlugs } from "@/lib/articles";
+import {
+  nextStepArticle,
+  otherThemeArticles,
+  sameThemeArticles,
+  themeOf,
+  type RelatedCard,
+} from "@/lib/related";
 import { SITE } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -38,6 +45,44 @@ export async function generateMetadata({
   };
 }
 
+function esc(s: string) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+/** 本文の途中に差し込む、次の記事への導線（メモ書き風の1行）。 */
+function nextStepMarkup(card: RelatedCard | null): string | undefined {
+  if (!card) return undefined;
+  const cost = card.cost
+    ? `<span class="pa-next-cost num">${esc(card.cost.label)} ${esc(card.cost.min)}〜${esc(card.cost.max)}</span>`
+    : "";
+  return `<aside class="pa-next">
+<span class="pa-next-label">ついでに見直すなら</span>
+<a href="/articles/${esc(card.slug)}">${esc(card.title)}</a>
+${cost}
+</aside>`;
+}
+
+/** 記事末尾の関連記事カード。 */
+function RelatedList({ items }: { items: RelatedCard[] }) {
+  return (
+    <ul className="rel-list">
+      {items.map((a) => (
+        <li key={a.slug}>
+          <Link href={`/articles/${a.slug}`} className="rel-card">
+            {a.category && <span className="rel-cat">{a.category}</span>}
+            <span className="rel-title">{a.title}</span>
+            {a.cost && (
+              <span className="rel-cost num">
+                {a.cost.label} {a.cost.min}〜{a.cost.max}
+              </span>
+            )}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default async function ArticlePage({
   params,
 }: {
@@ -45,7 +90,14 @@ export default async function ArticlePage({
 }) {
   const { slug } = await params;
   if (!getSlugs().includes(slug)) notFound();
-  const { meta, html, faqs } = await getArticle(slug);
+  const theme = themeOf(slug);
+  const sameTheme = sameThemeArticles(slug);
+  // 同じテーマが少ない記事ほど、別テーマから多めに出す
+  const others = otherThemeArticles(slug, sameTheme.length > 0 ? 3 : 4);
+  const { meta, html, faqs } = await getArticle(
+    slug,
+    nextStepMarkup(nextStepArticle(slug))
+  );
 
   // FAQ の構造化データ（検索結果での表示は検索エンジン側の判断による）
   const faqJsonLd =
@@ -86,7 +138,13 @@ export default async function ArticlePage({
         />
       )}
       <nav className="breadcrumb">
-        <Link href="/">← 一覧に戻る</Link>
+        <Link href="/">記事一覧</Link>
+        {theme && (
+          <>
+            <span aria-hidden="true">／</span>
+            <Link href={`/#${theme.id}`}>{theme.name}で使うもの</Link>
+          </>
+        )}
       </nav>
       <header className="article-head">
         {meta.category && <span className="article-cat">{meta.category}</span>}
@@ -102,6 +160,30 @@ export default async function ArticlePage({
         className="article-body"
         dangerouslySetInnerHTML={{ __html: html }}
       />
+
+      <nav className="related" aria-label="ほかの記事">
+        {sameTheme.length > 0 && theme && (
+          <section className="rel-block">
+            <h2>
+              同じ{theme.name}で使うもの
+              <span className="rel-note">{theme.note}</span>
+            </h2>
+            <RelatedList items={sameTheme} />
+          </section>
+        )}
+        {others.length > 0 && (
+          <section className="rel-block">
+            <h2>
+              ほかの消耗品も同じ基準で比べています
+              <span className="rel-note">1回あたりのコストで並べています</span>
+            </h2>
+            <RelatedList items={others} />
+          </section>
+        )}
+        <p className="rel-all">
+          <Link href="/">記事をすべて見る →</Link>
+        </p>
+      </nav>
     </article>
   );
 }

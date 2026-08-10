@@ -130,13 +130,30 @@ function renderSteps(items: string[]): string {
 /**
  * 記事本文をA案のHTMLに変換する。
  * chartHtml は「まず結論」の直後に差し込むコスト比較グラフ。
+ * nextStepHtml はその直後に置く、次の記事への導線。
+ * 最後まで読む人は多くないので、比較表を見終えた位置に1本だけ入口を作る。
  */
-export function renderArticle(md: string, slug: string, chartHtml?: string): string {
+export function renderArticle(
+  md: string,
+  slug: string,
+  chartHtml?: string,
+  nextStepHtml?: string
+): string {
   const list = products(slug);
   const lines = md.split("\n");
   const out: string[] = [];
   let buf: string[] = [];       // 通常のMarkdownを溜めるバッファ
-  let chartDone = false;
+  // グラフと導線は「いちばん行数の多い表」＝商品の比較表の直後に置く。
+  // 記事によっては本文の途中に小さな表（同一商品の入り数くらべ等）があるため、
+  // 先頭の表を基準にすると比較表より前に出てしまう。
+  let mainTableAt = -1;
+  for (let i = 0, best = 0; i < lines.length; i++) {
+    if (!lines[i].trim().startsWith("|")) continue;
+    const start = i;
+    let n = 0;
+    while (i < lines.length && lines[i].trim().startsWith("|")) { n++; i++; }
+    if (n > best) { best = n; mainTableAt = start; }
+  }
 
   const flush = () => {
     if (buf.length) { out.push(marked.parse(buf.join("\n")) as string); buf = []; }
@@ -150,15 +167,19 @@ export function renderArticle(md: string, slug: string, chartHtml?: string): str
 
     // 比較表
     if (line.trim().startsWith("|")) {
+      const start = i;
       const block: string[] = [];
       while (i < lines.length && lines[i].trim().startsWith("|")) block.push(lines[i++]);
       i--;
       flush();
       out.push(renderLedger(block, list));
-      // 比較表の直後にコスト比較グラフを置く
-      if (chartHtml && !chartDone) {
-        out.push(`<figure class="pa-fig">${chartHtml}<figcaption>記事の比較表と同じ値をグラフにしたものです。数値は内容量と一般的な使用量からの概算で、実際の使用量には個人差があります。</figcaption></figure>`);
-        chartDone = true;
+      if (start === mainTableAt) {
+        // 比較表の直後にコスト比較グラフを置く
+        if (chartHtml) {
+          out.push(`<figure class="pa-fig">${chartHtml}<figcaption>記事の比較表と同じ値をグラフにしたものです。数値は内容量と一般的な使用量からの概算で、実際の使用量には個人差があります。</figcaption></figure>`);
+        }
+        // 比較表を見終えた位置に、次の記事への入口を1本だけ置く
+        if (nextStepHtml) out.push(nextStepHtml);
       }
       continue;
     }

@@ -115,10 +115,41 @@ body {
 .card-date { font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .empty { color: var(--ink-2); }
 
+/* --- 一覧を「使う場所」でまとめる（回遊） --- */
+.theme-nav {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 0 0 8px; margin-bottom: 10px;
+}
+.theme-nav a {
+  display: inline-flex; align-items: baseline; gap: 7px;
+  background: var(--paper-card); border: 1px solid var(--rule);
+  border-bottom: 3px solid var(--pen);
+  padding: 6px 14px; font-size: 13.5px; font-weight: 800;
+  color: var(--ink); text-decoration: none;
+}
+.theme-nav a:hover { border-bottom-color: var(--tab); color: var(--pen-deep); }
+.theme-nav a:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+.theme-nav .num { font-size: 11.5px; font-weight: 700; color: var(--ink-2); }
+
+.theme-block { scroll-margin-top: 16px; padding-top: 18px; }
+.theme-head {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px;
+  font-size: 17px; font-weight: 800; margin: 0 0 14px;
+  padding-bottom: 8px; border-bottom: 2px solid var(--ink);
+}
+.theme-head::before {
+  content: ""; width: 12px; height: 12px; flex: none;
+  background: var(--tab); transform: rotate(-8deg);
+}
+.theme-note { font-size: 12.5px; font-weight: 500; color: var(--ink-2); letter-spacing: .02em; }
+
 /* --- 記事 --- */
-.breadcrumb { padding: 22px 0 6px; font-size: 13px; }
+.breadcrumb {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 22px 0 6px; font-size: 13px; color: var(--ink-2);
+}
 .breadcrumb a { color: var(--ink-2); text-decoration: none; }
-.breadcrumb a:hover { color: var(--pen); }
+.breadcrumb a:hover { color: var(--pen); text-decoration: underline; }
 .article-head { padding: 6px 0 22px; border-bottom: 2px solid var(--ink); }
 .article-cat {
   display: inline-block; background: var(--tape); color: var(--ink);
@@ -170,6 +201,28 @@ body {
 }
 .pa-memo p { margin: 0 0 14px; }
 .pa-memo strong { background: none; font-weight: 800; }
+
+/* 本文の途中に1本だけ置く、次の記事への導線（付箋を貼った感じ） */
+.pa-next {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px;
+  background: var(--marker-2); border: 1px solid var(--rule);
+  padding: 14px 18px; margin: 0 0 30px;
+  transform: rotate(-.35deg);
+  box-shadow: 3px 3px 0 rgba(36, 48, 59, .07);
+}
+.pa-next-label {
+  flex: none; font-size: 11px; font-weight: 800;
+  letter-spacing: .14em; color: var(--ink-2);
+}
+.pa-next a {
+  font-size: 15px; font-weight: 800; color: var(--pen-deep);
+  text-decoration: underline; text-underline-offset: 4px;
+}
+.pa-next a::after { content: " →"; text-decoration: none; }
+.pa-next-cost {
+  flex: none; font-size: 12.5px; color: var(--ink-2);
+  border-left: 1px solid var(--rule); padding-left: 12px;
+}
 
 /* 台帳（比較表） */
 .pa-ledger { margin: 0 0 30px; overflow-x: auto; }
@@ -308,6 +361,36 @@ body {
   }
   .pa-ledger .cost { font-size: 17px; }
 }
+
+/* --- 記事の下：ほかの記事へ（回遊） --- */
+.related { margin-top: 46px; padding-top: 8px; border-top: 2px solid var(--ink); }
+.rel-block { margin-top: 28px; }
+.rel-block h2 {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 3px 12px;
+  font-size: 16px; font-weight: 800; margin: 0 0 14px;
+  padding-left: 13px; border-left: 4px solid var(--tab);
+}
+.rel-note { font-size: 12px; font-weight: 500; color: var(--ink-2); }
+.rel-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.rel-card {
+  display: grid; gap: 6px;
+  background: var(--paper-card); border: 1px solid var(--rule);
+  border-left: 5px solid var(--pen);
+  padding: 15px 18px; text-decoration: none; color: var(--ink);
+  box-shadow: 3px 3px 0 rgba(36, 48, 59, .07);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.rel-card:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 rgba(36, 48, 59, .11); }
+.rel-card:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; }
+.rel-cat {
+  justify-self: start; background: var(--tape); color: var(--ink);
+  font-size: 11px; font-weight: 800; letter-spacing: .1em;
+  padding: 2px 10px; transform: rotate(-.8deg);
+}
+.rel-title { font-size: 15px; font-weight: 800; line-height: 1.6; }
+.rel-cost { font-size: 12.5px; color: var(--ink-2); }
+.rel-all { margin: 26px 0 0; font-size: 14px; }
+.rel-all a { color: var(--pen); font-weight: 700; text-underline-offset: 3px; }
 
 /* もっと狭い端末では画像を上に置いて横幅を全部本文に使う */
 @media (max-width: 400px) {

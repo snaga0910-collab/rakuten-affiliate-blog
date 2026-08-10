@@ -36,6 +36,7 @@ const BOARD = {
   "diatomite-bathmat": "バスマット・お風呂まわり",
   "laundry-detergent": "一人暮らしの洗濯・柔軟剤えらび",
   "dishwasher-detergent": "キッチンの時短",
+  "toothbrush-head": "オーラルケアの選び方",
 };
 
 const VARIANT_LABEL = { price: "価格訴求", pain: "悩み訴求", compare: "比較訴求" };
