@@ -68,7 +68,8 @@ function renderLedger(lines: string[], list: Product[]): string {
   // 「1回あたり」等のコスト列を見つけて、そこを強調する
   const costIdx = header.findIndex((h) => /あたり/.test(h));
   const costOf = (r: string[]) => {
-    const m = (r[costIdx] ?? "").match(/約([\d,]+)/);
+    // 「約1.6円」のように小数になるジャンル（食器用洗剤など）があるため小数も拾う
+    const m = (r[costIdx] ?? "").match(/約([\d,]+(?:\.\d+)?)/);
     return m ? Number(m[1].replace(/,/g, "")) : Number.MAX_SAFE_INTEGER;
   };
   const sorted = costIdx >= 0 ? [...body].sort((a, b) => costOf(a) - costOf(b)) : body;

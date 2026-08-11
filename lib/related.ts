@@ -33,7 +33,7 @@ export const THEMES: Theme[] = [
     id: "kitchen",
     name: "キッチン",
     note: "水まわりと洗いもの",
-    slugs: ["dishwasher-detergent", "water-filter", "coffee-drip"],
+    slugs: ["dishwasher-detergent", "dish-soap", "water-filter", "coffee-drip"],
   },
   {
     id: "bath",
@@ -49,6 +49,7 @@ export const THEMES: Theme[] = [
  *   バスマット → 洗濯洗剤 … 布タイプを選ぶと洗濯の回数が増える
  */
 const AFFINITY: Record<string, string[]> = {
+  "dish-soap": ["dishwasher-detergent", "water-filter"],
   "coffee-drip": ["water-filter"],
   "water-filter": ["coffee-drip"],
   "diatomite-bathmat": ["laundry-detergent", "fabric-softener"],
@@ -86,7 +87,7 @@ function cells(line: string): string[] {
 function amounts(rows: string[][], idx: number): number[] {
   const out: number[] = [];
   for (const r of rows) {
-    const m = (r[idx] ?? "").match(/約?([\d,]+)\s*円/);
+    const m = (r[idx] ?? "").match(/約?([\d,]+(?:\.\d+)?)\s*円/);
     if (m) out.push(Number(m[1].replace(/,/g, "")));
   }
   return out;

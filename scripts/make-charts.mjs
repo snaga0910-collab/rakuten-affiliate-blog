@@ -27,7 +27,7 @@ function parseRows(md) {
     // 「約37円」「約21〜25円」「約975円」を拾う。範囲は下限を採用し、幅も持っておく
     let cost = null, range = null;
     for (const c of cells.slice(1)) {
-      const m = c.match(/約([\d,]+)(?:〜([\d,]+))?円/);
+      const m = c.match(/約([\d,]+(?:\.\d+)?)(?:〜([\d,]+(?:\.\d+)?))?円/);
       if (m) {
         cost = Number(m[1].replace(/,/g, ""));
         if (m[2]) range = Number(m[2].replace(/,/g, ""));
