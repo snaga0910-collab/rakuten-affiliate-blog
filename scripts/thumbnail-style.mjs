@@ -1,5 +1,6 @@
 // サムネイルの見た目設定。色や絵文字を変えたいときはここだけ編集する。
 export const SITE_NAME = "ひとり暮らしの消耗品ノート";
+export const SITE_TAGLINE = "一人暮らし会社員の、買い替え消耗品を正直に比較";
 
 // ジャンルごとの配色。背景は淡く、差し色はカテゴリの雰囲気に合わせる。
 export const CATEGORY_STYLE = {

@@ -17,11 +17,14 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.name}｜${SITE.tagline}`,
     description: SITE.description,
+    // 記事ページは各記事のサムネイルで上書きされる（app/articles/[slug]/page.tsx）
+    images: [{ url: "/thumbnails/site.png", width: 1280, height: 670, alt: SITE.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name}｜${SITE.tagline}`,
     description: SITE.description,
+    images: ["/thumbnails/site.png"],
   },
   robots: { index: true, follow: true },
   // 各サービスの所有権確認用（削除すると確認状態が外れる）

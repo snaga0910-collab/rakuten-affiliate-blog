@@ -11,5 +11,6 @@ next-env.d.ts
 /note-out
 
 # 生成画像（原稿から再生成できる）
+# public/thumbnails だけは OGP画像として配信するのでコミットする
 /thumbnails
 /pins/*.png

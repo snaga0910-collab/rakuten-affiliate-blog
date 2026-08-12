@@ -1,7 +1,7 @@
 // 記事のサムネイル画像(1280x670)を生成する。
 //   使い方: npm run thumb            … 全記事
 //           npm run thumb oral-care  … 1記事だけ
-// 出力先: thumbnails/<slug>.png
+// 出力先: public/thumbnails/<slug>.png（OGP画像として配信するので public/ に置く）
 //
 // 画像生成AIは使わず、記事のタイトル・カテゴリを流し込んだHTMLを
 // ヘッドレスブラウザで描画してスクリーンショットする。
@@ -11,12 +11,12 @@ import path from "path";
 import { fileURLToPath } from "url";
 import matter from "gray-matter";
 import { chromium } from "playwright";
-import { SITE_NAME, CATEGORY_STYLE } from "./thumbnail-style.mjs";
+import { SITE_NAME, SITE_TAGLINE, CATEGORY_STYLE } from "./thumbnail-style.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT, "content");
-const OUT_DIR = path.join(ROOT, "thumbnails");
+const OUT_DIR = path.join(ROOT, "public", "thumbnails");
 
 const W = 1280;
 const H = 670;
@@ -105,8 +105,20 @@ async function main() {
     const out = path.join(OUT_DIR, `${slug}.png`);
     await page.screenshot({ path: out });
     const kb = Math.round(fs.statSync(out).size / 1024);
-    console.log(`  ✓ thumbnails/${slug}.png  (${W}x${H} / ${kb}KB)`);
+    console.log(`  ✓ public/thumbnails/${slug}.png  (${W}x${H} / ${kb}KB)`);
   }
+  // トップページ・About等のOGP用に、サイト共通の1枚も作っておく
+  if (!target) {
+    await page.setContent(
+      buildHtml({ slug: "_site", title: `${SITE_NAME}｜${SITE_TAGLINE}`, category: "消耗品の比較" }),
+      { waitUntil: "load" }
+    );
+    await page.waitForTimeout(300);
+    const out = path.join(OUT_DIR, "site.png");
+    await page.screenshot({ path: out });
+    console.log(`  ✓ public/thumbnails/site.png  (${W}x${H} / ${Math.round(fs.statSync(out).size / 1024)}KB)`);
+  }
+
   await browser.close();
   console.log(`\n${slugs.length} 枚のサムネイルを生成しました。`);
 }

@@ -24,6 +24,9 @@ export async function generateMetadata({
   const found = getAllArticles().find((a) => a.slug === slug);
   if (!found) return {};
   const path = `/articles/${slug}`;
+  // 記事ごとのサムネイル（npm run thumb で public/thumbnails に生成）。
+  // これが無いと note・Pinterest・LINE などでURLを貼ったとき画像なしのカードになる。
+  const image = { url: `/thumbnails/${slug}.png`, width: 1280, height: 670, alt: found.title };
   return {
     title: found.title,
     description: found.description,
@@ -36,11 +39,13 @@ export async function generateMetadata({
       description: found.description,
       publishedTime: found.date,
       modifiedTime: found.updated || found.date,
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title: found.title,
       description: found.description,
+      images: [image.url],
     },
   };
 }
