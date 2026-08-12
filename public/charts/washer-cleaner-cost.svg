@@ -4,11 +4,11 @@
   .sub{font:400 12px "Hiragino Sans",system-ui,sans-serif;fill:#6d6a65}
   .lbl{font:400 13px "Hiragino Sans","Noto Sans JP",system-ui,sans-serif;fill:#3b3f45}
   .val{font:600 13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#3b3f45;font-variant-numeric:tabular-nums}
-  .valhi{fill:#bf0000}
+  .valhi{fill:#41708c}
   .track{fill:#eeece8}
-  .bar{fill:#bf0000;opacity:.42}
+  .bar{fill:#41708c;opacity:.42}
   .bar.hi{opacity:1}
-  .rng{fill:#bf0000;opacity:.18}
+  .rng{fill:#41708c;opacity:.18}
   @media (prefers-color-scheme:dark){
     .ttl{fill:#e8e6e1}.sub{fill:#9a968f}.lbl{fill:#c9c6c1}.val{fill:#c9c6c1}
     .track{fill:#2b2e33}
