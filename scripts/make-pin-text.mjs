@@ -9,6 +9,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import matter from "gray-matter";
 import { PIN_COPY } from "./pin-copy.mjs";
+import { costTable } from "./pin-table-data.mjs";
 import { SITE_NAME } from "./thumbnail-style.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -43,9 +44,28 @@ const BOARD = {
   "dish-soap": "キッチンの時短",
 };
 
-const VARIANT_LABEL = { price: "価格訴求", pain: "悩み訴求", compare: "比較訴求" };
+const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rakuten-affiliate-blog.vercel.app";
+
+/** コスト一覧ピンの文言。数字は比較表そのものなので、記事を直せば自動で追従する。 */
+function tableText(slug) {
+  const t = costTable(slug);
+  if (!t) return null;
+  const rows = t.rows.slice(0, 6);
+  const kw = (KEYWORDS[slug] || []).map((k) => `#${k}`).join(" ");
+  const list = rows.map((r) => `${r.full} ${r.cost}`).join("／");
+  // ハッシュタグは検索に効くので必ず残し、あふれるときは商品リスト側を削る
+  const head = `${t.subject}を${t.label === "価格" ? "価格" : t.label + "コスト"}の安い順に並べました。`;
+  const tail = "。実際の価格とレビューをもとに比較しています。";
+  const room = 200 - head.length - tail.length - kw.length - 1;
+  const body = list.length > room ? list.slice(0, Math.max(0, room - 1)) + "…" : list;
+  const desc = `${head}${body}${tail}${kw}`;
+  return {
+    title: `${t.subject} ${rows.length}商品の${t.label === "価格" ? "価格" : t.label + "コスト"}一覧`,
+    desc,
+  };
+}
 
 function description(slug, variant, copy, count) {
   const v = copy[variant];
@@ -79,18 +99,28 @@ for (const slug of slugs) {
   // 「比較6選」のように記事タイトルへ入っている件数を使う
   const count = (String(data.title).match(/比較(\d+)選/) || [])[1] || "6";
   lines.push(`## ${data.title}`, "", `- ボード: **${BOARD[slug] || "未設定"}**`, `- リンク先: ${url}`, "");
-  for (const variant of ["price", "pain", "compare"]) {
-    const v = copy[variant];
+  for (const variant of ["table", "price", "compare"]) {
+    let title;
+    let desc;
+    if (variant === "table") {
+      const tt = tableText(slug);
+      if (!tt) continue; // 比較表からコストを取れない記事はコスト一覧を作らない
+      title = tt.title;
+      desc = tt.desc;
+    } else {
+      title = copy[variant].head.replace(/\n/g, " ");
+      desc = description(slug, variant, copy, count);
+    }
     lines.push(
       `### [ ] ${VARIANT_LABEL[variant]}（画像: \`pins/${slug}-${variant}.png\`）`,
       "",
       "**タイトル**",
       "```",
-      v.head.replace(/\n/g, " "),
+      title,
       "```",
       "**説明文**",
       "```",
-      description(slug, variant, copy, count),
+      desc,
       "```",
       ""
     );
