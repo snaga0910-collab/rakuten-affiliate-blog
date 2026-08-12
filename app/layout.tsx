@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+// どのチャネル（検索・Pinterest・note・X）から来たのかを見るために入れている。
+// Cookieを使わない計測なので、同意バナーは不要（プライバシーポリシーに明記）。
+import { Analytics } from "@vercel/analytics/next";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -64,6 +67,7 @@ export default function RootLayout({
             </p>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
