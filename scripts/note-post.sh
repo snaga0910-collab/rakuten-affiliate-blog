@@ -31,7 +31,7 @@ fi
 SLUG="$1"
 MODE="${2:-draft}"
 ARTICLE="$BLOG_DIR/note-out/$SLUG.md"
-THUMB="$BLOG_DIR/thumbnails/$SLUG.png"
+THUMB="$BLOG_DIR/public/thumbnails/$SLUG.png"
 
 if [ ! -f "$ARTICLE" ]; then
   echo "❌ 記事が見つかりません: $ARTICLE"

@@ -91,12 +91,13 @@ function frame(st, category, inner) {
 }
 
 /** コスト一覧ピン。記事の比較表をそのまま画像にして、保存される形にする。 */
-function buildTableHtml(slug, category) {
-  const t = costTable(slug);
+function buildTableHtml(slug, category, copy) {
+  // copy.table があればそれを使う（記事の比較表ではない一覧を出したいとき）
+  const t = copy.table ?? costTable(copy.article ?? slug);
   if (!t) return null;
   const st = CATEGORY_STYLE[slug] || CATEGORY_STYLE._default;
   // 行数が多いほど1行を詰める（6行で収まるように）
-  const rows = t.rows.slice(0, 6);
+  const rows = t.rows.slice(0, 6).map((r) => ({ ...r, name: r.name ?? r.full }));
   const min = rows[0].yen;
   const body = rows
     .map((r) => {
@@ -114,7 +115,7 @@ function buildTableHtml(slug, category) {
     `<div class="head-area t-head">
     <span class="chip">${esc(category)}</span>
     <h1>${esc(t.subject)}</h1>
-    <p class="t-sub">${rows.length}商品の${esc(t.label === "価格" ? "価格" : t.label + "コスト")}</p>
+    <p class="t-sub">${rows.length}件の${esc(/価格|コスト$/.test(t.label) ? t.label : t.label + "コスト")}</p>
   </div>
   <div class="rows">${body}</div>`
   );
@@ -144,9 +145,11 @@ function buildHtml(slug, variant, copy) {
 
 async function main() {
   const target = process.argv[2];
-  const slugs = target
-    ? [target]
-    : fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".md")).map((f) => f.replace(/\.md$/, ""));
+  // PIN_COPY を正としてピンを作る。article を持つトピックは、その記事にリンクする
+  const slugs = (target ? [target] : Object.keys(PIN_COPY)).filter((s) => {
+    const a = PIN_COPY[s]?.article ?? s;
+    return fs.existsSync(path.join(CONTENT_DIR, `${a}.md`));
+  });
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
   const browser = await chromium.launch();
@@ -160,13 +163,15 @@ async function main() {
       continue;
     }
     // カテゴリは記事のfrontmatterから補う
-    const { data } = matter(fs.readFileSync(path.join(CONTENT_DIR, `${slug}.md`), "utf8"));
+    const { data } = matter(
+      fs.readFileSync(path.join(CONTENT_DIR, `${copy.article ?? slug}.md`), "utf8")
+    );
     copy.category = copy.category || String(data.category || "");
 
     for (const variant of ["table", "price", "compare"]) {
       const html =
         variant === "table"
-          ? buildTableHtml(slug, copy.category)
+          ? buildTableHtml(slug, copy.category, copy)
           : buildHtml(slug, variant, copy);
       if (!html) {
         console.log(`  ⚠ ${slug}-${variant}: 比較表からコストを取れずスキップ`);

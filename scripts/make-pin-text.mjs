@@ -50,36 +50,41 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rakuten-affiliate-
 
 /** コスト一覧ピンの文言。数字は比較表そのものなので、記事を直せば自動で追従する。 */
 function tableText(slug) {
-  const t = costTable(slug);
+  const copy = PIN_COPY[slug];
+  const t = copy.table ?? costTable(copy.article ?? slug);
   if (!t) return null;
   const rows = t.rows.slice(0, 6);
-  const kw = (KEYWORDS[slug] || []).map((k) => `#${k}`).join(" ");
+  const kw = (copy.keywords ?? KEYWORDS[slug] ?? []).map((k) => `#${k}`).join(" ");
   const list = rows.map((r) => `${r.full} ${r.cost}`).join("／");
   // ハッシュタグは検索に効くので必ず残し、あふれるときは商品リスト側を削る
-  const head = `${t.subject}を${t.label === "価格" ? "価格" : t.label + "コスト"}の安い順に並べました。`;
+  const head = `${t.subject}を${/価格|コスト$/.test(t.label) ? t.label : t.label + "コスト"}の安い順に並べました。`;
   const tail = "。実際の価格とレビューをもとに比較しています。";
   const room = 200 - head.length - tail.length - kw.length - 1;
   const body = list.length > room ? list.slice(0, Math.max(0, room - 1)) + "…" : list;
   const desc = `${head}${body}${tail}${kw}`;
   return {
-    title: `${t.subject} ${rows.length}商品の${t.label === "価格" ? "価格" : t.label + "コスト"}一覧`,
+    title: `${t.subject} ${rows.length}件の${/価格|コスト$/.test(t.label) ? t.label : t.label + "コスト"}一覧`,
     desc,
   };
 }
 
 function description(slug, variant, copy, count) {
   const v = copy[variant];
-  const kw = KEYWORDS[slug] || [];
+  const kw = PIN_COPY[slug]?.keywords ?? KEYWORDS[slug] ?? [];
   const body = `${v.lead}。${v.points.join("。")}。`;
   const tags = kw.map((k) => `#${k}`).join(" ");
   // 説明文は200字以内が扱いやすい
-  let text = `${v.head.replace(/\n/g, "")}｜${body} 実際の価格とレビューをもとに${count}商品を比較しました。${tags}`;
+  // 記事に紐づかないトピック（article を持つもの）は「◯商品」と言えないので締めを変える
+  const tail = PIN_COPY[slug]?.article
+    ? " 記事では年間コストの計算根拠も書いています。"
+    : ` 実際の価格とレビューをもとに${count}商品を比較しました。`;
+  let text = `${v.head.replace(/\n/g, "")}｜${body}${tail}${tags}`;
   if (text.length > 200) text = text.slice(0, 197) + "…";
   return text;
 }
 
 const slugs = Object.keys(PIN_COPY).filter((s) =>
-  fs.existsSync(path.join(CONTENT_DIR, `${s}.md`))
+  fs.existsSync(path.join(CONTENT_DIR, `${PIN_COPY[s].article ?? s}.md`))
 );
 
 const lines = [
@@ -93,12 +98,13 @@ const lines = [
 ];
 
 for (const slug of slugs) {
-  const { data } = matter(fs.readFileSync(path.join(CONTENT_DIR, `${slug}.md`), "utf8"));
   const copy = PIN_COPY[slug];
-  const url = `${SITE_URL}/articles/${slug}`;
+  const articleSlug = copy.article ?? slug;
+  const { data } = matter(fs.readFileSync(path.join(CONTENT_DIR, `${articleSlug}.md`), "utf8"));
+  const url = `${SITE_URL}/articles/${articleSlug}`;
   // 「比較6選」のように記事タイトルへ入っている件数を使う
   const count = (String(data.title).match(/比較(\d+)選/) || [])[1] || "6";
-  lines.push(`## ${data.title}`, "", `- ボード: **${BOARD[slug] || "未設定"}**`, `- リンク先: ${url}`, "");
+  lines.push(`## ${copy.category ?? data.title}${copy.article ? `（${data.title} の中の節）` : ""}`, "", `- ボード: **${copy.board ?? BOARD[slug] ?? "未設定"}**`, `- リンク先: ${url}`, "");
   for (const variant of ["table", "price", "compare"]) {
     let title;
     let desc;
