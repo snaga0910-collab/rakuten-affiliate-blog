@@ -12,7 +12,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CSV = path.join(__dirname, "..", "metrics.csv");
 const HEAD =
-  "週の開始日,検索表示回数,検索クリック,ピンのクリック,楽天クリック,楽天成果件数,報酬額,メモ";
+  "週の開始日,検索表示回数,検索クリック,ピンのクリック,楽天クリック,楽天成果件数,楽天報酬額,A8クリック,A8成果件数,A8報酬額,メモ";
 
 /** その週の月曜日を YYYY-MM-DD で返す。 */
 function weekStart(d = new Date()) {
