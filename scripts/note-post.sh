@@ -55,6 +55,31 @@ if [ ! -f "$NOTE_POST_MCP_STATE_PATH" ]; then
   exit 1
 fi
 
+# --- 二重投稿の防止 -------------------------------------------------
+# 2026-08-13に、すでに公開済みの記事の下書きを重ねて作ってしまった。
+# 原因は、note側の現状を取り直さずに古い情報で判断したこと。
+# 投稿の直前に必ずnoteの一覧を取得し、同じタイトルがあれば止める。
+TITLE=$(grep -m1 '^title:' "$ARTICLE" | sed 's/^title:[[:space:]]*//')
+echo "note側の現状を確認中..."
+EXISTING=$(cd "$POSTER_DIR" && node scripts/list-notes.mjs 2>/dev/null || true)
+
+if [ -n "$EXISTING" ] && [ -n "$TITLE" ]; then
+  if echo "$EXISTING" | grep -Fq "$TITLE"; then
+    echo ""
+    echo "❌ 中止：同じタイトルの記事が note にすでにあります。"
+    echo "   タイトル: $TITLE"
+    echo "$EXISTING" | grep -F "$TITLE" | sed 's/^/   → /'
+    echo ""
+    echo "   重複して作らないため、ここで止めます。"
+    echo "   意図的に作り直す場合は、note側の該当記事を先に削除してください。"
+    exit 1
+  fi
+  echo "  OK: 同じタイトルはありません"
+else
+  echo "  ⚠ 一覧を取得できませんでした。重複していないか自分で確認してください。"
+fi
+# --------------------------------------------------------------------
+
 echo "記事: $ARTICLE"
 echo "サムネ: ${THUMB:-なし}"
 echo "モード: $MODE"
