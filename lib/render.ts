@@ -172,6 +172,13 @@ export function renderArticle(
       const block: string[] = [];
       while (i < lines.length && lines[i].trim().startsWith("|")) block.push(lines[i++]);
       i--;
+      // 1列目に商品リンクが無い表は、商品の比較表ではない（用途別の早見表など）。
+      // 台帳にすると商品画像の空枠が並んでしまうので、普通の表として出す。
+      if (!block.some((l) => /^\|[^|]*\[[^\]]+\]\(/.test(l.trim()))) {
+        flush();
+        out.push(`<div class="pa-table">${marked.parse(block.join("\n")) as string}</div>`);
+        continue;
+      }
       flush();
       out.push(renderLedger(block, list));
       if (start === mainTableAt) {
@@ -234,10 +241,16 @@ export function renderArticle(
   flush();
 
   let html = out.join("\n");
-  // 外部リンクは別タブ＋rel（アフィリンクの規約・SEO対応）
+  // 外部リンクは別タブ＋rel（アフィリンクの規約・SEO対応）。
+  // ASPの広告タグは rel="nofollow" 付きのHTMLで配布されるため、
+  // 既存の rel / target はいったん外してから付け直す（重複属性を作らない）。
   html = html.replace(
-    /<a href="(https?:\/\/(?!rakuten-affiliate-blog)[^"]+)"(?![^>]*target)/g,
-    '<a href="$1" target="_blank" rel="sponsored nofollow noopener"'
+    /<a\s+href="(https?:\/\/(?!rakuten-affiliate-blog)[^"]+)"([^>]*)>/g,
+    (_m, href: string, rest: string) =>
+      `<a href="${href}" target="_blank" rel="sponsored nofollow noopener"${rest.replace(
+        /\s*(?:rel|target)="[^"]*"/g,
+        ""
+      )}>`
   );
   return html;
 }

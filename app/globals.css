@@ -362,6 +362,21 @@ body {
   .pa-ledger .cost { font-size: 17px; }
 }
 
+/* 商品リンクを持たない一般の表（用途別の早見表など） */
+.pa-table { margin: 0 0 30px; overflow-x: auto; }
+.pa-table table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.pa-table th {
+  background: var(--ink); color: var(--paper-card);
+  font-size: 12.5px; letter-spacing: .06em; padding: 11px 12px;
+  text-align: left; white-space: nowrap;
+}
+.pa-table td {
+  padding: 12px; border-bottom: 1px solid var(--rule);
+  background: var(--paper-card); font-variant-numeric: tabular-nums;
+}
+.pa-table tbody tr:last-child td { border-bottom: 0; }
+.pa-table td:first-child { font-weight: 700; }
+
 /* --- 記事の下：ほかの記事へ（回遊） --- */
 .related { margin-top: 46px; padding-top: 8px; border-top: 2px solid var(--ink); }
 .rel-block { margin-top: 28px; }
