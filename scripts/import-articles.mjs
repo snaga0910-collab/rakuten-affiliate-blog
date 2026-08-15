@@ -24,6 +24,7 @@ const CATEGORY = {
   "dishwasher-detergent": "食洗機洗剤",
   "toothbrush-head": "替えブラシ",
   "washer-cleaner": "洗濯槽クリーナー",
+  "toothpaste": "歯磨き粉",
   "dish-soap": "食器用洗剤",
 };
 
