@@ -362,6 +362,24 @@ body {
   .pa-ledger .cost { font-size: 17px; }
 }
 
+/* 広告バナー。デザインそのものが判断材料になる商品でだけ使う
+   （例: キャラクターコラボ）。テキストリンクで代替できるものには使わない。 */
+.pa-ad {
+  margin: 0 0 30px;
+  padding: 18px;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-top: 5px solid var(--tab);
+  box-shadow: 3px 3px 0 rgba(36, 48, 59, .07);
+  text-align: center;
+}
+.pa-ad-label {
+  display: block; font-size: 11px; letter-spacing: .16em;
+  font-weight: 800; color: var(--ink-2); margin-bottom: 12px; text-align: left;
+}
+.pa-ad img { max-width: 100%; height: auto; display: inline-block; }
+.pa-ad-note { margin: 12px 0 0; font-size: 12.5px; color: var(--ink-2); text-align: left; line-height: 1.7; }
+
 /* 商品リンクを持たない一般の表（用途別の早見表など） */
 .pa-table { margin: 0 0 30px; overflow-x: auto; }
 .pa-table table { width: 100%; border-collapse: collapse; font-size: 14.5px; }

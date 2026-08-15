@@ -41,7 +41,11 @@ function cells(line) {
  *   { subject, label, rows: [{name, cost, yen}], count }
  * コスト列が無い記事は価格列で代用する。表が複数ある記事は行数の多いものを使う。
  */
-export function costTable(slug) {
+export function costTable(slug, override) {
+  // 比較表が「使う量 × 各社」のような行列になっている記事は自動で拾えない。
+  // その場合は pin-copy.mjs 側で table を手書きしてもらう。
+  if (override) return override;
+
   const raw = fs.readFileSync(path.join(CONTENT_DIR, `${slug}.md`), "utf8");
   const { data, content } = matter(raw);
 
