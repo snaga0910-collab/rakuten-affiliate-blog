@@ -37,58 +37,110 @@ function esc(s) {
   return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-/** 見出しの改行(\n)をそのまま反映させる。 */
-function escMultiline(s) {
-  return esc(s).replace(/\n/g, "<br>");
-}
 
-/** 共通の枠（背景・カテゴリチップ・フッター）。中身だけ差し替える。 */
+/**
+ * 共通の枠（背景・カテゴリチップ・フッター）。中身だけ差し替える。
+ *
+ * 2026-08-16 に文字を全体的に大きくした。Pinterestのフィードでピンが出る幅は
+ * 約236pxで、1000px幅で作った画像は23%に縮む。旧デザインは一覧の行が34px
+ * ＝実寸8px相当で、フィードでは読めていなかった（30日間で保存0・流入0）。
+ * 「フィードで止めるのは大きな数字、拡大して読むのが一覧」の役割分担にする。
+ *
+ * 背景の巨大絵文字（opacity .12）も廃止した。実寸では何か判別できないうえ、
+ * 文字とのコントラストを下げていたため。
+ *
+ * 楽天の商品画像はピンに載せない。ガイドライン上、商品画像は
+ * 「アフィリエイトリンクとセットで」使うものとされており、ピンのリンク先は
+ * 自分のブログでピン自体にアフィリンクがないため。ブログ記事内での使用は問題ない。
+ */
 function frame(st, category, inner) {
   return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>
   *{margin:0;padding:0;box-sizing:border-box;}
   body{
-    width:${W}px;height:${H}px;padding:78px 66px;
+    width:${W}px;height:${H}px;padding:70px 62px;
     display:flex;flex-direction:column;justify-content:space-between;
     font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
-    background:${st.bg};color:#1f2328;position:relative;overflow:hidden;
+    background:${st.bg};color:#161a1e;position:relative;overflow:hidden;
   }
-  .deco{position:absolute;right:-70px;bottom:120px;font-size:400px;opacity:.12;line-height:1;}
   .head-area{position:relative;z-index:1;}
-  .chip{display:inline-block;background:${st.accent};color:#fff;font-size:30px;
-    font-weight:700;padding:11px 30px;border-radius:999px;margin-bottom:44px;}
-  h1{font-size:96px;font-weight:800;line-height:1.34;letter-spacing:-.01em;}
-  .lead{margin-top:34px;font-size:37px;font-weight:600;color:#454c53;line-height:1.55;}
-  ul{position:relative;z-index:1;list-style:none;margin:18px 0;}
-  li{display:flex;align-items:flex-start;gap:18px;font-size:36px;font-weight:600;
-    line-height:1.5;margin-bottom:26px;color:#2c3238;}
-  .dot{flex:none;width:17px;height:17px;border-radius:50%;background:${st.accent};margin-top:14px;}
-  .foot{position:relative;z-index:1;border-top:4px solid ${st.accent};padding-top:28px;}
-  .cta{font-size:34px;font-weight:700;color:${st.accent};margin-bottom:12px;}
-  .site{font-size:30px;font-weight:700;}
-  .note{font-size:24px;color:#6b7178;margin-top:8px;}
+  .chip{display:inline-block;background:${st.accent};color:#fff;font-size:32px;
+    font-weight:700;padding:12px 32px;border-radius:999px;margin-bottom:34px;}
+  /* 主題は小さく、2行目の数字を主役にする */
+  .subject{font-weight:700;line-height:1.25;color:#3a4148;letter-spacing:-.01em;}
+  .hero{font-weight:800;line-height:1.14;color:${st.accent};letter-spacing:-.025em;
+    margin-top:10px;}
+  .lead{margin-top:28px;font-size:42px;font-weight:700;color:#2c3238;line-height:1.45;}
+  ul{position:relative;z-index:1;list-style:none;margin:10px 0;}
+  li{display:flex;align-items:flex-start;gap:20px;font-size:46px;font-weight:600;
+    line-height:1.42;margin-bottom:30px;color:#22282e;}
+  .dot{flex:none;width:20px;height:20px;border-radius:50%;background:${st.accent};margin-top:20px;}
+  .foot{position:relative;z-index:1;border-top:5px solid ${st.accent};padding-top:26px;}
+  .cta{font-size:38px;font-weight:800;color:${st.accent};margin-bottom:10px;}
+  .site{font-size:31px;font-weight:700;color:#3a4148;}
+  .note{font-size:25px;color:#6b7178;margin-top:6px;}
   /* コスト一覧 */
-  .t-head h1{font-size:78px;line-height:1.26;}
-  .t-sub{margin-top:20px;font-size:38px;font-weight:700;color:${st.accent};}
-  .rows{position:relative;z-index:1;margin:14px 0;}
-  .row{display:flex;align-items:baseline;gap:20px;padding:20px 0;
-    border-bottom:2px solid rgba(31,35,40,.13);}
-  .row:first-child{border-top:2px solid rgba(31,35,40,.13);}
-  .r-name{flex:1;font-size:34px;font-weight:600;color:#2c3238;line-height:1.35;}
-  .r-cost{flex:none;font-size:44px;font-weight:800;letter-spacing:-.01em;}
+  .t-label{margin-top:6px;font-size:34px;font-weight:700;color:#5a6169;}
+  .t-count{margin:22px 0 4px;font-size:30px;font-weight:700;color:#5a6169;}
+  .rows{position:relative;z-index:1;}
+  .row{display:flex;align-items:center;gap:18px;padding:17px 0;
+    border-bottom:2px solid rgba(22,26,30,.15);}
+  .row:first-child{border-top:2px solid rgba(22,26,30,.15);}
+  /* 商品名は必ず1行に収める。折り返すと6行で枠を越えてフッターが切れる。 */
+  .r-name{flex:1;min-width:0;font-size:44px;font-weight:600;color:#22282e;line-height:1.28;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .r-cost{flex:none;font-size:54px;font-weight:800;letter-spacing:-.02em;}
+  .best .r-name{font-weight:700;}
   .best .r-cost{color:${st.accent};}
-  .badge{flex:none;background:${st.accent};color:#fff;font-size:23px;font-weight:700;
-    padding:6px 15px;border-radius:999px;}
-  .spacer{flex:none;width:71px;}
+  .badge{flex:none;background:${st.accent};color:#fff;font-size:26px;font-weight:700;
+    padding:7px 17px;border-radius:999px;}
+  .spacer{flex:none;width:82px;}
 </style></head><body>
-  <div class="deco">${st.emoji}</div>
   ${inner}
   <div class="foot">
     <div class="cta">全項目の比較表はブログで →</div>
     <div class="site">${SITE_NAME}</div>
     <div class="note">価格・レビューは楽天市場の実データ／PR</div>
   </div>
+  <script>
+    // 主役の数字は必ず1行に収める。折り返すと「1,999円〜7,480」「円」のように
+    // 単位だけが next line に落ちて読みにくくなるため、入るまで縮める。
+    (function () {
+      var el = document.querySelector(".hero");
+      if (!el) return;
+      el.style.whiteSpace = "nowrap";
+      var size = parseFloat(getComputedStyle(el).fontSize);
+      while (el.scrollWidth > el.clientWidth && size > 46) {
+        size -= 2;
+        el.style.fontSize = size + "px";
+      }
+    })();
+  </script>
 </body></html>`;
 }
+
+/**
+ * 見出し部分（カテゴリチップ＋主題）を組み立てる。
+ *
+ * チップは32pxでフィードでは7.5px相当しか出ないので、これだけに主題を任せない。
+ * 同じ語がチップと主題で重複するときは、読めるほうの主題を残してチップを落とす。
+ */
+function headTop(category, subject) {
+  const chip =
+    category && category !== subject ? `<span class="chip">${esc(category)}</span>` : "";
+  return `${chip}<div class="subject" style="font-size:${fit(subject, SUBJECT_SIZES)}px">${esc(subject)}</div>`;
+}
+
+/** 文字数に応じてフォントサイズを決める（長い文言でも枠に収める）。 */
+function fit(text, steps) {
+  const len = String(text).length;
+  for (const [max, size] of steps) if (len <= max) return size;
+  return steps[steps.length - 1][1];
+}
+
+// [文字数の上限, フォントサイズ] の順に並べる。
+// 主役（hero）は縮小後も読める大きさを優先し、主題（subject）は脇役に回す。
+const HERO_SIZES = [[9, 116], [13, 100], [17, 86], [22, 74], [Infinity, 64]];
+const SUBJECT_SIZES = [[7, 60], [11, 52], [Infinity, 46]];
 
 /** コスト一覧ピン。記事の比較表をそのまま画像にして、保存される形にする。 */
 function buildTableHtml(slug, category, copy) {
@@ -98,7 +150,7 @@ function buildTableHtml(slug, category, copy) {
   const st = CATEGORY_STYLE[slug] || CATEGORY_STYLE._default;
   // 行数が多いほど1行を詰める（6行で収まるように）
   const rows = t.rows.slice(0, 6).map((r) => ({ ...r, name: r.name ?? r.full }));
-  const min = rows[0].yen;
+  const min = Math.min(...rows.map((r) => r.yen));
   const body = rows
     .map((r) => {
       const best = r.yen === min;
@@ -109,25 +161,38 @@ function buildTableHtml(slug, category, copy) {
     </div>`;
     })
     .join("");
+  // フィードで読ませるのは一覧ではなくこの幅。最安と最高だけを大きく出す。
+  // 「約21〜25円」のように1つのセルに幅が入っている記事があるので、
+  // セル内の数値をすべて見て本当の最小・最大を取る。
+  // cost の文字列をそのまま繋ぐと「13円〜21〜25円」になってしまう。
+  const nums = rows.flatMap((r) =>
+    [...String(r.cost).matchAll(/[\d,]+(?:\.\d+)?/g)].map((m) => Number(m[0].replace(/,/g, "")))
+  );
+  const yen = (n) => `${n.toLocaleString("ja-JP")}円`;
+  const range = `${yen(Math.min(...nums))}〜${yen(Math.max(...nums))}`;
+  const label = /価格|コスト$/.test(t.label) ? t.label : `${t.label}コスト`;
+
   return frame(
     st,
     category,
-    `<div class="head-area t-head">
-    <span class="chip">${esc(category)}</span>
-    <h1>${esc(t.subject)}</h1>
-    <p class="t-sub">${rows.length}件の${esc(/価格|コスト$/.test(t.label) ? t.label : t.label + "コスト")}</p>
+    `<div class="head-area">
+    ${headTop(category, t.subject)}
+    <div class="t-label">${esc(label)}</div>
+    <div class="hero" style="font-size:${fit(range, HERO_SIZES)}px">${esc(range)}</div>
   </div>
-  <div class="rows">${body}</div>`
+  <div>
+    <p class="t-count">${rows.length}商品を比較</p>
+    <div class="rows">${body}</div>
+  </div>`
   );
 }
 
 function buildHtml(slug, variant, copy) {
   const st = CATEGORY_STYLE[slug] || CATEGORY_STYLE._default;
   const v = copy[variant];
-  // 見出しは長さで自動的にサイズを落とす
-  // 改行を除いた実文字数で判定する
-  const headLen = v.head.replace(/\n/g, "").length;
-  const size = headLen > 26 ? 74 : headLen > 18 ? 84 : 96;
+  // head は "歯磨き粉\n1回2.7円〜21.9円" の形。1行目を主題、2行目以降を主役にする。
+  const [subject, ...restLines] = v.head.split("\n");
+  const hero = restLines.join("");
   const items = v.points
     .map((p) => `<li><span class="dot"></span>${esc(p)}</li>`)
     .join("");
@@ -135,8 +200,8 @@ function buildHtml(slug, variant, copy) {
     st,
     copy.category,
     `<div class="head-area">
-    <span class="chip">${esc(copy.category)}</span>
-    <h1 style="font-size:${size}px">${escMultiline(v.head)}</h1>
+    ${headTop(copy.category, subject)}
+    ${hero ? `<div class="hero" style="font-size:${fit(hero, HERO_SIZES)}px">${esc(hero)}</div>` : ""}
     <p class="lead">${esc(v.lead)}</p>
   </div>
   <ul>${items}</ul>`
