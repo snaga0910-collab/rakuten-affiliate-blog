@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 326" role="img" aria-label="1回あたりのコスト比較">
+<style>
+  .ttl{font:600 15px "Hiragino Sans","Noto Sans JP",system-ui,sans-serif;fill:#1c1f23}
+  .sub{font:400 12px "Hiragino Sans",system-ui,sans-serif;fill:#6d6a65}
+  .lbl{font:400 13px "Hiragino Sans","Noto Sans JP",system-ui,sans-serif;fill:#3b3f45}
+  .val{font:600 13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#3b3f45;font-variant-numeric:tabular-nums}
+  .valhi{fill:#6a5aa8}
+  .track{fill:#eeece8}
+  .bar{fill:#6a5aa8;opacity:.42}
+  .bar.hi{opacity:1}
+  .rng{fill:#6a5aa8;opacity:.18}
+  @media (prefers-color-scheme:dark){
+    .ttl{fill:#e8e6e1}.sub{fill:#9a968f}.lbl{fill:#c9c6c1}.val{fill:#c9c6c1}
+    .track{fill:#2b2e33}
+  }
+</style>
+<text x="0" y="20" class="ttl">1回あたりのコスト比較</text>
+<text x="0" y="38" class="sub">数値は内容量と一般的な使用量からの概算（記事本文の比較表と同じ値）</text>
+
+  <text x="0" y="71" class="lbl">メリット シャンプー つ</text>
+  <rect x="178" y="58" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="58" width="156.8" height="22" rx="4" class="bar hi"/>
+  <text x="344.8" y="74" class="val valhi">2.8円</text>
+  <text x="0" y="111" class="lbl">h&amp;s モイスチャー シ</text>
+  <rect x="178" y="98" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="98" width="190.39999999999998" height="22" rx="4" class="bar"/>
+  <text x="378.4" y="114" class="val">3.4円</text>
+  <text x="0" y="151" class="lbl">パンテーン エクストラダ</text>
+  <rect x="178" y="138" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="138" width="207.20000000000002" height="22" rx="4" class="bar"/>
+  <text x="395.20000000000005" y="154" class="val">3.7円</text>
+  <text x="0" y="191" class="lbl">ダイアン EXダメージリ</text>
+  <rect x="178" y="178" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="178" width="235.20000000000002" height="22" rx="4" class="bar"/>
+  <text x="423.20000000000005" y="194" class="val">4.2円</text>
+  <text x="0" y="231" class="lbl">キュレル シャンプー つ</text>
+  <rect x="178" y="218" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="218" width="319.20000000000005" height="22" rx="4" class="bar"/>
+  <text x="507.20000000000005" y="234" class="val">5.7円</text>
+  <text x="0" y="271" class="lbl">ミノン 薬用ヘアシャンプ</text>
+  <rect x="178" y="258" width="476" height="22" rx="4" class="track"/>
+  
+  <rect x="178" y="258" width="476" height="22" rx="4" class="bar"/>
+  <text x="664" y="274" class="val">8.5円</text>
+</svg>

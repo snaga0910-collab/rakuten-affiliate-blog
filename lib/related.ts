@@ -21,7 +21,7 @@ export const THEMES: Theme[] = [
     id: "washroom",
     name: "洗面所",
     note: "毎日の歯みがきまわり",
-    slugs: ["oral-care", "toothbrush-head", "toothpaste"],
+    slugs: ["oral-care", "toothbrush-head", "toothpaste", "shampoo"],
   },
   {
     id: "laundry",

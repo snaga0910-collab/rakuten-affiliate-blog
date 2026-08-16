@@ -373,6 +373,62 @@
    "shop": "オーラルケアのDOD"
   }
  ],
+ "shampoo": [
+  {
+   "name": "メリット シャンプー つめかえ用(1800ml×4セット)【メリット】",
+   "price": 6600,
+   "review": 15,
+   "rating": 4.27,
+   "url": "https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F601322%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11330372%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39",
+   "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/rakuten24/cabinet/322/601322.jpg",
+   "shop": "楽天24"
+  },
+  {
+   "name": "h＆s モイスチャー シャンプー 詰替超特大サイズ(2200ml)【h＆s(エイチアンドエス)】",
+   "price": 2508,
+   "review": 25,
+   "rating": 4.88,
+   "url": "https://hb.afl.rakuten.co.jp/hgc/g00ufaum.p2w406f0.g00ufaum.p2w41f90/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24-cosmetics%2F4987176143105%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24-cosmetics%2Fi%2F10035903%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39",
+   "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/rakuten24-cosmetics/cabinet/105/4987176143105.jpg",
+   "shop": "楽天24 コスメ館"
+  },
+  {
+   "name": "パンテーン エクストラダメージリペア シャンプー 詰替 超特大(860ml*6袋セット)【PANTENE(パンテーン)】",
+   "price": 6336,
+   "review": 159,
+   "rating": 4.64,
+   "url": "https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F557338%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11163102%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39",
+   "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/rakuten24/cabinet/338/557338.jpg",
+   "shop": "楽天24"
+  },
+  {
+   "name": "ダイアン パーフェクトビューティ— シャンプー EXダメージリペア 詰替 大容量(660ml*3個セット)【ダイアン パーフェクトビューティー】",
+   "price": 2805,
+   "review": 16,
+   "rating": 4.75,
+   "url": "https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F98491%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11015261%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39",
+   "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/rakuten24/cabinet/491/98491.jpg",
+   "shop": "楽天24"
+  },
+  {
+   "name": "【10個セット！】【送料無料！】キュレル シャンプー つめかえ用 340ml【花王】",
+   "price": 6480,
+   "review": 33,
+   "rating": 4.85,
+   "url": "https://hb.afl.rakuten.co.jp/hgc/g00tyosm.p2w40ad7.g00tyosm.p2w41e03/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fleaf-land%2F4901301367938-8%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fleaf-land%2Fi%2F10013816%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39",
+   "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/leaf-land/cabinet/cosme/shampoo/4901301367938.jpg",
+   "shop": "おくすりと健康専門店 Leaf land"
+  },
+  {
+   "name": "ミノン 薬用ヘアシャンプー つめかえ用(380ml*3袋セット)【MINON(ミノン)】",
+   "price": 3245,
+   "review": 38,
+   "rating": 4.71,
+   "url": "https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F68848%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F10910697%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39",
+   "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/rakuten24/cabinet/848/68848.jpg",
+   "shop": "楽天24"
+  }
+ ],
  "toothbrush-head": [
   {
    "name": "【公式ストア】【互換品に比べて10倍の歯垢除去力】 ブラウン オーラルB 替えブラシ マルチアクションブラシ 6本入 EB50RX-6-EL|Braun Oral-B 公式ストア pro1 正規品 純正 電動歯ブラシ オーラル 替ブラシ ブラウンオーラルb 充電式 oralb はみがき iO以外",

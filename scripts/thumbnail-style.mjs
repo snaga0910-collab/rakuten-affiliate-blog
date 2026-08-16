@@ -14,6 +14,7 @@ export const CATEGORY_STYLE = {
   "toothbrush-head": { bg: "#f2f6f9", accent: "#33708f", emoji: "🪥" },
   "washer-cleaner": { bg: "#eff3f6", accent: "#41708c", emoji: "🌀" },
   "toothpaste": { bg: "#eef7fa", accent: "#20748f", emoji: "🪥" },
+  "shampoo": { bg: "#f3f0f9", accent: "#6a5aa8", emoji: "🧴" },
   "dish-soap": { bg: "#eef6f4", accent: "#2b7d72", emoji: "🧽" },
   "water-server": { bg: "#eaf3f7", accent: "#2b6d90", emoji: "🚰" },
   _default: { bg: "#f4f5f7", accent: "#bf0000", emoji: "🛒" },
