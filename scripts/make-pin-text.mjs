@@ -32,6 +32,8 @@ const KEYWORDS = {
   "water-server": ["ウォーターサーバー", "宅配水", "天然水", "一人暮らし", "節約"],
   "shampoo": ["シャンプー", "詰め替え", "ヘアケア", "節約", "一人暮らし"],
   "dish-soap": ["食器用洗剤", "キッチン", "詰め替え", "節約", "一人暮らし"],
+  // 香水は節約系ではなくビューティー側のキーワードに寄せる（読者層が違う）
+  "perfume": ["香水", "フレグランス", "レディース香水", "コスメ", "プレゼント"],
 };
 
 const BOARD = {
@@ -48,6 +50,7 @@ const BOARD = {
   "water-server": "浄水器・水まわり",
   "shampoo": "オーラルケアの選び方",
   "dish-soap": "キッチンの時短",
+  "perfume": "香水・フレグランスの選び方",
 };
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };
@@ -63,13 +66,19 @@ function tableText(slug) {
   const kw = (copy.keywords ?? KEYWORDS[slug] ?? []).map((k) => `#${k}`).join(" ");
   const list = rows.map((r) => `${r.full} ${r.cost}`).join("／");
   // ハッシュタグは検索に効くので必ず残し、あふれるときは商品リスト側を削る
-  const head = `${t.subject}を${/価格|コスト$/.test(t.label) ? t.label : t.label + "コスト"}の安い順に並べました。`;
+  // hero を手書きしている一覧（香水の「香りの系統」など）はコスト順ではないので、
+  // 「安い順に並べました」という文型が成立しない。ラベルをそのまま使う。
+  const head = t.hero
+    ? `${t.subject}を${t.label}で整理しました。`
+    : `${t.subject}を${/価格|コスト$/.test(t.label) ? t.label : t.label + "コスト"}の安い順に並べました。`;
   const tail = "。実際の価格とレビューをもとに比較しています。";
   const room = 200 - head.length - tail.length - kw.length - 1;
   const body = list.length > room ? list.slice(0, Math.max(0, room - 1)) + "…" : list;
   const desc = `${head}${body}${tail}${kw}`;
   return {
-    title: `${t.subject} ${rows.length}件の${/価格|コスト$/.test(t.label) ? t.label : t.label + "コスト"}一覧`,
+    title: t.hero
+      ? `${t.subject} ${t.label}`
+      : `${t.subject} ${rows.length}件の${/価格|コスト$/.test(t.label) ? t.label : t.label + "コスト"}一覧`,
     desc,
   };
 }
