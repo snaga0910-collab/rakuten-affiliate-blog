@@ -23,6 +23,15 @@ export function readContent(slug: string): string {
   return matter(readRaw(slug)).content;
 }
 
+/** frontmatter の生データ。ArticleMeta に載せない任意項目の読み取りに使う。 */
+export function readFrontmatter(slug: string): Record<string, unknown> {
+  try {
+    return matter(readRaw(slug)).data as Record<string, unknown>;
+  } catch {
+    return {};
+  }
+}
+
 function toMeta(slug: string, data: Record<string, unknown>): ArticleMeta {
   return {
     slug,

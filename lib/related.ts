@@ -5,7 +5,12 @@
 //
 // 出す情報は記事本文の実データ（比較表のコスト幅）に限る。
 // 「読んだ人はこちらも」のような根拠のない文言は置かない。
-import { getAllArticles, readContent, type ArticleMeta } from "./articles";
+import {
+  getAllArticles,
+  readContent,
+  readFrontmatter,
+  type ArticleMeta,
+} from "./articles";
 
 export type Theme = {
   id: string;
@@ -41,12 +46,21 @@ export const THEMES: Theme[] = [
     note: "上がったあとの足もと",
     slugs: ["diatomite-bathmat"],
   },
+  // 2026-08-17 新設。ここから比較の軸を「1回あたりコスト」ではなく
+  // 「好み・タイプで選び分ける」に変えた記事を置く。
+  {
+    id: "grooming",
+    name: "身だしなみ",
+    note: "出かける前に足すもの",
+    slugs: ["perfume"],
+  },
 ];
 
 /**
  * テーマをまたぐつながり。理由があるものだけ書く。
  *   コーヒー ⇄ 浄水器   … 味を決めるのは水
  *   バスマット → 洗濯洗剤 … 布タイプを選ぶと洗濯の回数が増える
+ *   香水 ⇄ 柔軟剤      … 好きな香りの系統は両方でだいたい一致する
  */
 const AFFINITY: Record<string, string[]> = {
   "dish-soap": ["dishwasher-detergent", "water-filter"],
@@ -55,7 +69,8 @@ const AFFINITY: Record<string, string[]> = {
   "water-server": ["water-filter", "coffee-drip"],
   "diatomite-bathmat": ["laundry-detergent", "fabric-softener"],
   "laundry-detergent": ["diatomite-bathmat"],
-  "fabric-softener": ["diatomite-bathmat"],
+  "fabric-softener": ["diatomite-bathmat", "perfume"],
+  perfume: ["fabric-softener", "shampoo"],
 };
 
 export function themeOf(slug: string): Theme | undefined {
@@ -100,6 +115,19 @@ function amounts(rows: string[][], idx: number): number[] {
  * 表が複数ある記事は、値がいちばん多く取れた表を採用する。
  */
 export function costRange(slug: string): CostRange {
+  // frontmatter に costLabel / costMin / costMax があればそれを使う。
+  // 「1回あたりコスト」が主役ではない記事（香水など）のための逃げ道。
+  // 香水は比較表に「1mLあたり」の列があるので自動抽出だとそれを拾ってしまうが、
+  // 本文では「その数字で選ぶと失敗する」と書いているので、カードには出せない。
+  const front = readFrontmatter(slug);
+  if (front.costLabel && front.costMin && front.costMax) {
+    return {
+      label: String(front.costLabel),
+      min: String(front.costMin),
+      max: String(front.costMax),
+    };
+  }
+
   let raw: string;
   try {
     raw = readContent(slug);

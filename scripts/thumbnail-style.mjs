@@ -17,5 +17,6 @@ export const CATEGORY_STYLE = {
   "shampoo": { bg: "#f3f0f9", accent: "#6a5aa8", emoji: "🧴" },
   "dish-soap": { bg: "#eef6f4", accent: "#2b7d72", emoji: "🧽" },
   "water-server": { bg: "#eaf3f7", accent: "#2b6d90", emoji: "🚰" },
+  "perfume": { bg: "#f7f0f3", accent: "#9c4a6b", emoji: "🌸" },
   _default: { bg: "#f4f5f7", accent: "#bf0000", emoji: "🛒" },
 };

@@ -179,8 +179,10 @@ export default async function ArticlePage({
         {others.length > 0 && (
           <section className="rel-block">
             <h2>
-              ほかの消耗品も同じ基準で比べています
-              <span className="rel-note">1回あたりのコストで並べています</span>
+              ほかの消耗品も実データで比べています
+              {/* 「1回あたりのコストで並べています」と固定で書いていたが、
+                  香水のようにコストが主役でない記事が出てきたので軸に依存しない表現にした */}
+              <span className="rel-note">価格とレビューは楽天市場の実データです</span>
             </h2>
             <RelatedList items={others} />
           </section>

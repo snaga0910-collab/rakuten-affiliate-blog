@@ -150,14 +150,22 @@ function buildTableHtml(slug, category, copy) {
   const st = CATEGORY_STYLE[slug] || CATEGORY_STYLE._default;
   // 行数が多いほど1行を詰める（6行で収まるように）
   const rows = t.rows.slice(0, 6).map((r) => ({ ...r, name: r.name ?? r.full }));
-  const min = Math.min(...rows.map((r) => r.yen));
+  // yen を持たない一覧（香水の「香りの系統」など、コスト順で並ばないもの）は
+  // 最小バッジを出さない。その場合はバッジ幅の余白も空けない。
+  const hasYen = rows.every((r) => typeof r.yen === "number");
+  const min = hasYen ? Math.min(...rows.map((r) => r.yen)) : null;
   const body = rows
     .map((r) => {
-      const best = r.yen === min;
+      const best = hasYen && r.yen === min;
+      const tail = best
+        ? '<span class="badge">最小</span>'
+        : hasYen
+          ? '<span class="spacer"></span>'
+          : "";
       return `<div class="row${best ? " best" : ""}">
       <span class="r-name">${esc(r.name)}</span>
       <span class="r-cost">${esc(r.cost)}</span>
-      ${best ? '<span class="badge">最小</span>' : '<span class="spacer"></span>'}
+      ${tail}
     </div>`;
     })
     .join("");
@@ -165,12 +173,15 @@ function buildTableHtml(slug, category, copy) {
   // 「約21〜25円」のように1つのセルに幅が入っている記事があるので、
   // セル内の数値をすべて見て本当の最小・最大を取る。
   // cost の文字列をそのまま繋ぐと「13円〜21〜25円」になってしまう。
+  //
+  // コストが主役でない記事は pin-copy.mjs 側で hero を手書きする。
   const nums = rows.flatMap((r) =>
     [...String(r.cost).matchAll(/[\d,]+(?:\.\d+)?/g)].map((m) => Number(m[0].replace(/,/g, "")))
   );
   const yen = (n) => `${n.toLocaleString("ja-JP")}円`;
-  const range = `${yen(Math.min(...nums))}〜${yen(Math.max(...nums))}`;
-  const label = /価格|コスト$/.test(t.label) ? t.label : `${t.label}コスト`;
+  const range = t.hero ?? (nums.length ? `${yen(Math.min(...nums))}〜${yen(Math.max(...nums))}` : null);
+  if (!range) return null;
+  const label = t.hero || /価格|コスト$/.test(t.label) ? t.label : `${t.label}コスト`;
 
   return frame(
     st,
@@ -181,7 +192,7 @@ function buildTableHtml(slug, category, copy) {
     <div class="hero" style="font-size:${fit(range, HERO_SIZES)}px">${esc(range)}</div>
   </div>
   <div>
-    <p class="t-count">${rows.length}商品を比較</p>
+    <p class="t-count">${esc(t.countLabel ?? `${rows.length}商品を比較`)}</p>
     <div class="rows">${body}</div>
   </div>`
   );
