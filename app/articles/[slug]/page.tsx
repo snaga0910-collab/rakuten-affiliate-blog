@@ -39,6 +39,9 @@ export async function generateMetadata({
       description: found.description,
       publishedTime: found.date,
       modifiedTime: found.updated || found.date,
+      // article:author を出す。Pinterestのリッチピンで推奨項目になっており、
+      // 未設定だと検証結果が missing になる（2026-08-18 に確認）
+      authors: ["ゆうき"],
       images: [image],
     },
     twitter: {
