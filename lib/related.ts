@@ -38,7 +38,14 @@ export const THEMES: Theme[] = [
     id: "kitchen",
     name: "キッチン",
     note: "水まわりと洗いもの",
-    slugs: ["dishwasher-detergent", "dish-soap", "water-filter", "water-server", "coffee-drip"],
+    slugs: [
+      "dishwasher-detergent",
+      "dish-soap",
+      "water-filter",
+      "water-server",
+      "water-purifier-server",
+      "coffee-drip",
+    ],
   },
   {
     id: "bath",
@@ -65,8 +72,9 @@ export const THEMES: Theme[] = [
 const AFFINITY: Record<string, string[]> = {
   "dish-soap": ["dishwasher-detergent", "water-filter"],
   "coffee-drip": ["water-filter"],
-  "water-filter": ["water-server", "coffee-drip"],
-  "water-server": ["water-filter", "coffee-drip"],
+  "water-filter": ["water-purifier-server", "water-server", "coffee-drip"],
+  "water-server": ["water-purifier-server", "water-filter"],
+  "water-purifier-server": ["water-filter", "water-server"],
   "diatomite-bathmat": ["laundry-detergent", "fabric-softener"],
   "laundry-detergent": ["diatomite-bathmat"],
   "fabric-softener": ["diatomite-bathmat", "perfume"],

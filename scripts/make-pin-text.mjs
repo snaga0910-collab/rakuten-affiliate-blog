@@ -34,6 +34,7 @@ const KEYWORDS = {
   "dish-soap": ["食器用洗剤", "キッチン", "詰め替え", "節約", "一人暮らし"],
   // 香水は節約系ではなくビューティー側のキーワードに寄せる（読者層が違う）
   "perfume": ["香水", "フレグランス", "レディース香水", "コスメ", "プレゼント"],
+  "water-purifier-server": ["ウォーターサーバー", "浄水型", "一人暮らし", "固定費見直し", "節約"],
 };
 
 const BOARD = {
@@ -51,6 +52,7 @@ const BOARD = {
   "shampoo": "オーラルケアの選び方",
   "dish-soap": "キッチンの時短",
   "perfume": "香水・フレグランスの選び方",
+  "water-purifier-server": "浄水器・水まわり",
 };
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };
