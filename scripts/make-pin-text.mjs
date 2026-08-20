@@ -35,6 +35,7 @@ const KEYWORDS = {
   // 香水は節約系ではなくビューティー側のキーワードに寄せる（読者層が違う）
   "perfume": ["香水", "フレグランス", "レディース香水", "コスメ", "プレゼント"],
   "water-purifier-server": ["ウォーターサーバー", "浄水型", "一人暮らし", "固定費見直し", "節約"],
+  "hikari-internet": ["光回線", "一人暮らし", "固定費見直し", "節約", "賃貸"],
 };
 
 const BOARD = {
@@ -53,6 +54,7 @@ const BOARD = {
   "dish-soap": "キッチンの時短",
   "perfume": "香水・フレグランスの選び方",
   "water-purifier-server": "浄水器・水まわり",
+  "hikari-internet": "一人暮らしの固定費",
 };
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };

@@ -43,7 +43,6 @@ export const THEMES: Theme[] = [
       "dish-soap",
       "water-filter",
       "water-server",
-      "water-purifier-server",
       "coffee-drip",
     ],
   },
@@ -52,6 +51,14 @@ export const THEMES: Theme[] = [
     name: "お風呂",
     note: "上がったあとの足もと",
     slugs: ["diatomite-bathmat"],
+  },
+  // 2026-08-18 新設。消耗品ではないが「毎月かかるお金を実データで比べる」という
+  // このサイトの軸は同じ。単価がA8案件なので期待値も高い。
+  {
+    id: "fixed-cost",
+    name: "毎月の固定費",
+    note: "契約で決まる出費",
+    slugs: ["hikari-internet", "water-purifier-server"],
   },
   // 2026-08-17 新設。ここから比較の軸を「1回あたりコスト」ではなく
   // 「好み・タイプで選び分ける」に変えた記事を置く。
@@ -75,6 +82,7 @@ const AFFINITY: Record<string, string[]> = {
   "water-filter": ["water-purifier-server", "water-server", "coffee-drip"],
   "water-server": ["water-purifier-server", "water-filter"],
   "water-purifier-server": ["water-filter", "water-server"],
+  "hikari-internet": ["water-purifier-server", "water-filter"],
   "diatomite-bathmat": ["laundry-detergent", "fabric-softener"],
   "laundry-detergent": ["diatomite-bathmat"],
   "fabric-softener": ["diatomite-bathmat", "perfume"],

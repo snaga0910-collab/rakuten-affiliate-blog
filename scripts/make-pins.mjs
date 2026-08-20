@@ -53,7 +53,7 @@ function esc(s) {
  * 「アフィリエイトリンクとセットで」使うものとされており、ピンのリンク先は
  * 自分のブログでピン自体にアフィリンクがないため。ブログ記事内での使用は問題ない。
  */
-function frame(st, category, inner) {
+function frame(st, category, inner, footNote) {
   return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>
   *{margin:0;padding:0;box-sizing:border-box;}
   body{
@@ -99,7 +99,7 @@ function frame(st, category, inner) {
   <div class="foot">
     <div class="cta">全項目の比較表はブログで →</div>
     <div class="site">${SITE_NAME}</div>
-    <div class="note">価格・レビューは楽天市場の実データ／PR</div>
+    <div class="note">${footNote ?? "価格・レビューは楽天市場の実データ／PR"}</div>
   </div>
   <script>
     // 主役の数字は必ず1行に収める。折り返すと「1,999円〜7,480」「円」のように
@@ -194,7 +194,8 @@ function buildTableHtml(slug, category, copy) {
   <div>
     <p class="t-count">${esc(t.countLabel ?? `${rows.length}商品を比較`)}</p>
     <div class="rows">${body}</div>
-  </div>`
+  </div>`,
+    copy.footNote
   );
 }
 
@@ -215,7 +216,8 @@ function buildHtml(slug, variant, copy) {
     ${hero ? `<div class="hero" style="font-size:${fit(hero, HERO_SIZES)}px">${esc(hero)}</div>` : ""}
     <p class="lead">${esc(v.lead)}</p>
   </div>
-  <ul>${items}</ul>`
+  <ul>${items}</ul>`,
+    copy.footNote
   );
 }
 

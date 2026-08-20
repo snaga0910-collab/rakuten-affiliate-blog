@@ -19,5 +19,6 @@ export const CATEGORY_STYLE = {
   "water-server": { bg: "#eaf3f7", accent: "#2b6d90", emoji: "🚰" },
   "perfume": { bg: "#f7f0f3", accent: "#9c4a6b", emoji: "🌸" },
   "water-purifier-server": { bg: "#eaf2f6", accent: "#26688c", emoji: "🚰" },
+  "hikari-internet": { bg: "#eef1f7", accent: "#3a5a9c", emoji: "🌐" },
   _default: { bg: "#f4f5f7", accent: "#bf0000", emoji: "🛒" },
 };
