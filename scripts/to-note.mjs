@@ -171,6 +171,18 @@ function convert(slug) {
     }
     // 水平線は note では不要
     if (/^\s*---\s*$/.test(line)) continue;
+    // 引用記法（>）を外す。
+    //
+    // 2026-08-19: 記事の「>」は引用ではなく注記（計算の前提や但し書き）に使っている。
+    // note では「>」が引用ブロックになり、出典の入力欄が付いてくる。
+    // さらに「>」だけの空行が中身のない引用ブロックになって
+    //「出典を入力」だけが残る。注記なので、記法ごと外して素のテキストにする。
+    if (/^\s*>/.test(line)) {
+      const inner = line.replace(/^\s*>\s?/, "");
+      if (!inner.trim()) continue; // 「>」だけの行は捨てる
+      out.push(...expandLinks(stripBold(inner)));
+      continue;
+    }
 
     let clean = stripBold(line);
     // 行の途中に埋め込まれたHTML（<a>広告リンク</a> や計測用の1px画像）を外す。
