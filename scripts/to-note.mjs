@@ -88,6 +88,12 @@ function tableToList(lines) {
   return out;
 }
 
+/** 1〜20を丸数字にする。21以上は「(21)」の形で返す。 */
+function circled(n) {
+  const marks = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳";
+  return n >= 1 && n <= 20 ? marks[n - 1] : `(${n})`;
+}
+
 /** note に出してはいけない広告URLか判定する。 */
 function isAdUrl(url) {
   return /(?:^|\.)a8\.net\//.test(url) || /a8\.net\//.test(url);
@@ -171,6 +177,27 @@ function convert(slug) {
     }
     // 水平線は note では不要
     if (/^\s*---\s*$/.test(line)) continue;
+    // コードブロックの ``` は落とす（中の計算式は本文として残す）。
+    // note にコードブロック記法はなく、そのまま「```」が文字として出てしまう。
+    if (/^\s*```/.test(line)) continue;
+    // 斜体記法（*…*）で囲んだ免責文は、note ではアスタリスクが露出する。
+    // 記法だけ外して素のテキストにする。
+    const ital = line.match(/^\s*\*([^*].*)\*\s*$/);
+    if (ital) {
+      out.push(...expandLinks(stripBold(ital[1])));
+      continue;
+    }
+    // 番号付きリスト（1. 2. …）は丸数字に置き換える。
+    //
+    // 2026-08-21: note のエディタは行頭の「1. 」を見て自動的に番号付きリストへ
+    // 変換する。そこへこちらの番号がそのまま入るため「2.2」「3.3」と二重になる。
+    // 太字を Ctrl+B で入力すると日本語が壊れる問題と同じで、note 側の自動整形と
+    // ぶつかっている。記法を使わず丸数字にすれば自動変換が起きない。
+    const num = line.match(/^\s*(\d+)\.\s+(.*)$/);
+    if (num) {
+      out.push(...expandLinks(stripBold(`${circled(Number(num[1]))} ${num[2]}`)));
+      continue;
+    }
     // 引用記法（>）を外す。
     //
     // 2026-08-19: 記事の「>」は引用ではなく注記（計算の前提や但し書き）に使っている。
