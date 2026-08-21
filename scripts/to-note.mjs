@@ -19,6 +19,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT, "content");
 const OUT_DIR = path.join(ROOT, "note-out");
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://rakuten-affiliate-blog.vercel.app";
 
 // note のハッシュタグ（各記事の性格に合わせる。10個以内が扱いやすい）
 const TAGS = {
@@ -75,8 +77,9 @@ function tableToList(lines) {
       details.push(`${key} ${val}`);
     }
     if (details.length) out.push(details.join(" ／ "));
-    // URLの前後に空行を入れる（note がリンクカードに変換する条件）
-    if (link) out.push("", link[2]);
+    // 商品ごとのURLは出さない。
+    // 6商品の表だと長い生URLが6本並んで本文が読めなくなるため、
+    // 購入導線は記事末尾のブログへのリンク1本に集約する。
     out.push("");
   }
   return out;
@@ -122,11 +125,23 @@ function convert(slug) {
   const { data, content } = matter(raw);
   const lines = content.split("\n");
   const out = [];
+  // 広告や商品URLを落としたかどうか。落としたときは記事へのリンクで補う。
+  let adRemoved = false;
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     // HTMLコメント（meta-description）は落とす
     if (/^\s*<!--/.test(line)) continue;
+    // 生のHTMLブロック（A8のバナー広告など）は落とす。
+    //
+    // 2026-08-18: note に <div class="pa-ad">... がそのままテキストとして
+    // 出力されていた。読めないうえに、A8のリンクが note に載ることになる。
+    // A8は掲載サイトの登録を求めているので、登録していない媒体へ出すのは規約違反。
+    // ブログ側の広告は note には持ち込まず、記事へのリンク1本に集約する。
+    if (/^\s*<(?:div|p|a|img|span|iframe)[\s>]/i.test(line)) {
+      adRemoved = true;
+      continue;
+    }
     // テーブルはまとめて箇条書きへ
     if (line.trim().startsWith("|")) {
       const block = [];
@@ -138,7 +153,16 @@ function convert(slug) {
     // 水平線は note では不要
     if (/^\s*---\s*$/.test(line)) continue;
 
-    const clean = stripBold(line);
+    let clean = stripBold(line);
+    // 行の途中に埋め込まれたHTML（<a>広告リンク</a> や計測用の1px画像）を外す。
+    // リンク文字だけ残して、URLは落とす。
+    if (/<a\s|<img\s/i.test(clean)) {
+      adRemoved = true;
+      clean = clean
+        .replace(/<a\s[^>]*>(.*?)<\/a>/gi, "$1")
+        .replace(/<img\s[^>]*>/gi, "")
+        .replace(/<\/?[a-z][^>]*>/gi, "");
+    }
     // 参考文献など、楽天以外のURLは本文に出さない（生URLが誤字に見えるため）。
     // リンク文字だけ残し、出典名は文章として読めるようにする。
     if (/^\s*-\s*\[/.test(clean) && !clean.includes("hb.afl.rakuten")) {
@@ -174,14 +198,25 @@ function convert(slug) {
   // 入れていたが、光回線や浄水型サーバーのように楽天のリンクもデータも
   // 使っていない記事がある。表示が事実と違うと、規制対応として意味をなさない。
   // 本文に楽天のリンクがあるかどうかで文面を切り替える。
-  const usesRakuten = content.includes("hb.afl.rakuten");
-  const disclosure = usesRakuten
+  // 本文に楽天のリンクが残っているかで文面を切り替える。
+  // A8の広告は上で落としているので、A8だけの記事には広告リンクが残らない。
+  let body = out.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+  const hasRakutenLink = body.includes("hb.afl.rakuten");
+
+  // 商品ごとのURLを落としたぶん、記事へのリンクを1本だけ末尾に置く。
+  // note の読者をブログへ送る導線でもある（購入リンクはブログ側にある）。
+  if (adRemoved || !hasRakutenLink) {
+    body +=
+      "\n\n――――――\n\n" +
+      "各社へのリンクと、全項目をそろえた比較表はブログにまとめています。\n\n" +
+      `${SITE_URL}/articles/${slug}\n`;
+  }
+
+  const disclosure = hasRakutenLink
     ? "※本記事はアフィリエイト広告（楽天アフィリエイト）を利用しています。\n" +
       "※価格・評価は執筆時点の楽天市場のデータです。\n"
-    : "※本記事はアフィリエイト広告を利用しています。\n" +
+    : "※この記事にはアフィリエイト広告を含むページへのリンクがあります。\n" +
       "※料金・条件は執筆時点で各社が公表している情報です。\n";
-
-  const body = out.join("\n").replace(/\n{3,}/g, "\n\n").trim();
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const outPath = path.join(OUT_DIR, `${slug}.md`);
   fs.writeFileSync(outPath, `${fm}${disclosure}\n${body}\n`, "utf8");
