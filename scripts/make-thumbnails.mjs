@@ -22,6 +22,27 @@ const W = 1280;
 const H = 670;
 
 /** タイトルを「主題」と「サブ」に割る（｜ で区切られている前提、無ければ全体を主題に） */
+// サムネイル右上の一言。記事ごとに比較対象の数と単位が違う。
+// 未登録の記事は「実データで正直比較」にフォールバックする。
+const THUMB_COUNT = {
+  "hikari-internet": "4社を正直比較",
+  "water-purifier-server": "3社を正直比較",
+  "water-server": "3社を正直比較",
+  "perfume": "6商品を正直比較",
+  "oral-care": "6商品を正直比較",
+  "fabric-softener": "6商品を正直比較",
+  "coffee-drip": "6商品を正直比較",
+  "water-filter": "6商品を正直比較",
+  "laundry-detergent": "5商品を正直比較",
+  "dishwasher-detergent": "5商品を正直比較",
+  "toothbrush-head": "6商品を正直比較",
+  "dish-soap": "6商品を正直比較",
+  "toothpaste": "6商品を正直比較",
+  "shampoo": "6商品を正直比較",
+  "washer-cleaner": "6商品を正直比較",
+  "diatomite-bathmat": "6商品を正直比較",
+};
+
 function splitTitle(title) {
   const i = title.indexOf("｜");
   if (i === -1) return { main: title, sub: "" };
@@ -33,6 +54,18 @@ function buildHtml(meta) {
   const style = CATEGORY_STYLE[meta.slug] || CATEGORY_STYLE._default;
   // タイトルが長いときは少し小さくして、3行に収まるようにする
   const mainSize = main.length > 22 ? 62 : main.length > 16 ? 72 : 82;
+  // サムネイルの「N商品を正直比較」と出典表記は、以前は全記事で固定文だった。
+  // 4社比較の光回線に「6商品を正直比較」と出たり、楽天を一切使っていない記事に
+  // 「価格・レビューは楽天市場の実データ」と出ていたため、記事から判定する。
+  // サイト全体用（_site）は記事ファイルを持たないので読み込まない
+  const articlePath = path.join(CONTENT_DIR, `${meta.slug}.md`);
+  const raw = fs.existsSync(articlePath) ? fs.readFileSync(articlePath, "utf8") : "";
+  const usesRakuten = raw.includes("hb.afl.rakuten");
+  const footNote = usesRakuten
+    ? "価格・レビューは楽天市場の実データ"
+    : "料金は各社の公表情報";
+  const countLabel = THUMB_COUNT[meta.slug] ?? "実データで正直比較";
+
   return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
@@ -71,7 +104,7 @@ function buildHtml(meta) {
   <div class="deco">${style.emoji}</div>
   <div class="top">
     <span class="chip">${meta.category}</span>
-    <span class="count">6商品を正直比較</span>
+    <span class="count">${countLabel}</span>
   </div>
   <div class="body">
     <h1>${main}</h1>
@@ -79,7 +112,7 @@ function buildHtml(meta) {
   </div>
   <div class="foot">
     <span class="site">${SITE_NAME}</span>
-    <span class="note">価格・レビューは楽天市場の実データ</span>
+    <span class="note">${footNote}</span>
   </div>
 </body></html>`;
 }
