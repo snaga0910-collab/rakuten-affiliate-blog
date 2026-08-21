@@ -61,18 +61,21 @@ function tableToList(lines) {
   const isSep = rows[1].every((c) => /^:?-{2,}:?$/.test(c));
   const body = rows.slice(isSep ? 2 : 1);
 
+  // 表のセルからリンク記法を外してテキストだけにする。
+  // ヘッダー行に商品名リンクが入っている表（「| | [A社](url) | [B社](url) |」の形）
+  // があり、そのままだと本文に長い広告URLが残ってしまう。
+  const plain = (c) => String(c).replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+
   const out = [];
   for (const row of body) {
     // 1列目は商品名（リンクを含むことが多い）
-    const nameCell = row[0] || "";
-    const link = nameCell.match(/\[([^\]]+)\]\(([^)]+)\)/);
-    const name = link ? link[1] : nameCell;
+    const name = plain(row[0] || "");
     out.push(`◾️ ${name}`);
     // 2列目以降を「項目: 値」で並べる
     const details = [];
     for (let i = 1; i < row.length; i++) {
-      const key = header[i] || "";
-      const val = row[i] || "";
+      const key = plain(header[i] || "");
+      const val = plain(row[i] || "");
       if (!val || val === "―") continue;
       details.push(`${key} ${val}`);
     }
@@ -84,6 +87,14 @@ function tableToList(lines) {
   }
   return out;
 }
+
+/** note に出してはいけない広告URLか判定する。 */
+function isAdUrl(url) {
+  return /(?:^|\.)a8\.net\//.test(url) || /a8\.net\//.test(url);
+}
+
+/** expandLinks が広告URLを落としたことを convert() へ伝えるためのフラグ。 */
+let adFound = false;
 
 /** 太字記法(**...**)を外して素のテキストにする。
  *
@@ -111,6 +122,13 @@ function expandLinks(line) {
   const urls = [];
   for (const m of links) {
     text = text.replace(m[0], m[1]);
+    // A8のリンクは note に出さない。A8は掲載サイトの登録を求めており、
+    // note を登録していない媒体に広告リンクを置くと規約違反になる。
+    // リンク文字だけ残し、購入導線は末尾のブログへのリンクに集約する。
+    if (isAdUrl(m[2])) {
+      adFound = true;
+      continue;
+    }
     urls.push(m[2]);
   }
   // テキスト → 空行 → URL（1行1つ・間に空行）→ 空行
@@ -127,6 +145,7 @@ function convert(slug) {
   const out = [];
   // 広告や商品URLを落としたかどうか。落としたときは記事へのリンクで補う。
   let adRemoved = false;
+  adFound = false;
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -205,7 +224,7 @@ function convert(slug) {
 
   // 商品ごとのURLを落としたぶん、記事へのリンクを1本だけ末尾に置く。
   // note の読者をブログへ送る導線でもある（購入リンクはブログ側にある）。
-  if (adRemoved || !hasRakutenLink) {
+  if (adRemoved || adFound || !hasRakutenLink) {
     body +=
       "\n\n――――――\n\n" +
       "各社へのリンクと、全項目をそろえた比較表はブログにまとめています。\n\n" +
