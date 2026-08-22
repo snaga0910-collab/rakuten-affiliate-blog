@@ -525,7 +525,7 @@
 
 ---
 
-## 一人暮らしの光回線4社比較｜auひかり・ahamo光・BIGLOBE光・おてがる光
+## 一人暮らしの光回線4社比較｜違約金より怖い「工事費残債」
 
 - ボード: **一人暮らしの固定費**
 - リンク先: https://rakuten-affiliate-blog.vercel.app/articles/hikari-internet
