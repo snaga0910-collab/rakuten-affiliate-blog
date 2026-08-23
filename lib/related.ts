@@ -58,7 +58,7 @@ export const THEMES: Theme[] = [
     id: "fixed-cost",
     name: "毎月の固定費",
     note: "契約で決まる出費",
-    slugs: ["hikari-internet", "water-purifier-server"],
+    slugs: ["hikari-internet", "water-purifier-server", "meal-delivery"],
   },
   // 2026-08-17 新設。ここから比較の軸を「1回あたりコスト」ではなく
   // 「好み・タイプで選び分ける」に変えた記事を置く。
@@ -82,7 +82,8 @@ const AFFINITY: Record<string, string[]> = {
   "water-filter": ["water-purifier-server", "water-server", "coffee-drip"],
   "water-server": ["water-purifier-server", "water-filter"],
   "water-purifier-server": ["water-filter", "water-server"],
-  "hikari-internet": ["water-purifier-server", "water-filter"],
+  "hikari-internet": ["water-purifier-server", "meal-delivery"],
+  "meal-delivery": ["hikari-internet", "coffee-drip"],
   "diatomite-bathmat": ["laundry-detergent", "fabric-softener"],
   "laundry-detergent": ["diatomite-bathmat"],
   "fabric-softener": ["diatomite-bathmat", "perfume"],
