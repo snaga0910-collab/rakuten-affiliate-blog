@@ -53,7 +53,7 @@ function esc(s) {
  * 「アフィリエイトリンクとセットで」使うものとされており、ピンのリンク先は
  * 自分のブログでピン自体にアフィリンクがないため。ブログ記事内での使用は問題ない。
  */
-function frame(st, category, inner, footNote) {
+function frame(st, category, inner, footNote, cta) {
   return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>
   *{margin:0;padding:0;box-sizing:border-box;}
   body{
@@ -97,7 +97,7 @@ function frame(st, category, inner, footNote) {
 </style></head><body>
   ${inner}
   <div class="foot">
-    <div class="cta">全項目の比較表はブログで →</div>
+    <div class="cta">${cta ?? "全項目の比較表はブログで →"}</div>
     <div class="site">${SITE_NAME}</div>
     <div class="note">${footNote ?? "価格・レビューは楽天市場の実データ／PR"}</div>
   </div>
@@ -195,7 +195,8 @@ function buildTableHtml(slug, category, copy) {
     <p class="t-count">${esc(t.countLabel ?? `${rows.length}商品を比較`)}</p>
     <div class="rows">${body}</div>
   </div>`,
-    copy.footNote
+    copy.footNote,
+    copy.cta
   );
 }
 
@@ -217,7 +218,8 @@ function buildHtml(slug, variant, copy) {
     <p class="lead">${esc(v.lead)}</p>
   </div>
   <ul>${items}</ul>`,
-    copy.footNote
+    copy.footNote,
+    copy.cta
   );
 }
 

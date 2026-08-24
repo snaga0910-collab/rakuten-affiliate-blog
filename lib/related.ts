@@ -32,7 +32,7 @@ export const THEMES: Theme[] = [
     id: "laundry",
     name: "洗濯",
     note: "部屋干しのにおい対策",
-    slugs: ["fabric-softener", "laundry-detergent", "washer-cleaner"],
+    slugs: ["laundry-odor", "fabric-softener", "laundry-detergent", "washer-cleaner"],
   },
   {
     id: "kitchen",
@@ -85,7 +85,8 @@ const AFFINITY: Record<string, string[]> = {
   "hikari-internet": ["water-purifier-server", "meal-delivery"],
   "meal-delivery": ["hikari-internet", "coffee-drip"],
   "diatomite-bathmat": ["laundry-detergent", "fabric-softener"],
-  "laundry-detergent": ["diatomite-bathmat"],
+  "laundry-detergent": ["laundry-odor", "diatomite-bathmat"],
+  "laundry-odor": ["laundry-detergent", "fabric-softener", "washer-cleaner"],
   "fabric-softener": ["diatomite-bathmat", "perfume"],
   perfume: ["fabric-softener", "shampoo"],
 };

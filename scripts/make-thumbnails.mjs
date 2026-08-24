@@ -24,9 +24,16 @@ const H = 670;
 /** タイトルを「主題」と「サブ」に割る（｜ で区切られている前提、無ければ全体を主題に） */
 // サムネイル右上の一言。記事ごとに比較対象の数と単位が違う。
 // 未登録の記事は「実データで正直比較」にフォールバックする。
+// 記事によっては「楽天の実データ」も「各社の公表情報」も当てはまらない。
+// 例: 部屋干し臭の記事は、自サイトの各比較記事から数字を引いている。
+const THUMB_NOTE = {
+  "laundry-odor": "各比較記事の実データより",
+};
+
 const THUMB_COUNT = {
   "hikari-internet": "4社を正直比較",
   "meal-delivery": "3社を正直比較",
+  "laundry-odor": "お金をかけない順に",
   "water-purifier-server": "3社を正直比較",
   "water-server": "3社を正直比較",
   "perfume": "6商品を正直比較",
@@ -62,9 +69,9 @@ function buildHtml(meta) {
   const articlePath = path.join(CONTENT_DIR, `${meta.slug}.md`);
   const raw = fs.existsSync(articlePath) ? fs.readFileSync(articlePath, "utf8") : "";
   const usesRakuten = raw.includes("hb.afl.rakuten");
-  const footNote = usesRakuten
-    ? "価格・レビューは楽天市場の実データ"
-    : "料金は各社の公表情報";
+  const footNote =
+    THUMB_NOTE[meta.slug] ??
+    (usesRakuten ? "価格・レビューは楽天市場の実データ" : "料金は各社の公表情報");
   const countLabel = THUMB_COUNT[meta.slug] ?? "実データで正直比較";
 
   return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>
