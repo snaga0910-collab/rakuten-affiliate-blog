@@ -38,7 +38,7 @@ const THUMB_COUNT = {
   "water-purifier-server": "3社を正直比較",
   "water-server": "3社を正直比較",
   "perfume": "6商品を正直比較",
-  "oral-care": "6商品を正直比較",
+  "oral-care": "洗口液3＋歯間ケア3",
   "fabric-softener": "6商品を正直比較",
   "coffee-drip": "6商品を正直比較",
   "water-filter": "6商品を正直比較",
