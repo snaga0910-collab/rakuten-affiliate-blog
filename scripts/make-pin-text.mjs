@@ -70,8 +70,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hitorikurashi-note
 /** コスト一覧ピンの文言。数字は比較表そのものなので、記事を直せば自動で追従する。 */
 function tableText(slug) {
   const copy = PIN_COPY[slug];
-  const t = copy.table ?? costTable(copy.article ?? slug);
-  if (!t) return null;
+  // rows を持たない table は、自動生成した一覧への部分的な上書き指定
+  // （countLabel や subject だけ差し替えたい記事がある）。make-pins.mjs と同じ扱い。
+  let t = copy.table ?? costTable(copy.article ?? slug);
+  if (t && !t.rows) t = { ...costTable(copy.article ?? slug), ...t };
+  if (!t || !t.rows) return null;
   const rows = t.rows.slice(0, 6);
   const kw = (copy.keywords ?? KEYWORDS[slug] ?? []).map((k) => `#${k}`).join(" ");
   const list = rows.map((r) => `${r.full} ${r.cost}`).join("／");

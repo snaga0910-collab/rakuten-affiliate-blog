@@ -144,9 +144,12 @@ const SUBJECT_SIZES = [[7, 60], [11, 52], [Infinity, 46]];
 
 /** コスト一覧ピン。記事の比較表をそのまま画像にして、保存される形にする。 */
 function buildTableHtml(slug, category, copy) {
-  // copy.table があればそれを使う（記事の比較表ではない一覧を出したいとき）
-  const t = copy.table ?? costTable(copy.article ?? slug);
-  if (!t) return null;
+  // copy.table があればそれを使う（記事の比較表ではない一覧を出したいとき）。
+  // countLabel だけ差し替えたい記事もあるので、rows を持たない table は
+  // 自動生成した一覧への上書き指定として扱う。
+  let t = copy.table ?? costTable(copy.article ?? slug);
+  if (t && !t.rows) t = { ...costTable(copy.article ?? slug), ...t };
+  if (!t || !t.rows) return null;
   const st = CATEGORY_STYLE[slug] || CATEGORY_STYLE._default;
   // 行数が多いほど1行を詰める（6行で収まるように）
   const rows = t.rows.slice(0, 6).map((r) => ({ ...r, name: r.name ?? r.full }));
