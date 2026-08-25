@@ -22,5 +22,6 @@ export const CATEGORY_STYLE = {
   "hikari-internet": { bg: "#eef1f7", accent: "#3a5a9c", emoji: "🌐" },
   "meal-delivery": { bg: "#f6f2ea", accent: "#8a6423", emoji: "🍱" },
   "laundry-odor": { bg: "#eef3f0", accent: "#2f6b52", emoji: "👕" },
+  "clothes-deodorant": { bg: "#f1f4ee", accent: "#4f7a3a", emoji: "🧴" },
   _default: { bg: "#f4f5f7", accent: "#bf0000", emoji: "🛒" },
 };

@@ -44,6 +44,7 @@ const TAGS = {
   "hikari-internet": ["光回線", "一人暮らし", "固定費見直し", "節約", "賃貸"],
   "meal-delivery": ["食材宅配", "ミールキット", "一人暮らし", "自炊", "時短"],
   "laundry-odor": ["部屋干し", "生乾き臭", "洗濯", "暮らしの工夫", "一人暮らし"],
+  "clothes-deodorant": ["消臭スプレー", "ファブリーズ", "部屋干し", "洗濯", "一人暮らし"],
 };
 
 /** Markdownテーブルを、note で読める箇条書きブロックに変換する。 */
@@ -137,7 +138,10 @@ function expandLinks(line) {
       adFound = true;
       continue;
     }
-    urls.push(m[2]);
+    // 記事本文の内部リンクは相対パス（/articles/...）で書いてある。
+    // ドメインを変えるときに本文を書き換えずに済ませるためだが、note には
+    // 絶対URLでないとリンクにならないので、ここで SITE_URL を前に付ける。
+    urls.push(m[2].startsWith("/") ? `${SITE_URL}${m[2]}` : m[2]);
   }
   // テキスト → 空行 → URL（1行1つ・間に空行）→ 空行
   const out = [text];

@@ -38,6 +38,7 @@ const KEYWORDS = {
   "hikari-internet": ["光回線", "一人暮らし", "固定費見直し", "節約", "賃貸"],
   "meal-delivery": ["食材宅配", "ミールキット", "一人暮らし", "自炊", "時短ごはん"],
   "laundry-odor": ["部屋干し", "生乾き臭", "洗濯", "暮らしの知恵", "一人暮らし"],
+  "clothes-deodorant": ["消臭スプレー", "ファブリーズ", "部屋干し", "洗濯", "一人暮らし"],
 };
 
 const BOARD = {
@@ -59,6 +60,7 @@ const BOARD = {
   "hikari-internet": "一人暮らしの固定費",
   "meal-delivery": "一人暮らしの固定費",
   "laundry-odor": "一人暮らしの洗濯・柔軟剤えらび",
+  "clothes-deodorant": "一人暮らしの洗濯・柔軟剤えらび",
 };
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };

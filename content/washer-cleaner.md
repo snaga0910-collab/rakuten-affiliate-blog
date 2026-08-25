@@ -184,7 +184,7 @@ A. 酸素系は水温が低いと発泡が弱くなるため、40〜50度のお�
 
 ### あわせて読みたい
 
-洗濯槽を洗っても臭いが残るなら、順番として先に見直すのは洗剤です。**[部屋干し向け洗濯洗剤の比較](https://rakuten-affiliate-blog.vercel.app/articles/laundry-detergent)** では、においを落とす主役である洗剤を1回あたり13円から比較しています。仕上げの香りと消臭は **[柔軟剤の比較](https://rakuten-affiliate-blog.vercel.app/articles/fabric-softener)** にまとめました。
+洗濯槽を洗っても臭いが残るなら、順番として先に見直すのは洗剤です。**[部屋干し向け洗濯洗剤の比較](/articles/laundry-detergent)** では、においを落とす主役である洗剤を1回あたり13円から比較しています。仕上げの香りと消臭は **[柔軟剤の比較](/articles/fabric-softener)** にまとめました。
 
 洗剤・柔軟剤・洗濯槽の3つを一度そろえておくと、しばらく生乾き臭のことを考えずに済みます。
 

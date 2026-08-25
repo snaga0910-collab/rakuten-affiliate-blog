@@ -193,11 +193,11 @@ A. まとめ買いして手元に置いておくのがいちばん効きます�
 
 ### あわせて読みたい
 
-替えブラシを見直したなら、**[マウスウォッシュとデンタルフロスの比較](https://rakuten-affiliate-blog.vercel.app/articles/oral-care)** もあわせてどうぞ。電動歯ブラシだけでは歯間の汚れは落としきれないので、フロスとの併用で取りこぼしが減ります。1回あたり3円から始められる商品も紹介しています。
+替えブラシを見直したなら、**[マウスウォッシュとデンタルフロスの比較](/articles/oral-care)** もあわせてどうぞ。電動歯ブラシだけでは歯間の汚れは落としきれないので、フロスとの併用で取りこぼしが減ります。1回あたり3円から始められる商品も紹介しています。
 
 ### あわせて使いたい関連アイテム
 
-電動歯ブラシだけでは歯間の汚れは落としきれません。フロスが苦手なら[歯間ブラシ](https://hb.afl.rakuten.co.jp/hgc/g00r6h3m.p2w405ac.g00r6h3m.p2w41962/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fd-fit%2Foooo42%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fd-fit%2Fi%2F10009680%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1,300円・★4.6／レビュー336件）という手もあります。洗口液とフロスは[マウスウォッシュの比較](https://rakuten-affiliate-blog.vercel.app/articles/oral-care)にまとめました。
+電動歯ブラシだけでは歯間の汚れは落としきれません。フロスが苦手なら[歯間ブラシ](https://hb.afl.rakuten.co.jp/hgc/g00r6h3m.p2w405ac.g00r6h3m.p2w41962/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fd-fit%2Foooo42%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fd-fit%2Fi%2F10009680%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1,300円・★4.6／レビュー336件）という手もあります。洗口液とフロスは[マウスウォッシュの比較](/articles/oral-care)にまとめました。
 
 ### 参考文献・情報源
 

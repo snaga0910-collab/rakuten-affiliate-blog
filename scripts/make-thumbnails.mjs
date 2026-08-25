@@ -34,6 +34,7 @@ const THUMB_COUNT = {
   "hikari-internet": "4社を正直比較",
   "meal-delivery": "3社を正直比較",
   "laundry-odor": "お金をかけない順に",
+  "clothes-deodorant": "6商品を正直比較",
   "water-purifier-server": "3社を正直比較",
   "water-server": "3社を正直比較",
   "perfume": "6商品を正直比較",

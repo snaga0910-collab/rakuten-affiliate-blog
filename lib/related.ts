@@ -32,7 +32,13 @@ export const THEMES: Theme[] = [
     id: "laundry",
     name: "洗濯",
     note: "部屋干しのにおい対策",
-    slugs: ["laundry-odor", "fabric-softener", "laundry-detergent", "washer-cleaner"],
+    slugs: [
+      "laundry-odor",
+      "fabric-softener",
+      "laundry-detergent",
+      "washer-cleaner",
+      "clothes-deodorant",
+    ],
   },
   {
     id: "kitchen",
@@ -87,6 +93,8 @@ const AFFINITY: Record<string, string[]> = {
   "diatomite-bathmat": ["laundry-detergent", "fabric-softener"],
   "laundry-detergent": ["laundry-odor", "diatomite-bathmat"],
   "laundry-odor": ["laundry-detergent", "fabric-softener", "washer-cleaner"],
+  // 香りが重なるので、香水と柔軟剤は消臭スプレーとも並べて見せたい
+  "clothes-deodorant": ["fabric-softener", "perfume", "diatomite-bathmat"],
   "fabric-softener": ["diatomite-bathmat", "perfume"],
   perfume: ["fabric-softener", "shampoo"],
 };

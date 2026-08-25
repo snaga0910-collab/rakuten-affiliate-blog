@@ -60,7 +60,7 @@ updated: "2026-08-24"
 
 **洗剤を変えてもにおうなら、洗濯槽を疑ってください。** 槽の裏側に汚れが溜まっていると、洗うたびに汚れが洗濯物に移ります。この状態では、どんな洗剤を使っても戻ってきます。
 
-洗濯槽クリーナーは**塩素系と酸素系で落とし方がまったく違い**、1回あたり183円〜1,550円と8倍の開きがありました。詳しくは**[洗濯槽クリーナー6商品の比較](https://rakuten-affiliate-blog.vercel.app/articles/washer-cleaner)**に書いています。
+洗濯槽クリーナーは**塩素系と酸素系で落とし方がまったく違い**、1回あたり183円〜1,550円と8倍の開きがありました。詳しくは**[洗濯槽クリーナー6商品の比較](/articles/washer-cleaner)**に書いています。
 
 **頻度は年1回では足りず、月1回はやりすぎ**というのが調べた結論です。
 
@@ -76,7 +76,7 @@ updated: "2026-08-24"
 汎用の大容量       1回 約21〜25円
 ```
 
-**高いものが部屋干しに強いわけではありませんでした。** 詳しくは**[部屋干し洗濯洗剤5商品の比較](https://rakuten-affiliate-blog.vercel.app/articles/laundry-detergent)**をどうぞ。
+**高いものが部屋干しに強いわけではありませんでした。** 詳しくは**[部屋干し洗濯洗剤5商品の比較](/articles/laundry-detergent)**をどうぞ。
 
 ## 6：柔軟剤は主役ではありません
 
@@ -84,7 +84,7 @@ updated: "2026-08-24"
 
 ただし**補助としては効きます**。6商品を比べたところ1回4円〜15円で、**消臭を重視したタイプが意外にも安い層**にありました。
 
-**入れすぎても香りは長持ちしません。** 規定量を超えると繊維に残りすぎて、かえってにおいの原因になることがあります。詳しくは**[部屋干し柔軟剤6商品の比較](https://rakuten-affiliate-blog.vercel.app/articles/fabric-softener)**に書いています。
+**入れすぎても香りは長持ちしません。** 規定量を超えると繊維に残りすぎて、かえってにおいの原因になることがあります。詳しくは**[部屋干し柔軟剤6商品の比較](/articles/fabric-softener)**に書いています。
 
 ## この記事が役に立たない人
 
@@ -117,9 +117,9 @@ A. どちらも乾く時間を縮めます。**風を当てるだけでも変わ
 部屋干しのにおい対策は、**効く順とお金がかかる順が逆**です。
 
 - **まず0円でできる3つ**（すぐ干す・風を当てる・詰め込まない）
-- **それでもにおうなら[洗濯槽](https://rakuten-affiliate-blog.vercel.app/articles/washer-cleaner)**（1回183円〜）
-- **次に[洗剤](https://rakuten-affiliate-blog.vercel.app/articles/laundry-detergent)**（1回13円〜）
-- **最後に[柔軟剤](https://rakuten-affiliate-blog.vercel.app/articles/fabric-softener)**（1回4円〜）
+- **それでもにおうなら[洗濯槽](/articles/washer-cleaner)**（1回183円〜）
+- **次に[洗剤](/articles/laundry-detergent)**（1回13円〜）
+- **最後に[柔軟剤](/articles/fabric-softener)**（1回4円〜）
 
 **洗剤の買い替えから入ると、効かなかったときに戻る場所がなくなります。** 順番だけ守ってください。
 
@@ -127,11 +127,11 @@ A. どちらも乾く時間を縮めます。**風を当てるだけでも変わ
 
 ### あわせて読みたい
 
-**[部屋干し洗濯洗剤5商品の比較](https://rakuten-affiliate-blog.vercel.app/articles/laundry-detergent)** では、1回13円〜25円で比べました。部屋干し特化タイプがいちばん安かった理由も書いています。
+**[部屋干し洗濯洗剤5商品の比較](/articles/laundry-detergent)** では、1回13円〜25円で比べました。部屋干し特化タイプがいちばん安かった理由も書いています。
 
-**[部屋干し柔軟剤6商品の比較](https://rakuten-affiliate-blog.vercel.app/articles/fabric-softener)** は1回4円〜15円。消臭重視と香り重視で分けて整理しました。
+**[部屋干し柔軟剤6商品の比較](/articles/fabric-softener)** は1回4円〜15円。消臭重視と香り重視で分けて整理しました。
 
-**[洗濯槽クリーナー6商品の比較](https://rakuten-affiliate-blog.vercel.app/articles/washer-cleaner)** では、塩素系と酸素系の違いと、1回183円〜1,550円の開きを扱っています。
+**[洗濯槽クリーナー6商品の比較](/articles/washer-cleaner)** では、塩素系と酸素系の違いと、1回183円〜1,550円の開きを扱っています。
 
 ### 参考文献・情報源
 
