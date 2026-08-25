@@ -65,7 +65,7 @@ const BOARD = {
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rakuten-affiliate-blog.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hitorikurashi-note.vercel.app";
 
 /** コスト一覧ピンの文言。数字は比較表そのものなので、記事を直せば自動で追従する。 */
 function tableText(slug) {

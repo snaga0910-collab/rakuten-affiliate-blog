@@ -20,7 +20,7 @@ const ROOT = path.join(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT, "content");
 const OUT_DIR = path.join(ROOT, "note-out");
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://rakuten-affiliate-blog.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://hitorikurashi-note.vercel.app";
 
 // note のハッシュタグ（各記事の性格に合わせる。10個以内が扱いやすい）
 const TAGS = {

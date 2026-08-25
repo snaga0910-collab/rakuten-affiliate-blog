@@ -8,7 +8,7 @@
 ## 市販マウスウォッシュ6商品比較｜リステリン・モンダミン・GUM
 
 - ボード: **オーラルケアの選び方**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/oral-care
+- リンク先: https://hitorikurashi-note.vercel.app/articles/oral-care
 
 ### [ ] コスト一覧（画像: `pins/oral-care-table.png`）
 
@@ -48,7 +48,7 @@
 ## 部屋干し柔軟剤6商品を比較｜生乾き臭に効くのは1回4円〜15円
 
 - ボード: **一人暮らしの洗濯・柔軟剤えらび**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/fabric-softener
+- リンク先: https://hitorikurashi-note.vercel.app/articles/fabric-softener
 
 ### [ ] コスト一覧（画像: `pins/fabric-softener-table.png`）
 
@@ -88,7 +88,7 @@
 ## ドリップコーヒーおすすめ比較6選｜1杯あたりコストで選ぶ在宅ワークの一杯
 
 - ボード: **おうちコーヒー**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/coffee-drip
+- リンク先: https://hitorikurashi-note.vercel.app/articles/coffee-drip
 
 ### [ ] コスト一覧（画像: `pins/coffee-drip-table.png`）
 
@@ -125,10 +125,10 @@
 
 ---
 
-## 浄水器カートリッジおすすめ比較6選｜交換コストで選ぶ一人暮らしの水対策
+## 浄水器カートリッジおすすめ6商品比較｜交換コストで選ぶ
 
 - ボード: **浄水器・水まわり**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/water-filter
+- リンク先: https://hitorikurashi-note.vercel.app/articles/water-filter
 
 ### [ ] コスト一覧（画像: `pins/water-filter-table.png`）
 
@@ -168,7 +168,7 @@
 ## 部屋干し洗濯洗剤5商品を比較｜最安は部屋干し用の1回13円
 
 - ボード: **一人暮らしの洗濯・柔軟剤えらび**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/laundry-detergent
+- リンク先: https://hitorikurashi-note.vercel.app/articles/laundry-detergent
 
 ### [ ] コスト一覧（画像: `pins/laundry-detergent-table.png`）
 
@@ -208,7 +208,7 @@
 ## 食洗機用洗剤おすすめ比較5選｜タブレットと粉末で1回あたり3倍ちがう
 
 - ボード: **キッチンの時短**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/dishwasher-detergent
+- リンク先: https://hitorikurashi-note.vercel.app/articles/dishwasher-detergent
 
 ### [ ] コスト一覧（画像: `pins/dishwasher-detergent-table.png`）
 
@@ -248,7 +248,7 @@
 ## 電動歯ブラシの替えブラシ比較6選｜同じ純正でも1本あたり3倍ちがう
 
 - ボード: **オーラルケアの選び方**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/toothbrush-head
+- リンク先: https://hitorikurashi-note.vercel.app/articles/toothbrush-head
 
 ### [ ] コスト一覧（画像: `pins/toothbrush-head-table.png`）
 
@@ -285,20 +285,20 @@
 
 ---
 
-## 食器用洗剤おすすめ比較6選｜1回2円台。差が出るのは値段ではなかった
+## 食器用洗剤6商品を比較｜1回2円台、差は値段ではなかった
 
 - ボード: **キッチンの時短**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/dish-soap
+- リンク先: https://hitorikurashi-note.vercel.app/articles/dish-soap
 
 ### [ ] コスト一覧（画像: `pins/dish-soap-table.png`）
 
 **タイトル**
 ```
-食器用洗剤 6件の1回あたりコスト一覧
+食器用洗剤6商品を比較 6件の1回あたりコスト一覧
 ```
 **説明文**
 ```
-食器用洗剤を1回あたりコストの安い順に並べました。ライオン CHARMY Magica 除菌＋ プロ 3.8L×3 約1.6円／ジョイ W除菌 超ジャンボ 1,550mL×5 約1.9円／花王 キュキュット 業務用 4.5L 約2.1円／緑の魔女 キッチン 5L 約2.9円／除菌ジョイコンパ…。実際の価格とレビューをもとに比較しています。#食器用洗剤 #キッチン #詰め替え #節約 #一人暮らし
+食器用洗剤6商品を比較を1回あたりコストの安い順に並べました。ライオン CHARMY Magica 除菌＋ プロ 3.8L×3 約1.6円／ジョイ W除菌 超ジャンボ 1,550mL×5 約1.9円／花王 キュキュット 業務用 4.5L 約2.1円／緑の魔女 キッチン 5L 約2.9円／除菌…。実際の価格とレビューをもとに比較しています。#食器用洗剤 #キッチン #詰め替え #節約 #一人暮らし
 ```
 
 ### [ ] 価格訴求（画像: `pins/dish-soap-price.png`）
@@ -328,7 +328,7 @@
 ## 歯磨き粉おすすめ比較6選｜1回2.7円と21.9円、差はフッ素の量ではなかった
 
 - ボード: **オーラルケアの選び方**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/toothpaste
+- リンク先: https://hitorikurashi-note.vercel.app/articles/toothpaste
 
 ### [ ] コスト一覧（画像: `pins/toothpaste-table.png`）
 
@@ -365,20 +365,20 @@
 
 ---
 
-## シャンプー詰め替え比較6選｜1回2.8円と8.5円、3倍の差は洗浄成分だった
+## シャンプー詰め替え比較｜1回2.8円と8.5円、差は洗浄成分
 
 - ボード: **オーラルケアの選び方**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/shampoo
+- リンク先: https://hitorikurashi-note.vercel.app/articles/shampoo
 
 ### [ ] コスト一覧（画像: `pins/shampoo-table.png`）
 
 **タイトル**
 ```
-シャンプー詰め替え 6件の1回あたりコスト一覧
+シャンプー詰め替え比較 6件の1回あたりコスト一覧
 ```
 **説明文**
 ```
-シャンプー詰め替えを1回あたりコストの安い順に並べました。メリット シャンプー つめかえ 1800ml×4 約2.8円／h&s モイスチャー シャンプー 詰替 2200ml 約3.4円／パンテーン エクストラダメージリペア 詰替 860ml×6 約3.7円／ダイアン EXダメージリペア 詰替…。実際の価格とレビューをもとに比較しています。#シャンプー #詰め替え #ヘアケア #節約 #一人暮らし
+シャンプー詰め替え比較を1回あたりコストの安い順に並べました。メリット シャンプー つめかえ 1800ml×4 約2.8円／h&s モイスチャー シャンプー 詰替 2200ml 約3.4円／パンテーン エクストラダメージリペア 詰替 860ml×6 約3.7円／ダイアン EXダメージリペア …。実際の価格とレビューをもとに比較しています。#シャンプー #詰め替え #ヘアケア #節約 #一人暮らし
 ```
 
 ### [ ] 価格訴求（画像: `pins/shampoo-price.png`）
@@ -408,7 +408,7 @@
 ## 洗濯槽クリーナー比較6選｜洗剤を変えても臭うなら、原因は槽のほうかもしれない
 
 - ボード: **一人暮らしの洗濯・柔軟剤えらび**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/washer-cleaner
+- リンク先: https://hitorikurashi-note.vercel.app/articles/washer-cleaner
 
 ### [ ] コスト一覧（画像: `pins/washer-cleaner-table.png`）
 
@@ -448,7 +448,7 @@
 ## ウォーターサーバー比較3選｜1日1Lが、定額と都度払いの分かれ目だった
 
 - ボード: **浄水器・水まわり**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/water-server
+- リンク先: https://hitorikurashi-note.vercel.app/articles/water-server
 
 ### [ ] コスト一覧（画像: `pins/water-server-table.png`）
 
@@ -488,7 +488,7 @@
 ## 香水おすすめ比較6選｜値段より先に「香りの系統」で絞ると外さない
 
 - ボード: **香水・フレグランスの選び方**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/perfume
+- リンク先: https://hitorikurashi-note.vercel.app/articles/perfume
 
 ### [ ] コスト一覧（画像: `pins/perfume-table.png`）
 
@@ -525,10 +525,10 @@
 
 ---
 
-## 衣類用消臭スプレー6商品を比較｜1mL1.29円〜2.37円、詰め替えは安くない
+## 衣類用消臭スプレー6商品比較｜1mLあたり1.29円〜2.37円
 
 - ボード: **一人暮らしの洗濯・柔軟剤えらび**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/clothes-deodorant
+- リンク先: https://hitorikurashi-note.vercel.app/articles/clothes-deodorant
 
 ### [ ] コスト一覧（画像: `pins/clothes-deodorant-table.png`）
 
@@ -568,7 +568,7 @@
 ## 部屋干しの生乾き臭を消す方法｜洗剤を変える前にやること
 
 - ボード: **一人暮らしの洗濯・柔軟剤えらび**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/laundry-odor
+- リンク先: https://hitorikurashi-note.vercel.app/articles/laundry-odor
 
 ### [ ] コスト一覧（画像: `pins/laundry-odor-table.png`）
 
@@ -608,7 +608,7 @@
 ## 一人暮らしの食材宅配3社比較｜初回料金より継続費で選ぶ
 
 - ボード: **一人暮らしの固定費**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/meal-delivery
+- リンク先: https://hitorikurashi-note.vercel.app/articles/meal-delivery
 
 ### [ ] コスト一覧（画像: `pins/meal-delivery-table.png`）
 
@@ -648,7 +648,7 @@
 ## 一人暮らしの光回線4社比較｜違約金より怖い「工事費残債」
 
 - ボード: **一人暮らしの固定費**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/hikari-internet
+- リンク先: https://hitorikurashi-note.vercel.app/articles/hikari-internet
 
 ### [ ] コスト一覧（画像: `pins/hikari-internet-table.png`）
 
@@ -688,7 +688,7 @@
 ## 浄水型ウォーターサーバー3社比較｜途中解約まで含めた総額を計算した
 
 - ボード: **浄水器・水まわり**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/water-purifier-server
+- リンク先: https://hitorikurashi-note.vercel.app/articles/water-purifier-server
 
 ### [ ] コスト一覧（画像: `pins/water-purifier-server-table.png`）
 
@@ -728,7 +728,7 @@
 ## バスマットおすすめ比較6選｜珪藻土と速乾タオル地を正直レビュー
 
 - ボード: **バスマット・お風呂まわり**
-- リンク先: https://rakuten-affiliate-blog.vercel.app/articles/diatomite-bathmat
+- リンク先: https://hitorikurashi-note.vercel.app/articles/diatomite-bathmat
 
 ### [ ] コスト一覧（画像: `pins/diatomite-bathmat-table.png`）
 

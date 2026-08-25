@@ -24,7 +24,7 @@ noteと同じで「Xにはブログ記事のURLだけを置き、広告はブロ
 本当に効くのは工事費の残債で、6か月でやめると2万円台。
 残債が消えるのは11か月か36か月かで、社によって3倍違いました。
 
-https://rakuten-affiliate-blog.vercel.app/articles/hikari-internet
+https://hitorikurashi-note.vercel.app/articles/hikari-internet
 ```
 *（238 / 280）*
 
@@ -36,7 +36,7 @@ BIGLOBE光を1年・2年・3年で計算したら、同じ会社が
 受け取れれば3年で7,280円得、忘れると27,720円損。
 12か月目に自分で手続きが要ります。
 
-https://rakuten-affiliate-blog.vercel.app/articles/hikari-internet
+https://hitorikurashi-note.vercel.app/articles/hikari-internet
 ```
 *（226 / 280）*
 
@@ -48,7 +48,7 @@ auの「スマホ代が月2,200円引き」には条件が2つありました。
 もうひとつは割引額がプランで3段階に分かれること。
 全員が最大額ではありません。
 
-https://rakuten-affiliate-blog.vercel.app/articles/hikari-internet
+https://hitorikurashi-note.vercel.app/articles/hikari-internet
 ```
 *（229 / 280）*
 
@@ -63,7 +63,7 @@ https://rakuten-affiliate-blog.vercel.app/articles/hikari-internet
 
 解約金が1年ごとに1万円ずつ減る設計だからです。
 
-https://rakuten-affiliate-blog.vercel.app/articles/water-purifier-server
+https://hitorikurashi-note.vercel.app/articles/water-purifier-server
 ```
 *（255 / 280）*
 
@@ -75,7 +75,7 @@ https://rakuten-affiliate-blog.vercel.app/articles/water-purifier-server
 金額が分からないものは計算に入れられないので、
 その旨を書いて外しました。
 
-https://rakuten-affiliate-blog.vercel.app/articles/water-purifier-server
+https://hitorikurashi-note.vercel.app/articles/water-purifier-server
 ```
 *（222 / 280）*
 
@@ -94,7 +94,7 @@ https://rakuten-affiliate-blog.vercel.app/articles/water-purifier-server
 効いたのは「香りの系統」で、4つに分けると
 候補が6つから1〜2つまで一気に減りました。
 
-https://rakuten-affiliate-blog.vercel.app/articles/perfume
+https://hitorikurashi-note.vercel.app/articles/perfume
 ```
 *（212 / 280）*
 
@@ -106,7 +106,7 @@ https://rakuten-affiliate-blog.vercel.app/articles/perfume
 
 最初の1本ほど安いものを選ぶほうが合理的でした。
 
-https://rakuten-affiliate-blog.vercel.app/articles/perfume
+https://hitorikurashi-note.vercel.app/articles/perfume
 ```
 *（216 / 280）*
 
@@ -124,7 +124,7 @@ https://rakuten-affiliate-blog.vercel.app/articles/perfume
 
 分かれ目は1日1L前後。相手によって0.89L〜1.07Lでした。
 
-https://rakuten-affiliate-blog.vercel.app/articles/water-server
+https://hitorikurashi-note.vercel.app/articles/water-server
 ```
 *（225 / 280）*
 
@@ -139,7 +139,7 @@ https://rakuten-affiliate-blog.vercel.app/articles/water-server
 
 差が出ていたのは別のところでした。
 
-https://rakuten-affiliate-blog.vercel.app/articles/toothpaste
+https://hitorikurashi-note.vercel.app/articles/toothpaste
 ```
 *（226 / 280）*
 
@@ -152,7 +152,7 @@ https://rakuten-affiliate-blog.vercel.app/articles/toothpaste
 高いほうは「よく落とす」ためではなく
 「落としすぎない」ためにお金がかかっています。
 
-https://rakuten-affiliate-blog.vercel.app/articles/shampoo
+https://hitorikurashi-note.vercel.app/articles/shampoo
 ```
 *（220 / 280）*
 
@@ -167,7 +167,7 @@ https://rakuten-affiliate-blog.vercel.app/articles/shampoo
 ウォーターサーバーだと水代だけで年52,536円〜。
 安さで選ぶなら浄水器でした。
 
-https://rakuten-affiliate-blog.vercel.app/articles/water-filter
+https://hitorikurashi-note.vercel.app/articles/water-filter
 ```
 *（222 / 280）*
 
@@ -182,7 +182,7 @@ https://rakuten-affiliate-blog.vercel.app/articles/water-filter
 ここを節約しても効果は小さいので、
 手荒れや香りで選んだほうがいいという結論になりました。
 
-https://rakuten-affiliate-blog.vercel.app/articles/dish-soap
+https://hitorikurashi-note.vercel.app/articles/dish-soap
 ```
 *（238 / 280）*
 
@@ -196,7 +196,7 @@ https://rakuten-affiliate-blog.vercel.app/articles/dish-soap
 大容量216杯セットで1杯32円、デカフェで65円。
 毎日飲むものは1杯あたりで見ると判断しやすいです。
 
-https://rakuten-affiliate-blog.vercel.app/articles/coffee-drip
+https://hitorikurashi-note.vercel.app/articles/coffee-drip
 ```
 *（205 / 280）*
 
@@ -210,7 +210,7 @@ https://rakuten-affiliate-blog.vercel.app/articles/coffee-drip
 
 塩素系と酸素系で落とし方が違うので、そこも書きました。
 
-https://rakuten-affiliate-blog.vercel.app/articles/washer-cleaner
+https://hitorikurashi-note.vercel.app/articles/washer-cleaner
 ```
 *（222 / 280）*
 

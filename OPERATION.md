@@ -3,7 +3,7 @@
 比較記事ブログ「ひとり暮らしの消耗品ノート」の運用手順。
 収益ゼロから、検索とPinterestで流入を作るまでの回し方をまとめる。
 
-- ブログ: https://rakuten-affiliate-blog.vercel.app
+- ブログ: https://hitorikurashi-note.vercel.app
 - note: https://note.com/kaisyainkurashi
 - 記事の作り方: [README.md](README.md) / note投稿: [NOTE.md](NOTE.md)
 
