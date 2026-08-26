@@ -95,7 +95,9 @@ function renderLedger(lines: string[], list: Product[]): string {
       const label = ` data-label="${esc(header[idx] ?? "")}"`;
       if (idx === costIdx) {
         const isMin = costOf(r) === min;
-        return `<td class="cost"${label}>${esc(c)}${isMin ? '<span class="best">最小</span>' : ""}</td>`;
+        // コスト列だけ esc() で素通ししていたため、セルに **…** と書くと
+        // アスタリスクがそのまま表示されていた。他の列と同じくインライン記法を通す。
+        return `<td class="cost"${label}>${inline(c)}${isMin ? '<span class="best">最小</span>' : ""}</td>`;
       }
       return `<td class="${/^[\d,]+円$/.test(c) ? "num" : ""}"${label}>${inline(c)}</td>`;
     }).join("");

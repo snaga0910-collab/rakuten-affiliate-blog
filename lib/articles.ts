@@ -71,9 +71,21 @@ export function extractFaqs(markdown: string): Faq[] {
   const re = /\*\*Q\.\s*(.+?)\*\*\s*\n\s*A\.\s*([^\n]+)/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(section[1])) !== null) {
-    faqs.push({ question: m[1].trim(), answer: m[2].trim() });
+    faqs.push({ question: plain(m[1]), answer: plain(m[2]) });
   }
   return faqs;
+}
+
+/** 構造化データに入れる前に、Markdown記法を落として素のテキストにする。
+ *
+ * 2026-08-26: FAQPage の answer に「**濡れている時間が長い**」のように
+ * アスタリスクがそのまま入っていた。読者には見えないが、検索エンジンが読む値なので
+ * 記法が残っていると不正確になる。太字とリンクを外す。 */
+function plain(text: string): string {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .trim();
 }
 
 /** 記事のコスト比較グラフ（あれば）をインラインSVGで返す。 */

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run check && next build",
     "start": "next start",
     "import": "node scripts/import-articles.mjs",
     "products": "node scripts/import-products.mjs",
@@ -13,7 +13,8 @@
     "pins": "node scripts/make-pins.mjs",
     "pintext": "node scripts/make-pin-text.mjs",
     "metrics": "node scripts/metrics.mjs",
-    "charts": "node scripts/make-charts.mjs"
+    "charts": "node scripts/make-charts.mjs",
+    "check": "node scripts/check-markdown.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

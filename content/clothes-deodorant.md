@@ -1,12 +1,13 @@
 ---
-title: "衣類用消臭スプレー6商品比較｜1mLあたり1.29円〜2.37円"
-description: "衣類用消臭スプレーをファブリーズ・リセッシュ・ラボン・ランドリンの6商品で比較。1mLあたり1.29円〜2.37円と1.8倍の差がありました。詰め替えにしても単価が8%しか下がらないこと、洗える衣類とそうでないもので使い分けが変わることも計算して確かめています。"
-category: "衣類用消臭スプレー"
-date: "2026-08-25"
-updated: "2026-08-25"
-costLabel: "1mLあたり"
-costMin: "1.29円"
-costMax: "2.37円"
+title: 衣類用消臭スプレー6商品比較｜1mLあたり1.29円〜2.37円
+description: >-
+  衣類用消臭スプレーをファブリーズ・リセッシュ・ラボン・ランドリンの6商品で比較。1mLあたり1.29円〜2.37円と1.8倍の差がありました。詰め替えにしても単価が8%しか下がらないこと、洗える衣類とそうでないもので使い分けが変わることも計算して確かめています。
+category: 衣類用消臭スプレー
+date: '2026-08-25'
+updated: '2026-08-25'
+costLabel: 1mLあたり
+costMin: 1.29円
+costMax: 2.37円
 ---
 
 洗ったのににおう。でも、もう一度洗うほどではない。そんなときに手が伸びるのが衣類用の消臭スプレーです。
@@ -25,7 +26,7 @@ costMax: "2.37円"
 
 生乾き臭は、洗濯物に残った菌が増えて出るものだとされています。**スプレーはにおいに働きかけますが、洗濯で落ちきらなかった汚れそのものは衣類に残ります**。原因が落ちていない場合、時間が経つとにおいが気になることがあります。
 
-つまりスプレーは、**洗濯や干し方を見直したうえで足す補助の手段**という位置づけになります。順番については**[部屋干しの生乾き臭を消す方法](/articles/laundry-odor)**に、効く順とかかる費用をまとめました。
+つまりスプレーは、**洗濯や干し方を見直したうえで足す補助の手段**という位置づけになります。順番については[**部屋干しの生乾き臭を消す方法**](/articles/laundry-odor)に、効く順とかかる費用をまとめました。
 
 ```
 まず  すぐ干す・風を当てる・詰め込まない   0円
@@ -83,7 +84,7 @@ costMax: "2.37円"
 
 ファブリーズは本体1.83円/mL に対し6袋セットが1.41円/mL で23%下がりますが、**これは詰め替えの効果とまとめ買いの効果が混ざった数字**です。同じ条件の比較ではないため、詰め替え単体の目安としては使えません。
 
-まとめると、**今回比較した6商品では、詰め替えによる単価の下げ幅は8〜23%**でした。価格だけでなく、ゴミの量や買う頻度も含めて選ぶのが現実的です。
+まとめると、今回比較した6商品では、詰め替えによる単価の下げ幅は8〜23%でした。価格だけでなく、ゴミの量や買う頻度も含めて選ぶのが現実的です。
 
 **置き場所も判断材料になります。** 320mLの袋が6つ届くと、一人暮らしの部屋では場所を取ります。
 
@@ -98,7 +99,7 @@ costMax: "2.37円"
 - **買うなら**：すでにリセッシュの本体を持っていて、詰め替えたい人
 - **買わなくていい**：スプレー自体が初めての人（本体が要ります）
 
-**[楽天市場で価格を見る →](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2Fe374198h%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F10252041%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)**
+[**楽天市場で価格を見る →**](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2Fe374198h%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F10252041%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)
 
 ### リセッシュ 除菌EX 消臭ストロング 本体（522円・評価4.47）
 
@@ -111,7 +112,7 @@ costMax: "2.37円"
 - **買うなら**：帰宅後のジャケットやコートに、香りを足さずに使いたい人
 - **買わなくていい**：毎日の洗濯物の生乾き臭が目的の人（洗濯側の見直しが先です）
 
-**[楽天市場で価格を見る →](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2Fe374197h%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F10252040%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)**
+[**楽天市場で価格を見る →**](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2Fe374197h%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F10252040%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)
 
 ## 香りつきの2つ：ファブリーズは買い方で単価が変わります
 
@@ -124,7 +125,7 @@ costMax: "2.37円"
 - **買うなら**：部屋やソファに、柔軟剤とは別の香りを足したい人
 - **買わなくていい**：においを消すことだけが目的の人
 
-**[楽天市場で価格を見る →](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F4902430858229%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F10848164%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)**
+[**楽天市場で価格を見る →**](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F4902430858229%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F10848164%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)
 
 ### ファブリーズ ナチュリス つめかえ 6袋（2,714円・評価4.75）
 
@@ -135,7 +136,7 @@ costMax: "2.37円"
 - **買うなら**：ファブリーズのこの香りを使い続けると決まっていて、置き場所がある人
 - **買わなくていい**：まだ試している段階の人
 
-**[楽天市場で価格を見る →](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F512159%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11063241%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)**
+[**楽天市場で価格を見る →**](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F512159%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11063241%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)
 
 ## 香り重視の2つ：単価は最安の1.7〜1.8倍
 
@@ -148,7 +149,7 @@ costMax: "2.37円"
 - **買うなら**：香りの系統を自分で選びたい人
 - **買わなくていい**：単価を優先したい人
 
-**[楽天市場で価格を見る →](https://hb.afl.rakuten.co.jp/hgc/g00sxiim.p2w404bd.g00sxiim.p2w4138c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnaturelab%2Flaundrin-tea-mist%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnaturelab%2Fi%2F10007197%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)**
+[**楽天市場で価格を見る →**](https://hb.afl.rakuten.co.jp/hgc/g00sxiim.p2w404bd.g00sxiim.p2w4138c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnaturelab%2Flaundrin-tea-mist%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnaturelab%2Fi%2F10007197%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)
 
 ### ラボン to the Moon ファブリックミスト（712円・評価4.58）
 
@@ -159,7 +160,7 @@ costMax: "2.37円"
 - **買うなら**：布団や枕まわりの香りにこだわりたい人
 - **買わなくていい**：香りより単価を優先したい人
 
-**[楽天市場で価格を見る →](https://hb.afl.rakuten.co.jp/hgc/g00sxiim.p2w404bd.g00sxiim.p2w4138c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnaturelab%2F4582469499534%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnaturelab%2Fi%2F10006717%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)**
+[**楽天市場で価格を見る →**](https://hb.afl.rakuten.co.jp/hgc/g00sxiim.p2w404bd.g00sxiim.p2w4138c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnaturelab%2F4582469499534%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnaturelab%2Fi%2F10006717%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)
 
 ## 香りつきを柔軟剤の上から使うと、ぶつかることがあります
 
@@ -167,11 +168,11 @@ costMax: "2.37円"
 
 **柔軟剤の香りを楽しんでいるなら、スプレーは無香を選ぶほうが無難**です。逆にスプレーの香りが主役なら、柔軟剤を無香のものに寄せる選び方もあります。
 
-柔軟剤側の選択肢は**[部屋干し柔軟剤6商品の比較](/articles/fabric-softener)**にまとめています。1回4円〜15円で、消臭重視と香り重視で分けて整理しました。
+柔軟剤側の選択肢は[**部屋干し柔軟剤6商品の比較**](/articles/fabric-softener)にまとめています。1回4円〜15円で、消臭重視と香り重視で分けて整理しました。
 
 ## この記事が役に立たない人
 
-- **毎日の部屋干し臭を何とかしたい人**：**[生乾き臭を消す方法](/articles/laundry-odor)**から読んでください。スプレーは補助の手段です
+- **毎日の部屋干し臭を何とかしたい人**：[**生乾き臭を消す方法**](/articles/laundry-odor)から読んでください。スプレーは補助の手段です
 - **体臭・わきがが目的の人**：選ぶ基準がまったく違うため、この6商品は対象外です
 - **香りにこだわりがない人**：消臭重視の2つで足りるので、香り系を検討する必要がありません
 
@@ -181,7 +182,7 @@ costMax: "2.37円"
 A. **リセッシュ 除菌EX 詰め替えの1mL約1.29円**です。ただし詰め替えなので、スプレーボトルの本体が別に必要になります。
 
 **Q. 詰め替えにすると、どれくらい安くなりますか？**
-A. 同じ商品で比べられたリセッシュでは**約8%**でした。ファブリーズは6袋セットで23%下がりますが、まとめ買いの効果が混ざっています。**今回の範囲では8〜23%**です。
+A. 同じ商品で比べられたリセッシュでは約8%でした。ファブリーズは6袋セットで23%下がりますが、まとめ買いの効果が混ざっています。今回の範囲では8〜23%です。
 
 **Q. 衣類用消臭スプレーで生乾き臭は消えますか？**
 A. その場のにおいには働きかけますが、**洗濯で落ちきらなかった汚れは衣類に残ったまま**です。時間が経つと気になる場合、原因は洗濯側にあることが多いと考えられます。
@@ -208,11 +209,11 @@ A. 使う量が対象によって変わるため、一概には言えません�
 
 ### あわせて読みたい
 
-**[部屋干しの生乾き臭を消す方法](/articles/laundry-odor)** では、効く順とかかる費用を整理しました。スプレーを買う前に読むと、順番を飛ばさずに済みます。
+[**部屋干しの生乾き臭を消す方法**](/articles/laundry-odor) では、効く順とかかる費用を整理しました。スプレーを買う前に読むと、順番を飛ばさずに済みます。
 
-**[部屋干し柔軟剤6商品の比較](/articles/fabric-softener)** は1回4円〜15円。香りが重ならない組み合わせを考えるときに使ってください。
+[**部屋干し柔軟剤6商品の比較**](/articles/fabric-softener) は1回4円〜15円。香りが重ならない組み合わせを考えるときに使ってください。
 
-**[部屋干し洗濯洗剤5商品の比較](/articles/laundry-detergent)** は1回13円〜25円。洗える衣類なら、こちらの見直しが先になります。
+[**部屋干し洗濯洗剤5商品の比較**](/articles/laundry-detergent) は1回13円〜25円。洗える衣類なら、こちらの見直しが先になります。
 
 ### 参考文献・情報源
 
