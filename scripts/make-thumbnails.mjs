@@ -28,6 +28,7 @@ const H = 670;
 // 例: 部屋干し臭の記事は、自サイトの各比較記事から数字を引いている。
 const THUMB_NOTE = {
   "laundry-odor": "各比較記事の実データより",
+  "video-streaming": "料金は各社の公表情報",
 };
 
 const THUMB_COUNT = {
@@ -35,6 +36,7 @@ const THUMB_COUNT = {
   "meal-delivery": "3社を正直比較",
   "laundry-odor": "お金をかけない順に",
   "clothes-deodorant": "6商品を正直比較",
+  "video-streaming": "5サービスを正直比較",
   "water-purifier-server": "3社を正直比較",
   "water-server": "3社を正直比較",
   "perfume": "6商品を正直比較",

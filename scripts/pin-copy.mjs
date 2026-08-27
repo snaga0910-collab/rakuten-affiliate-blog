@@ -325,6 +325,44 @@ export const PIN_COPY = {
   // 数字は記事本文の表と一致させること。
   // 比較表が「初回 × 継続」の行列なので自動抽出できない。
   // 数字は記事本文の表と一致させること。
+  // 商品比較ではなくサービスの月額比較。安い順に並べるが、
+  // 「安い＝おすすめ」ではない（Primeが安いのは動画が主役でないため）ので
+  // 比較訴求ピンでその点を出す。
+  "video-streaming": {
+    footNote: "料金は各社の公表情報／PR",
+    table: {
+      subject: "動画配信サービス",
+      label: "月額（税込）",
+      countLabel: "5サービスを比較",
+      rows: [
+        { full: "Amazon Prime（年払い）", name: "Amazon Prime 年払い", cost: "約492円" },
+        { full: "YouTube Premium Lite", name: "YouTube Premium Lite", cost: "780円" },
+        { full: "Netflix 広告つき", name: "Netflix 広告つき", cost: "890円" },
+        { full: "Disney+ スタンダード", name: "Disney+ スタンダード", cost: "1,250円" },
+        { full: "Netflix スタンダード", name: "Netflix スタンダード", cost: "1,590円" },
+        { full: "U-NEXT", name: "U-NEXT", cost: "2,189円" },
+      ],
+    },
+    price: {
+      head: "動画配信\n3本で年4万円",
+      lead: "1本ずつは安いのに、積むと効いてくる",
+      points: [
+        "Prime年払いは月492円",
+        "3本だと月3,332円＝年39,984円",
+        "5つ全部なら年81,608円",
+      ],
+    },
+    compare: {
+      head: "動画配信5つ\n同じものを売っていない",
+      lead: "作品数で並べると誤解します",
+      points: [
+        "Primeは買い物の会費",
+        "YouTubeは広告を消す料金",
+        "比べるのは残り3つだけ",
+      ],
+    },
+  },
+
   "clothes-deodorant": {
     table: {
       subject: "衣類用消臭スプレー",
