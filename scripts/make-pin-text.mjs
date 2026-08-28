@@ -40,6 +40,7 @@ const KEYWORDS = {
   "laundry-odor": ["部屋干し", "生乾き臭", "洗濯", "暮らしの知恵", "一人暮らし"],
   "clothes-deodorant": ["消臭スプレー", "ファブリーズ", "部屋干し", "洗濯", "一人暮らし"],
   "video-streaming": ["動画配信", "サブスク", "固定費見直し", "一人暮らし", "節約"],
+  "water-cost": ["浄水器", "ウォーターサーバー", "一人暮らし", "節約", "暮らしの知恵"],
 };
 
 const BOARD = {
@@ -63,6 +64,7 @@ const BOARD = {
   "laundry-odor": "一人暮らしの洗濯・柔軟剤えらび",
   "clothes-deodorant": "一人暮らしの洗濯・柔軟剤えらび",
   "video-streaming": "一人暮らしの固定費",
+  "water-cost": "浄水器・水まわり",
 };
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };

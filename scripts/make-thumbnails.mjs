@@ -29,6 +29,7 @@ const H = 670;
 const THUMB_NOTE = {
   "laundry-odor": "各比較記事の実データより",
   "video-streaming": "料金は各社の公表情報",
+  "water-cost": "各比較記事と楽天の実データ",
 };
 
 const THUMB_COUNT = {
@@ -37,6 +38,7 @@ const THUMB_COUNT = {
   "laundry-odor": "お金をかけない順に",
   "clothes-deodorant": "6商品を正直比較",
   "video-streaming": "5サービスを正直比較",
+  "water-cost": "4通りを年額で比較",
   "water-purifier-server": "3社を正直比較",
   "water-server": "3社を正直比較",
   "perfume": "6商品を正直比較",

@@ -47,6 +47,7 @@ export const THEMES: Theme[] = [
     slugs: [
       "dishwasher-detergent",
       "dish-soap",
+      "water-cost",
       "water-filter",
       "water-server",
       "coffee-drip",
@@ -90,9 +91,11 @@ export const THEMES: Theme[] = [
 const AFFINITY: Record<string, string[]> = {
   "dish-soap": ["dishwasher-detergent", "water-filter"],
   "coffee-drip": ["water-filter"],
-  "water-filter": ["water-purifier-server", "water-server", "coffee-drip"],
-  "water-server": ["water-purifier-server", "water-filter"],
-  "water-purifier-server": ["water-filter", "water-server"],
+  "water-filter": ["water-cost", "water-purifier-server", "water-server"],
+  // 水まわり3本を束ねるハブ。どれから来ても他の2本へ送れるようにする
+  "water-cost": ["water-filter", "water-purifier-server", "water-server"],
+  "water-server": ["water-cost", "water-purifier-server", "water-filter"],
+  "water-purifier-server": ["water-cost", "water-filter", "water-server"],
   "hikari-internet": ["video-streaming", "water-purifier-server", "meal-delivery"],
   "meal-delivery": ["hikari-internet", "coffee-drip"],
   // 動画配信は回線がないと始まらないので光回線と、
