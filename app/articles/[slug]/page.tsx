@@ -77,8 +77,11 @@ function RelatedList({ items }: { items: RelatedCard[] }) {
       {items.map((a) => (
         <li key={a.slug}>
           <Link href={`/articles/${a.slug}`} className="rel-card">
-            {a.category && <span className="rel-cat">{a.category}</span>}
-            <span className="rel-title">{a.title}</span>
+            {/* span だと、タグを剥がしてテキスト化したときに
+                「食洗機洗剤食洗機用洗剤5商品比較」のように連結してしまう。
+                グリッドの子なので見た目は変わらないが、div にして行を分ける。 */}
+            {a.category && <div className="rel-cat">{a.category}</div>}
+            <div className="rel-title">{a.title}</div>
             {a.cost && (
               <span className="rel-cost num">
                 {a.cost.label} {a.cost.min}〜{a.cost.max}

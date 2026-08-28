@@ -35,7 +35,7 @@ export default function HomePage() {
         >
           <h2 className="theme-head">
             {theme?.name ?? "そのほか"}
-            {theme?.note && <span className="theme-note">{theme.note}</span>}
+            {theme?.note && <div className="theme-note">{theme.note}</div>}
           </h2>
           <div className="article-list">
             {items.map((a) => (
