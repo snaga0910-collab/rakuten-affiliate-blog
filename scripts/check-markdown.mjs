@@ -34,6 +34,17 @@ function proseOnly(md) {
     .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1");
 }
 
+/** 太字を数えるとき、装飾ではなく構造として使っている箇所は除く。
+ *  - 「**Q. …**」   … FAQの見出し。marked に見出しとして渡す代わりの記法
+ *  - 「- **語**：…」 … 箇条書きのラベル。定義リストの代わり
+ *  これらを数に入れると、FAQと箇条書きが多い記事ほど密度が上がってしまい、
+ *  「強調しすぎ」という本来見たい指標からずれる。 */
+function decorativeBold(md) {
+  return proseOnly(md)
+    .replace(/^\s*\*\*Q\..*?\*\*/gm, "")
+    .replace(/^\s*[-*]\s+\*\*[^*]+\*\*/gm, "");
+}
+
 const articles = fs
   .readdirSync(CONTENT_DIR)
   .filter((f) => f.endsWith(".md"))
@@ -71,7 +82,7 @@ for (const a of articles) {
 // 2026-08-27 時点の平均は 9.0回/1000字（111字に1回）だった。
 const BOLD_PER_1000 = 6;
 for (const a of articles) {
-  const s = proseOnly(a.content);
+  const s = decorativeBold(a.content);
   const n = (s.match(/\*\*.+?\*\*/g) ?? []).length;
   const d = (n / Math.max(s.length, 1)) * 1000;
   if (d > BOLD_PER_1000) {
