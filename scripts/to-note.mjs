@@ -155,7 +155,16 @@ function expandLinks(line) {
 function convert(slug) {
   const raw = fs.readFileSync(path.join(CONTENT_DIR, `${slug}.md`), "utf8");
   const { data, content } = matter(raw);
-  const lines = content.split("\n");
+  // 引用記法（>）は本文を読む前に外しておく。
+  //
+  // 2026-08-29: 引用の中に比較表を置いた記事があり、Markdownの表がそのまま
+  // note に出ていた。「>」を1行ずつ外す処理より先に表の判定をしていたため、
+  // 「> | 商品 | 価格 |」が表として認識されずすり抜けていた。
+  // 中身が表でも箇条書きでも同じ扱いになるよう、前処理でまとめて剥がす。
+  const lines = content
+    .split("\n")
+    .map((l) => (/^\s*>/.test(l) ? l.replace(/^\s*>\s?/, "") : l))
+    .filter((l, i, a) => !(a[i - 1] !== undefined && l === "" && a[i - 1] === "" ));
   const out = [];
   // 広告や商品URLを落としたかどうか。落としたときは記事へのリンクで補う。
   let adRemoved = false;
@@ -206,19 +215,6 @@ function convert(slug) {
       out.push(...expandLinks(stripBold(`${circled(Number(num[1]))} ${num[2]}`)));
       continue;
     }
-    // 引用記法（>）を外す。
-    //
-    // 2026-08-19: 記事の「>」は引用ではなく注記（計算の前提や但し書き）に使っている。
-    // note では「>」が引用ブロックになり、出典の入力欄が付いてくる。
-    // さらに「>」だけの空行が中身のない引用ブロックになって
-    //「出典を入力」だけが残る。注記なので、記法ごと外して素のテキストにする。
-    if (/^\s*>/.test(line)) {
-      const inner = line.replace(/^\s*>\s?/, "");
-      if (!inner.trim()) continue; // 「>」だけの行は捨てる
-      out.push(...expandLinks(stripBold(inner)));
-      continue;
-    }
-
     let clean = stripBold(line);
     // 行の途中に埋め込まれたHTML（<a>広告リンク</a> や計測用の1px画像）を外す。
     // リンク文字だけ残して、URLは落とす。
@@ -298,5 +294,33 @@ for (const slug of slugs) {
   const { outPath, chars, tags } = convert(slug);
   console.log(`  ✓ ${path.relative(ROOT, outPath)}  (${chars.toLocaleString()}字 / タグ: ${tags.join("・")})`);
 }
+
+// 出力を機械で検査する。note に貼ったあとで気づいても遅い。
+// 2026-08-29: 引用の中に置いた比較表がそのまま残り、複数行にまたがる太字が
+// アスタリスクのまま出ていた。どちらも目視では見落とした。
+const NOTE_NG = [
+  [/a8\.net/, "A8のリンク（未登録サイトへの掲載は規約違反）"],
+  [/\*\*/, "アスタリスクの露出"],
+  [/^\|/m, "Markdownの表が残っている"],
+  [/^>/m, "引用記法が残っている"],
+  [/^```/m, "コードフェンスが残っている"],
+  [/^\d+\.\s/m, "番号付きリスト（note が二重番号にする）"],
+  [/<(div|a|img|p)[\s>]/, "生のHTML"],
+];
+let ngCount = 0;
+for (const f of fs.readdirSync(OUT_DIR).filter((x) => x.endsWith(".md"))) {
+  const text = fs.readFileSync(path.join(OUT_DIR, f), "utf8");
+  for (const [re, label] of NOTE_NG) {
+    if (re.test(text)) {
+      console.log(`  ✗ ${f}: ${label}`);
+      ngCount++;
+    }
+  }
+}
+if (ngCount) {
+  console.log(`\n${ngCount}件、note に貼る前に直してください。`);
+  process.exit(1);
+}
+
 console.log(`\n${slugs.length} 本を note 用に変換しました。`);
 console.log("投稿手順は NOTE.md を参照してください。");
