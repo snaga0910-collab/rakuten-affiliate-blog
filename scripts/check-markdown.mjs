@@ -151,6 +151,36 @@ for (const a of articles) {
   }
 }
 
+// 「月◯円 → 年◯円」「◯円×12」の掛け算が合っているか。
+//
+// 2026-08-29: 動画配信の記事で「月3,332円 → 年39,984円」と書いていた。
+// 3,332は端数を丸めた月額で、実際の支払い（年払い5,900円＋月額×12）は39,980円。
+// 丸めた数字を12倍すると、実在しない金額になる。
+const YEN = (t) => Number(t.replace(/,/g, ""));
+for (const a of articles) {
+  const src = a.content;
+  for (const m of src.matchAll(/月\s*([\d,]+)\s*円\s*(?:→|＝|=)\s*年\s*([\d,]+)\s*円/g)) {
+    const [mo, yr] = [YEN(m[1]), YEN(m[2])];
+    if (Math.abs(mo * 12 - yr) > 12) {
+      warns.push({
+        rule: "月額×12と年額が合わない",
+        text: `${a.slug}  月${m[1]}円×12=${(mo * 12).toLocaleString()}円 だが「年${m[2]}円」と記載`,
+        n: Math.abs(mo * 12 - yr),
+      });
+    }
+  }
+  for (const m of src.matchAll(/([\d,]+)\s*円\s*[×x]\s*12\s*(?:＝|=|は)?\s*([\d,]+)\s*円/g)) {
+    const [unit, total] = [YEN(m[1]), YEN(m[2])];
+    if (Math.abs(unit * 12 - total) > 12) {
+      warns.push({
+        rule: "月額×12と年額が合わない",
+        text: `${a.slug}  ${m[1]}円×12=${(unit * 12).toLocaleString()}円 だが「${m[2]}円」と記載`,
+        n: Math.abs(unit * 12 - total),
+      });
+    }
+  }
+}
+
 /* ───────── 出力 ───────── */
 
 if (warns.length) {
