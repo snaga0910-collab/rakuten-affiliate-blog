@@ -26,7 +26,7 @@ export const THEMES: Theme[] = [
     id: "washroom",
     name: "洗面所",
     note: "毎日の歯みがきまわり",
-    slugs: ["oral-care", "toothbrush-head", "toothpaste", "shampoo"],
+    slugs: ["oral-care", "interdental-brush", "toothbrush-head", "toothpaste", "shampoo"],
   },
   {
     id: "laundry",
@@ -108,6 +108,7 @@ const AFFINITY: Record<string, string[]> = {
   "clothes-deodorant": ["fabric-softener", "perfume", "diatomite-bathmat"],
   "fabric-softener": ["diatomite-bathmat", "perfume"],
   perfume: ["fabric-softener", "shampoo"],
+  "interdental-brush": ["oral-care", "toothbrush-head", "toothpaste"],
 };
 
 export function themeOf(slug: string): Theme | undefined {

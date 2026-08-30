@@ -25,5 +25,6 @@ export const CATEGORY_STYLE = {
   "clothes-deodorant": { bg: "#f1f4ee", accent: "#4f7a3a", emoji: "🧴" },
   "video-streaming": { bg: "#f0eef6", accent: "#4b3f8f", emoji: "📺" },
   "water-cost": { bg: "#eaf4f6", accent: "#1f6f86", emoji: "💧" },
+  "interdental-brush": { bg: "#eef6fb", accent: "#1f7ba6", emoji: "🦷" },
   _default: { bg: "#f4f5f7", accent: "#bf0000", emoji: "🛒" },
 };
