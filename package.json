@@ -14,7 +14,9 @@
     "pintext": "node scripts/make-pin-text.mjs",
     "metrics": "node scripts/metrics.mjs",
     "charts": "node scripts/make-charts.mjs",
-    "check": "node scripts/check-markdown.mjs"
+    "check": "node scripts/check-markdown.mjs",
+    "guidepins": "node scripts/make-guide-pins.mjs",
+    "guidepost": "node scripts/make-guide-post.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
