@@ -8,6 +8,8 @@ updated: '2026-08-25'
 costLabel: 1mLあたり
 costMin: 1.29円
 costMax: 2.37円
+keyword: 消臭スプレー
+keywordAlt: [消臭]
 ---
 
 洗ったのににおう。でも、もう一度洗うほどではない。そんなときに手が伸びるのが衣類用の消臭スプレーです。
