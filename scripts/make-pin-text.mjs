@@ -42,6 +42,7 @@ const KEYWORDS = {
   "video-streaming": ["動画配信", "サブスク", "固定費見直し", "一人暮らし", "節約"],
   "water-cost": ["浄水器", "ウォーターサーバー", "一人暮らし", "節約", "暮らしの知恵"],
   "interdental-brush": ["歯間ブラシ", "オーラルケア", "デンタルケア", "口臭対策", "一人暮らし"],
+  "laundry-bleach": ["漂白剤", "洗濯", "部屋干し", "生乾き臭", "一人暮らし"],
 };
 
 const BOARD = {
@@ -67,6 +68,7 @@ const BOARD = {
   "video-streaming": "一人暮らしの固定費",
   "water-cost": "浄水器・水まわり",
   "interdental-brush": "オーラルケアの選び方",
+  "laundry-bleach": "一人暮らしの洗濯・柔軟剤えらび",
 };
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };
