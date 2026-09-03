@@ -184,6 +184,8 @@ A. 浄水は塩素が除去されているため、水道水より傷みやす�
 
 浄水器がはじめてで決めきれないなら、**まずは3,630円の[クリンスイ CB073W-WT](https://hb.afl.rakuten.co.jp/hgc/g00pvfxm.p2w40d2c.g00pvfxm.p2w417c5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcleansui%2Fproduct_wakeari45%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcleansui%2Fi%2F10000271%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)から試すのがおすすめです。** カートリッジが2個付いて半年ほど使えるうえ、初期費用はペットボトル1か月分ほど。合わなければ損失も小さく、続けられそうなら同じシリーズのカートリッジを買い足していけます。ただし購入前に、自宅の蛇口の形状だけは必ず確認してください。
 
+そもそも浄水器が自分に合っているかから決めたいなら、[**飲み水4通りの初年度費用を見る →**](/articles/water-cost) 浄水器・ペットボトル・サーバーを、実在する1商品・1契約で並べています。
+
 ---
 
 

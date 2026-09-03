@@ -187,6 +187,10 @@ A. 口の中の細菌が増えやすい就寝中の前後、つまり夜の歯�
 
 フロスが続かない人は[歯間ブラシ](https://hb.afl.rakuten.co.jp/hgc/g00r6h3m.p2w405ac.g00r6h3m.p2w41962/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fd-fit%2Foooo42%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fd-fit%2Fi%2F10009680%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1,300円・★4.6／レビュー336件）のほうが習慣にしやすいことがあります。電動歯ブラシを使っているなら、[替えブラシの比較](/articles/toothbrush-head)もどうぞ。同じ純正でもセット数で1本あたり3倍変わります。
 
+フロスが続かなかった人は、歯間ブラシのほうが早く終わります。[**歯間ブラシ6商品の1本あたりを見る →**](/articles/interdental-brush) 6.2円と118.2円で19倍差ですが、その差は性能ではありませんでした。
+
+---
+
 ### 参考文献・情報源
 
 - [歯みがきによるむし歯予防効果（予防法）｜e-ヘルスネット（厚生労働省）](https://www.e-healthnet.mhlw.go.jp/information/teeth/h-02-015.html)
