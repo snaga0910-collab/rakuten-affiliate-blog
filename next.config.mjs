@@ -24,7 +24,11 @@ const nextConfig = {
         source: "/:path*",
         has: [{ type: "host", value: OLD_HOST }],
         destination: `${NEW_ORIGIN}/:path*`,
-        permanent: true, // 308（301と同じく恒久的な移転として扱われる）
+        // permanent: true だと Next.js は 308 を返す。Google は 308 も恒久
+        // リダイレクトとして扱うが、Search Console のアドレス変更ツールは
+        // 「301 リダイレクト」を見ていて、サンプルページの判定が
+        // オレンジ（推奨を満たさない）になった。明示的に 301 を返す。
+        statusCode: 301,
       },
     ];
   },
