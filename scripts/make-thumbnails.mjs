@@ -30,7 +30,7 @@ const THUMB_NOTE = {
   "laundry-odor": "各比較記事の実データより",
   "video-streaming": "料金は各社の公表情報",
   "water-cost": "各比較記事と楽天の実データ",
-  "seasoning-allinone": "原材料・用途は各社の公表値",
+  "seasoning-allinone": "レシピは各社の公式サイト",
 };
 
 const THUMB_COUNT = {
@@ -42,7 +42,7 @@ const THUMB_COUNT = {
   "water-cost": "4通りを年額で比較",
   "interdental-brush": "6商品を正直比較",
   "laundry-bleach": "6商品中4つを算出",
-  "seasoning-allinone": "原材料と公式の用途で",
+  "seasoning-allinone": "公式レシピで比較",
   "water-purifier-server": "3社を正直比較",
   "water-server": "3社を正直比較",
   "perfume": "6商品を正直比較",
