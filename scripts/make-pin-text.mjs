@@ -43,6 +43,7 @@ const KEYWORDS = {
   "water-cost": ["浄水器", "ウォーターサーバー", "一人暮らし", "節約", "暮らしの知恵"],
   "interdental-brush": ["歯間ブラシ", "オーラルケア", "デンタルケア", "口臭対策", "一人暮らし"],
   "laundry-bleach": ["漂白剤", "洗濯", "部屋干し", "生乾き臭", "一人暮らし"],
+  "seasoning-allinone": ["調味料", "万能調味料", "自炊", "一人暮らし", "時短ごはん"],
 };
 
 const BOARD = {
@@ -69,6 +70,7 @@ const BOARD = {
   "water-cost": "浄水器・水まわり",
   "interdental-brush": "オーラルケアの選び方",
   "laundry-bleach": "一人暮らしの洗濯・柔軟剤えらび",
+  "seasoning-allinone": "キッチンの時短",
 };
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };
