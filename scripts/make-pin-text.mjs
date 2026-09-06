@@ -48,30 +48,47 @@ const KEYWORDS = {
 
 const BOARD = {
   "oral-care": "オーラルケアの選び方",
-  "fabric-softener": "一人暮らしの洗濯・柔軟剤えらび",
+  "fabric-softener": "一人暮らしの洗濯えらび",
   "coffee-drip": "おうちコーヒー",
-  "water-filter": "浄水器・水まわり",
+  "water-filter": "浄水器・水回り",
   "diatomite-bathmat": "バスマット・お風呂まわり",
-  "laundry-detergent": "一人暮らしの洗濯・柔軟剤えらび",
+  "laundry-detergent": "一人暮らしの洗濯えらび",
   "dishwasher-detergent": "キッチンの時短",
   "toothbrush-head": "オーラルケアの選び方",
-  "washer-cleaner": "一人暮らしの洗濯・柔軟剤えらび",
+  "washer-cleaner": "一人暮らしの洗濯えらび",
   "toothpaste": "オーラルケアの選び方",
-  "water-server": "浄水器・水まわり",
-  "shampoo": "オーラルケアの選び方",
+  "water-server": "浄水器・水回り",
+  "shampoo": "シャンプー",
   "dish-soap": "キッチンの時短",
-  "perfume": "香水・フレグランスの選び方",
-  "water-purifier-server": "浄水器・水まわり",
-  "hikari-internet": "一人暮らしの固定費",
-  "meal-delivery": "一人暮らしの固定費",
-  "laundry-odor": "一人暮らしの洗濯・柔軟剤えらび",
-  "clothes-deodorant": "一人暮らしの洗濯・柔軟剤えらび",
+  "perfume": "香水",
+  "water-purifier-server": "浄水器・水回り",
+  "hikari-internet": "光回線",
+  "meal-delivery": "食材宅配",
+  "laundry-odor": "一人暮らしの洗濯えらび",
+  "clothes-deodorant": "一人暮らしの洗濯えらび",
   "video-streaming": "一人暮らしの固定費",
-  "water-cost": "浄水器・水まわり",
+  "water-cost": "浄水器・水回り",
   "interdental-brush": "オーラルケアの選び方",
-  "laundry-bleach": "一人暮らしの洗濯・柔軟剤えらび",
+  "laundry-bleach": "一人暮らしの洗濯えらび",
   "seasoning-allinone": "キッチンの時短",
 };
+
+// 2026-09-07 時点で実在するボード。ここに無いものは投稿前に作る必要がある。
+// プロフィール（jp.pinterest.com/hitorikurashi/）で確認した実物の名前。
+const EXISTING_BOARDS = new Set([
+  "香水",
+  "一人暮らしの買い替えメモ",
+  "食材宅配",
+  "オーラルケアの選び方",
+  "浄水器・水回り",
+  "光回線",
+  "シャンプー",
+  "ウォーターサーバー",
+  "一人暮らしの洗濯えらび",
+]);
+
+// 価格で順位を付けない記事。コスト一覧ピンを作らない。
+const NO_PRICE_RANKING = new Set(["seasoning-allinone"]);
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };
 
@@ -121,8 +138,18 @@ function description(slug, variant, copy, count) {
   return text;
 }
 
-const slugs = Object.keys(PIN_COPY).filter((s) =>
-  fs.existsSync(path.join(CONTENT_DIR, `${PIN_COPY[s].article ?? s}.md`))
+// 引数でスラッグを渡すと、その記事だけの台帳を pins/TODO.md に出す。
+//   npm run pintext                       … 全記事 → pins/POST.md
+//   npm run pintext laundry-bleach ...     … 指定分のみ → pins/TODO.md
+//
+// 全記事ぶんを毎回並べると、すでに投稿したピンが混ざって重複投稿を招く。
+// 未投稿のものだけを渡して使う。
+const only = process.argv.slice(2);
+const OUT_FILE = only.length ? path.join(ROOT, "pins", "TODO.md") : OUT;
+const slugs = Object.keys(PIN_COPY).filter(
+  (s) =>
+    fs.existsSync(path.join(CONTENT_DIR, `${PIN_COPY[s].article ?? s}.md`)) &&
+    (only.length === 0 || only.includes(s))
 );
 
 const lines = [
@@ -141,12 +168,29 @@ for (const slug of slugs) {
   const { data } = matter(fs.readFileSync(path.join(CONTENT_DIR, `${articleSlug}.md`), "utf8"));
   const url = `${SITE_URL}/articles/${articleSlug}`;
   // 「比較6選」のように記事タイトルへ入っている件数を使う
-  const count = (String(data.title).match(/比較(\d+)選/) || [])[1] || "6";
-  lines.push(`## ${copy.category ?? data.title}${copy.article ? `（${data.title} の中の節）` : ""}`, "", `- ボード: **${copy.board ?? BOARD[slug] ?? "未設定"}**`, `- リンク先: ${url}`, "");
+  // タイトルに書いてある件数を使う。「比較6選」だけを見ていたため、
+  // 「万能調味料5つ｜…」の記事が既定値の6になり、5商品なのに
+  // 「6商品を比較しました」という説明文が出ていた。
+  const count =
+    (String(data.title).match(/(\d+)\s*(?:商品|サービス|社|通り|つ|選)/) || [])[1] || "6";
+  const board = copy.board ?? BOARD[slug] ?? "未設定";
+  const boardNote = EXISTING_BOARDS.has(board) ? "" : "　← **このボードはまだありません。先に作ってください**";
+  lines.push(
+    `## ${copy.category ?? data.title}${copy.article ? `（${data.title} の中の節）` : ""}`,
+    "",
+    `- ボード: **${board}**${boardNote}`,
+    `- リンク先: ${url}`,
+    ""
+  );
   for (const variant of ["table", "price", "compare"]) {
     let title;
     let desc;
     if (variant === "table") {
+      // 価格で順位を付けない記事では、コスト一覧ピンを出さない。
+      // 2026-09-07: 調味料の記事は「内容量が違うので価格をそのまま比べても
+      // 意味はない」と本文に書いているのに、ピンだけ「価格の安い順に
+      // 並べました」となっていた。記事とピンが矛盾する。
+      if (NO_PRICE_RANKING.has(slug)) continue;
       const tt = tableText(slug);
       if (!tt) continue; // 比較表からコストを取れない記事はコスト一覧を作らない
       title = tt.title;
@@ -172,6 +216,6 @@ for (const slug of slugs) {
   lines.push("---", "");
 }
 
-fs.mkdirSync(path.dirname(OUT), { recursive: true });
-fs.writeFileSync(OUT, lines.join("\n"), "utf8");
-console.log(`✓ ${path.relative(ROOT, OUT)} を作成しました（${slugs.length}記事 × 3枚）`);
+fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
+fs.writeFileSync(OUT_FILE, lines.join("\n"), "utf8");
+console.log(`✓ ${path.relative(ROOT, OUT_FILE)} を作成しました（${slugs.length}記事 × 3枚）`);
