@@ -1,0 +1,475 @@
+<title>Pinterest 投稿台帳</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F4F7F8; --surface:#FFFFFF; --surface-2:#FBFCFC;
+  --ink:#141A1D; --muted:#66737B; --faint:#8D9AA2;
+  --line:#DBE3E6; --line-soft:#EAF0F2;
+  --accent:#0E6B60; --accent-ink:#0A5148; --accent-soft:#E0EFEC;
+  --warn:#8A5A12; --warn-soft:#F6EBDA; --on-accent:#FFFFFF;
+  --r:10px; --maxw:920px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#111619; --surface:#1A2126; --surface-2:#151B1F;
+    --ink:#E6ECEF; --muted:#96A3AB; --faint:#75828A;
+    --line:#2A333A; --line-soft:#222A30;
+    --accent:#4FC2B0; --accent-ink:#7FD6C8; --accent-soft:#153029;
+    --warn:#D9A85F; --warn-soft:#2E2617; --on-accent:#0C1917;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111619; --surface:#1A2126; --surface-2:#151B1F;
+  --ink:#E6ECEF; --muted:#96A3AB; --faint:#75828A;
+  --line:#2A333A; --line-soft:#222A30;
+  --accent:#4FC2B0; --accent-ink:#7FD6C8; --accent-soft:#153029;
+  --warn:#D9A85F; --warn-soft:#2E2617; --on-accent:#0C1917;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Zen Kaku Gothic New",-apple-system,"Hiragino Sans",sans-serif;
+  font-size:15px; line-height:1.75; -webkit-font-smoothing:antialiased;
+  padding:0 20px 96px;
+}
+.wrap{max-width:var(--maxw);margin:0 auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.mast{padding:44px 0 20px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.mast h1{font-size:clamp(26px,4.4vw,36px);font-weight:700;line-height:1.3;letter-spacing:-.01em;margin-top:8px;text-wrap:balance}
+.lede{color:var(--muted);margin-top:10px;max-width:62ch;font-size:14px}
+.status{
+  position:sticky;top:0;z-index:20;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--r);
+  padding:16px 18px;margin:22px 0 30px;
+  box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 22px -18px rgba(0,0,0,.4);
+}
+.stat-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.tally{font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:600}
+.tally b{font-size:26px;color:var(--accent);font-weight:600}
+.tally span{color:var(--muted);font-weight:400}
+.bar{height:5px;background:var(--line-soft);border-radius:99px;overflow:hidden;margin:12px 0 14px}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .35s ease}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filters button{font:inherit;font-size:13px;font-weight:500;padding:6px 14px;border-radius:99px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--muted);transition:.15s}
+.filters button:hover{border-color:var(--accent);color:var(--accent)}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.hint{margin-top:14px;padding:11px 13px;border-radius:8px;background:var(--warn-soft);color:var(--warn);font-size:13px;line-height:1.6}
+.hint b{font-weight:700}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin-bottom:16px;overflow:hidden}
+.day.hide{display:none}
+.day.done{opacity:.5}
+.dayhead{display:flex;align-items:center;gap:16px;padding:16px 18px;border-bottom:1px solid var(--line-soft)}
+.daynum{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:600;color:var(--accent);flex:none;min-width:34px;letter-spacing:-.02em}
+.daytitle{flex:1;min-width:0}
+.daytitle h2{font-size:16px;font-weight:700;line-height:1.4}
+.daycount{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--faint);flex:none}
+.daycount b{color:var(--ink);font-weight:600}
+.day.done .daycount b{color:var(--accent)}
+.shared{display:grid;gap:1px;background:var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.kv{display:flex;align-items:center;gap:10px;padding:9px 18px;background:var(--surface-2);min-width:0}
+.kv.warnrow{background:var(--warn-soft)}
+.kv.warnrow .klabel,.kv.warnrow .kval{color:var(--warn);font-weight:700}
+.klabel{font-size:11.5px;color:var(--faint);flex:none;width:62px;letter-spacing:.04em}
+.kval{font-size:12.5px;color:var(--ink);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kval.url{color:var(--muted);font-size:11.5px}
+.pins{list-style:none}
+.pin{display:flex;gap:13px;padding:15px 18px;border-top:1px solid var(--line-soft)}
+.pin:first-child{border-top:none}
+.pin.on{background:var(--accent-soft)}
+.pin.on .pinbody{opacity:.42}
+.box{flex:none;position:relative;width:21px;height:21px;margin-top:3px;cursor:pointer}
+.box input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+.tick{display:block;width:21px;height:21px;border:1.5px solid var(--line);border-radius:6px;background:var(--surface);transition:.15s}
+.box input:checked+.tick{background:var(--accent);border-color:var(--accent)}
+.box input:checked+.tick::after{content:"";position:absolute;left:7px;top:3px;width:5px;height:10px;border:solid var(--on-accent);border-width:0 2px 2px 0;transform:rotate(42deg)}
+.box input:focus-visible+.tick{outline:2px solid var(--accent);outline-offset:2px}
+.pinbody{flex:1;min-width:0;transition:opacity .2s}
+.pinmeta{display:flex;align-items:center;gap:9px;margin-bottom:9px;flex-wrap:wrap}
+.variant{font-size:11px;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-ink)}
+.file{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint)}
+.field{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-top:1px dashed var(--line-soft)}
+.field:first-of-type{border-top:none;padding-top:0}
+.flabel{font-size:11.5px;color:var(--faint);flex:none;width:52px;padding-top:2px}
+.ftext{flex:1;min-width:0;font-size:14px;line-height:1.7;word-break:break-word}
+.ftext.desc{font-size:13px;color:var(--muted);line-height:1.75}
+.copy{flex:none;font:inherit;font-size:11.5px;font-weight:500;padding:3px 11px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--muted);cursor:pointer;transition:.15s;margin-top:1px}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+.copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.copy.ok{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.copy.warn{background:var(--warn-soft);border-color:var(--warn);color:var(--warn);font-weight:700}
+.copy.sm{font-size:11px;padding:2px 9px}
+::selection{background:var(--accent-soft);color:var(--ink)}
+.howto{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin-bottom:26px}
+.howto h3{font-size:13px;font-weight:700;margin-bottom:9px}
+.howto ol{margin-left:1.15em;font-size:13.5px;color:var(--muted);line-height:1.85}
+.howto ol li::marker{color:var(--accent);font-weight:600}
+.howto p{font-size:12.5px;color:var(--faint);margin-top:9px;line-height:1.7}
+.howto p b{color:var(--muted);font-weight:700}
+.foot{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--faint);line-height:1.8}
+.foot b{color:var(--muted);font-weight:600}
+.empty{text-align:center;padding:46px 20px;color:var(--muted);font-size:14px;display:none}
+.empty.show{display:block}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:600px){
+  body{padding:0 14px 70px}
+  .field{flex-wrap:wrap}
+  .flabel{width:100%}
+  .klabel{width:52px}
+}
+</style>
+
+<div class="wrap">
+<header class="mast">
+  <div class="eyebrow">Pinterest 投稿台帳</div>
+  <h1>17枚を6日で出す</h1>
+  <p class="lede">まだ一度も出していない6記事ぶんだけを並べています。すでに投稿済みのピンは入っていないので、上から順に出せば重複しません。チェックはこの端末に保存されるので、途中で閉じても続きから再開できます。</p>
+</header>
+
+<div class="status">
+  <div class="stat-top">
+    <div class="tally"><b id="done">0</b> <span>/ 17 投稿済み</span></div>
+    <div class="tally" style="font-size:13px"><span id="daylabel">Day 1 から</span></div>
+  </div>
+  <div class="bar"><i id="barfill"></i></div>
+  <div class="filters">
+    <button data-f="all" aria-pressed="true">すべて</button>
+    <button data-f="todo" aria-pressed="false">未投稿だけ</button>
+    <button data-f="next" aria-pressed="false">次に出すぶん</button>
+  </div>
+  <div class="hint" id="hint"></div>
+</div>
+
+<div class="howto">
+  <h3>投稿の手順</h3>
+  <ol>
+    <li>Pinterest で「作成 → ピンを作成」を開く</li>
+    <li><code>pins/</code> フォルダから、カードのファイル名の画像をアップロード</li>
+    <li>タイトル・説明文・リンク先をコピーして貼り付け、ボードを選んで公開</li>
+    <li>投稿したらチェックを入れる</li>
+  </ol>
+  <p><b>ドメイン認証は 2026-09-07 に新URLで完了しています。</b>そのまま投稿して大丈夫です。</p>
+  <p><b>Day 5 と Day 6 はボードを作るところから</b>です。カードの「要作成」の行に出ています。1日3枚までにとどめてください（まとめて大量に出すとスパム判定を受けることがあります）。</p>
+</div>
+
+<div id="list">
+<section class="day" data-slug="laundry-bleach" data-day="1">
+<header class="dayhead">
+<span class="daynum">01</span>
+<div class="daytitle"><h2>衣類用漂白剤6商品比較｜1回9.5円と32.7円、3.4倍</h2></div>
+<span class="daycount"><b data-done>0</b>/3</span>
+</header>
+<div class="shared">
+<div class="kv"><span class="klabel">ボード</span><code class="kval">一人暮らしの洗濯えらび</code><button class="copy sm" data-copy="一人暮らしの洗濯えらび">コピー</button></div>
+
+<div class="kv"><span class="klabel">リンク先</span><code class="kval url">https://hitorikurashi-note.vercel.app/articles/laundry-bleach</code><button class="copy sm" data-copy="https://hitorikurashi-note.vercel.app/articles/laundry-bleach">コピー</button></div>
+</div>
+<ol class="pins"><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="laundry-bleach::0"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">コスト一覧</span><code class="file">laundry-bleach-table.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">衣類用漂白剤6商品比較 4件の1回あたりコスト一覧</p><button class="copy" data-copy="衣類用漂白剤6商品比較 4件の1回あたりコスト一覧">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">衣類用漂白剤6商品比較を1回あたりコストの安い順に並べました。ブライトSTRONG 漂白＆抗菌ジェル つめかえ 9.5円／シャボン玉 酸素系漂白剤 750g×3 10.8円／ワイドハイターEXパワー 液体 450mL×5 17.1円／オキシクリーン つめかえ用 2,000g 32.7円。実際の価格とレビューをもとに比較しています。#漂白剤 #洗濯 #部屋干し #生乾き臭 #一人暮らし</p><button class="copy" data-copy="衣類用漂白剤6商品比較を1回あたりコストの安い順に並べました。ブライトSTRONG 漂白＆抗菌ジェル つめかえ 9.5円／シャボン玉 酸素系漂白剤 750g×3 10.8円／ワイドハイターEXパワー 液体 450mL×5 17.1円／オキシクリーン つめかえ用 2,000g 32.7円。実際の価格とレビューをもとに比較しています。#漂白剤 #洗濯 #部屋干し #生乾き臭 #一人暮らし">コピー</button></div>
+</div></li><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="laundry-bleach::1"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">価格訴求</span><code class="file">laundry-bleach-price.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">衣類用漂白剤 1回9.5円と32.7円</p><button class="copy" data-copy="衣類用漂白剤 1回9.5円と32.7円">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">衣類用漂白剤1回9.5円と32.7円｜3.4倍の差は容量ではなかった。ブライトSTRONGが1回9.5円。オキシクリーンは1回32.7円。1回に入れる量で決まる。 実際の価格とレビューをもとに6商品を比較しました。#漂白剤 #洗濯 #部屋干し #生乾き臭 #一人暮らし</p><button class="copy" data-copy="衣類用漂白剤1回9.5円と32.7円｜3.4倍の差は容量ではなかった。ブライトSTRONGが1回9.5円。オキシクリーンは1回32.7円。1回に入れる量で決まる。 実際の価格とレビューをもとに6商品を比較しました。#漂白剤 #洗濯 #部屋干し #生乾き臭 #一人暮らし">コピー</button></div>
+</div></li><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="laundry-bleach::2"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">比較訴求</span><code class="file">laundry-bleach-compare.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">漂白剤は 使い切れるかで選ぶ</p><button class="copy" data-copy="漂白剤は 使い切れるかで選ぶ">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">漂白剤は使い切れるかで選ぶ｜安い商品ほど何年もかかる。900mLなら週1回で約10か月。750g×3は約3年かかる。毎日使うものではない。 実際の価格とレビューをもとに6商品を比較しました。#漂白剤 #洗濯 #部屋干し #生乾き臭 #一人暮らし</p><button class="copy" data-copy="漂白剤は使い切れるかで選ぶ｜安い商品ほど何年もかかる。900mLなら週1回で約10か月。750g×3は約3年かかる。毎日使うものではない。 実際の価格とレビューをもとに6商品を比較しました。#漂白剤 #洗濯 #部屋干し #生乾き臭 #一人暮らし">コピー</button></div>
+</div></li></ol>
+</section>
+<section class="day" data-slug="interdental-brush" data-day="2">
+<header class="dayhead">
+<span class="daynum">02</span>
+<div class="daytitle"><h2>歯間ブラシ6商品比較｜1本6.2円と118.2円、19倍の差</h2></div>
+<span class="daycount"><b data-done>0</b>/3</span>
+</header>
+<div class="shared">
+<div class="kv"><span class="klabel">ボード</span><code class="kval">オーラルケアの選び方</code><button class="copy sm" data-copy="オーラルケアの選び方">コピー</button></div>
+
+<div class="kv"><span class="klabel">リンク先</span><code class="kval url">https://hitorikurashi-note.vercel.app/articles/interdental-brush</code><button class="copy sm" data-copy="https://hitorikurashi-note.vercel.app/articles/interdental-brush">コピー</button></div>
+</div>
+<ol class="pins"><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="interdental-brush::0"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">コスト一覧</span><code class="file">interdental-brush-table.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">歯間ブラシ6商品比較 6件の1本あたりコスト一覧</p><button class="copy" data-copy="歯間ブラシ6商品比較 6件の1本あたりコスト一覧">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">歯間ブラシ6商品比較を1本あたりコストの安い順に並べました。スマートイン SSS〜S 60本×5個 6.2円／GUM ソフトピック カーブ型 30本×3個 12.9円／デンタルプロ I字型 15本×3個 24.4円／デンタルプロ L字型 10本×3パック 35.1円／GUM プロ…。実際の価格とレビューをもとに比較しています。#歯間ブラシ #オーラルケア #デンタルケア #口臭対策 #一人暮らし</p><button class="copy" data-copy="歯間ブラシ6商品比較を1本あたりコストの安い順に並べました。スマートイン SSS〜S 60本×5個 6.2円／GUM ソフトピック カーブ型 30本×3個 12.9円／デンタルプロ I字型 15本×3個 24.4円／デンタルプロ L字型 10本×3パック 35.1円／GUM プロ…。実際の価格とレビューをもとに比較しています。#歯間ブラシ #オーラルケア #デンタルケア #口臭対策 #一人暮らし">コピー</button></div>
+</div></li><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="interdental-brush::1"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">価格訴求</span><code class="file">interdental-brush-price.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">歯間ブラシ 1本6.2円と118.2円</p><button class="copy" data-copy="歯間ブラシ 1本6.2円と118.2円">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">歯間ブラシ1本6.2円と118.2円｜19倍の差は性能ではなかった。300本まとめ買いで1本6.2円。1本ずつキャップ付きは118.2円。自宅で使うなら払わなくていい差。 実際の価格とレビューをもとに6商品を比較しました。#歯間ブラシ #オーラルケア #デンタルケア #口臭対策 #一人暮らし</p><button class="copy" data-copy="歯間ブラシ1本6.2円と118.2円｜19倍の差は性能ではなかった。300本まとめ買いで1本6.2円。1本ずつキャップ付きは118.2円。自宅で使うなら払わなくていい差。 実際の価格とレビューをもとに6商品を比較しました。#歯間ブラシ #オーラルケア #デンタルケア #口臭対策 #一人暮らし">コピー</button></div>
+</div></li><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="interdental-brush::2"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">比較訴求</span><code class="file">interdental-brush-compare.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">歯間ブラシ ゴムは使い捨て</p><button class="copy" data-copy="歯間ブラシ ゴムは使い捨て">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">歯間ブラシゴムは使い捨て｜単価だけでは年間費用が決まらない。ゴムタイプは1回使い切り。ワイヤーは繰り返し使える。交換は日数ではなく毛の乱れで。 実際の価格とレビューをもとに6商品を比較しました。#歯間ブラシ #オーラルケア #デンタルケア #口臭対策 #一人暮らし</p><button class="copy" data-copy="歯間ブラシゴムは使い捨て｜単価だけでは年間費用が決まらない。ゴムタイプは1回使い切り。ワイヤーは繰り返し使える。交換は日数ではなく毛の乱れで。 実際の価格とレビューをもとに6商品を比較しました。#歯間ブラシ #オーラルケア #デンタルケア #口臭対策 #一人暮らし">コピー</button></div>
+</div></li></ol>
+</section>
+<section class="day" data-slug="water-cost" data-day="3">
+<header class="dayhead">
+<span class="daynum">03</span>
+<div class="daytitle"><h2>一人暮らしの水代はいくら？4通りを実在商品で比較</h2></div>
+<span class="daycount"><b data-done>0</b>/3</span>
+</header>
+<div class="shared">
+<div class="kv"><span class="klabel">ボード</span><code class="kval">浄水器・水回り</code><button class="copy sm" data-copy="浄水器・水回り">コピー</button></div>
+
+<div class="kv"><span class="klabel">リンク先</span><code class="kval url">https://hitorikurashi-note.vercel.app/articles/water-cost</code><button class="copy sm" data-copy="https://hitorikurashi-note.vercel.app/articles/water-cost">コピー</button></div>
+</div>
+<ol class="pins"><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="water-cost::0"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">コスト一覧</span><code class="file">water-cost-table.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">一人暮らしの水 4件の初年度（1日2L・電気代を除く）コスト一覧</p><button class="copy" data-copy="一人暮らしの水 4件の初年度（1日2L・電気代を除く）コスト一覧">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">一人暮らしの水を初年度（1日2L・電気代を除く）コストの安い順に並べました。浄水器 クリンスイ 6,622円／浄水型サーバー Locca 31,860円／ペットボトル 国産天然水 57,122円／宅配型サーバー 富士 91,900円。実際の価格とレビューをもとに比較しています。#浄水器 #ウォーターサーバー #一人暮らし #節約 #暮らしの知恵</p><button class="copy" data-copy="一人暮らしの水を初年度（1日2L・電気代を除く）コストの安い順に並べました。浄水器 クリンスイ 6,622円／浄水型サーバー Locca 31,860円／ペットボトル 国産天然水 57,122円／宅配型サーバー 富士 91,900円。実際の価格とレビューをもとに比較しています。#浄水器 #ウォーターサーバー #一人暮らし #節約 #暮らしの知恵">コピー</button></div>
+</div></li><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="water-cost::1"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">価格訴求</span><code class="file">water-cost-price.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">一人暮らしの水 初年度6,622円と約10万円</p><button class="copy" data-copy="一人暮らしの水 初年度6,622円と約10万円">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">一人暮らしの水初年度6,622円と約10万円｜実在する1商品・1契約で計算した。浄水器クリンスイが初年度6,622円。1日2Lならペットボトルは年5万円超。電気代は公表値だけを別に出しています。 実際の価格とレビューをもとに4商品を比較しました。#浄水器 #ウォーターサーバー #一人暮らし #節約 #暮らしの知恵</p><button class="copy" data-copy="一人暮らしの水初年度6,622円と約10万円｜実在する1商品・1契約で計算した。浄水器クリンスイが初年度6,622円。1日2Lならペットボトルは年5万円超。電気代は公表値だけを別に出しています。 実際の価格とレビューをもとに4商品を比較しました。#浄水器 #ウォーターサーバー #一人暮らし #節約 #暮らしの知恵">コピー</button></div>
+</div></li><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="water-cost::2"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">比較訴求</span><code class="file">water-cost-compare.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">水の4通り 買っているのは手間</p><button class="copy" data-copy="水の4通り 買っているのは手間">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">水の4通り買っているのは手間｜冷水温水と、運ぶ手間の有無で決まる。要らないなら浄水器かペットボトル。料理にも使うならペットボトルは割高。先に決めるのは金額ではありません。 実際の価格とレビューをもとに4商品を比較しました。#浄水器 #ウォーターサーバー #一人暮らし #節約 #暮らしの知恵</p><button class="copy" data-copy="水の4通り買っているのは手間｜冷水温水と、運ぶ手間の有無で決まる。要らないなら浄水器かペットボトル。料理にも使うならペットボトルは割高。先に決めるのは金額ではありません。 実際の価格とレビューをもとに4商品を比較しました。#浄水器 #ウォーターサーバー #一人暮らし #節約 #暮らしの知恵">コピー</button></div>
+</div></li></ol>
+</section>
+<section class="day" data-slug="clothes-deodorant" data-day="4">
+<header class="dayhead">
+<span class="daynum">04</span>
+<div class="daytitle"><h2>衣類用消臭スプレー6商品比較｜1mLあたり1.29円〜2.37円</h2></div>
+<span class="daycount"><b data-done>0</b>/3</span>
+</header>
+<div class="shared">
+<div class="kv"><span class="klabel">ボード</span><code class="kval">一人暮らしの洗濯えらび</code><button class="copy sm" data-copy="一人暮らしの洗濯えらび">コピー</button></div>
+
+<div class="kv"><span class="klabel">リンク先</span><code class="kval url">https://hitorikurashi-note.vercel.app/articles/clothes-deodorant</code><button class="copy sm" data-copy="https://hitorikurashi-note.vercel.app/articles/clothes-deodorant">コピー</button></div>
+</div>
+<ol class="pins"><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="clothes-deodorant::0"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">コスト一覧</span><code class="file">clothes-deodorant-table.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">衣類用消臭スプレー 6件の1mLあたりで比べたコスト一覧</p><button class="copy" data-copy="衣類用消臭スプレー 6件の1mLあたりで比べたコスト一覧">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">衣類用消臭スプレーを1mLあたりで比べたコストの安い順に並べました。リセッシュ除菌EX 詰め替え 1.29円／リセッシュ除菌EX 本体 1.41円／ファブリーズ つめかえ6袋 1.41円／ファブリーズ ナチュリス 本体 1.83円／ランドリン ファブリックミスト 2.19円／ラボン t…。実際の価格とレビューをもとに比較しています。#消臭スプレー #ファブリーズ #部屋干し #洗濯 #一人暮らし</p><button class="copy" data-copy="衣類用消臭スプレーを1mLあたりで比べたコストの安い順に並べました。リセッシュ除菌EX 詰め替え 1.29円／リセッシュ除菌EX 本体 1.41円／ファブリーズ つめかえ6袋 1.41円／ファブリーズ ナチュリス 本体 1.83円／ランドリン ファブリックミスト 2.19円／ラボン t…。実際の価格とレビューをもとに比較しています。#消臭スプレー #ファブリーズ #部屋干し #洗濯 #一人暮らし">コピー</button></div>
+</div></li><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="clothes-deodorant::1"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">価格訴求</span><code class="file">clothes-deodorant-price.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">衣類用消臭スプレー 詰め替えは安くない</p><button class="copy" data-copy="衣類用消臭スプレー 詰め替えは安くない">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">衣類用消臭スプレー詰め替えは安くない｜6商品を1mLあたりで計算した。1.29円〜2.37円、1.8倍の差。詰め替えでも8〜23%しか下がらない。洗える服なら洗ったほうが安い。 実際の価格とレビューをもとに6商品を比較しました。#消臭スプレー #ファブリーズ #部屋干し #洗濯 #一人暮らし</p><button class="copy" data-copy="衣類用消臭スプレー詰め替えは安くない｜6商品を1mLあたりで計算した。1.29円〜2.37円、1.8倍の差。詰め替えでも8〜23%しか下がらない。洗える服なら洗ったほうが安い。 実際の価格とレビューをもとに6商品を比較しました。#消臭スプレー #ファブリーズ #部屋干し #洗濯 #一人暮らし">コピー</button></div>
+</div></li><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="clothes-deodorant::2"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">比較訴求</span><code class="file">clothes-deodorant-compare.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">消臭スプレー 香りを買うと1.5倍</p><button class="copy" data-copy="消臭スプレー 香りを買うと1.5倍">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">消臭スプレー香りを買うと1.5倍｜消臭重視と香り重視で単価が違う。無香タイプ 1mL1.29円〜。香り重視  1mL2.19円〜。差は消臭の性能ではありません。 実際の価格とレビューをもとに6商品を比較しました。#消臭スプレー #ファブリーズ #部屋干し #洗濯 #一人暮らし</p><button class="copy" data-copy="消臭スプレー香りを買うと1.5倍｜消臭重視と香り重視で単価が違う。無香タイプ 1mL1.29円〜。香り重視  1mL2.19円〜。差は消臭の性能ではありません。 実際の価格とレビューをもとに6商品を比較しました。#消臭スプレー #ファブリーズ #部屋干し #洗濯 #一人暮らし">コピー</button></div>
+</div></li></ol>
+</section>
+<section class="day" data-slug="seasoning-allinone" data-day="5">
+<header class="dayhead">
+<span class="daynum">05</span>
+<div class="daytitle"><h2>万能調味料5つ｜材料2つで1品になるのはどれか</h2></div>
+<span class="daycount"><b data-done>0</b>/2</span>
+</header>
+<div class="shared">
+<div class="kv"><span class="klabel">ボード</span><code class="kval">キッチンの時短</code><button class="copy sm" data-copy="キッチンの時短">コピー</button></div>
+<div class="kv warnrow"><span class="klabel">要作成</span><span class="kval">このボードはまだありません。投稿前に作ってください</span></div>
+<div class="kv"><span class="klabel">リンク先</span><code class="kval url">https://hitorikurashi-note.vercel.app/articles/seasoning-allinone</code><button class="copy sm" data-copy="https://hitorikurashi-note.vercel.app/articles/seasoning-allinone">コピー</button></div>
+</div>
+<ol class="pins"><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="seasoning-allinone::0"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">価格訴求</span><code class="file">seasoning-allinone-price.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">万能調味料5つ 材料2つで1品になる</p><button class="copy" data-copy="万能調味料5つ 材料2つで1品になる">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">万能調味料5つ材料2つで1品になる｜公式レシピで手順の数を比べた。創味シャンタンはお湯400mLに8g。混ぜるだけ。手順は1回。火も包丁も使いません。 実際の価格とレビューをもとに5商品を比較しました。#調味料 #万能調味料 #自炊 #一人暮らし #時短ごはん</p><button class="copy" data-copy="万能調味料5つ材料2つで1品になる｜公式レシピで手順の数を比べた。創味シャンタンはお湯400mLに8g。混ぜるだけ。手順は1回。火も包丁も使いません。 実際の価格とレビューをもとに5商品を比較しました。#調味料 #万能調味料 #自炊 #一人暮らし #時短ごはん">コピー</button></div>
+</div></li><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="seasoning-allinone::1"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">比較訴求</span><code class="file">seasoning-allinone-compare.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">漬ける30分は 風呂に使えばいい</p><button class="copy" data-copy="漬ける30分は 風呂に使えばいい">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">漬ける30分は風呂に使えばいい｜待ち時間は手間ではなかった。カンタン酢はきゅうりと2つで完結。食後の風呂が面倒なら先に入る。クレイジーソルトは鶏むねに振るだけ。 実際の価格とレビューをもとに5商品を比較しました。#調味料 #万能調味料 #自炊 #一人暮らし #時短ごはん</p><button class="copy" data-copy="漬ける30分は風呂に使えばいい｜待ち時間は手間ではなかった。カンタン酢はきゅうりと2つで完結。食後の風呂が面倒なら先に入る。クレイジーソルトは鶏むねに振るだけ。 実際の価格とレビューをもとに5商品を比較しました。#調味料 #万能調味料 #自炊 #一人暮らし #時短ごはん">コピー</button></div>
+</div></li></ol>
+</section>
+<section class="day" data-slug="video-streaming" data-day="6">
+<header class="dayhead">
+<span class="daynum">06</span>
+<div class="daytitle"><h2>動画配信5サービス比較｜乗り換えできないのは1つだけ</h2></div>
+<span class="daycount"><b data-done>0</b>/3</span>
+</header>
+<div class="shared">
+<div class="kv"><span class="klabel">ボード</span><code class="kval">一人暮らしの固定費</code><button class="copy sm" data-copy="一人暮らしの固定費">コピー</button></div>
+<div class="kv warnrow"><span class="klabel">要作成</span><span class="kval">このボードはまだありません。投稿前に作ってください</span></div>
+<div class="kv"><span class="klabel">リンク先</span><code class="kval url">https://hitorikurashi-note.vercel.app/articles/video-streaming</code><button class="copy sm" data-copy="https://hitorikurashi-note.vercel.app/articles/video-streaming">コピー</button></div>
+</div>
+<ol class="pins"><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="video-streaming::0"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">コスト一覧</span><code class="file">video-streaming-table.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">動画配信サービス 6件の月額（税込）コスト一覧</p><button class="copy" data-copy="動画配信サービス 6件の月額（税込）コスト一覧">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">動画配信サービスを月額（税込）コストの安い順に並べました。Amazon Prime（年払い） 約492円／YouTube Premium Lite 780円／Netflix 広告つき 890円／Disney+ スタンダード 1,250円／Netflix スタンダード 1,590円／U-NE…。実際の価格とレビューをもとに比較しています。#動画配信 #サブスク #固定費見直し #一人暮らし #節約</p><button class="copy" data-copy="動画配信サービスを月額（税込）コストの安い順に並べました。Amazon Prime（年払い） 約492円／YouTube Premium Lite 780円／Netflix 広告つき 890円／Disney+ スタンダード 1,250円／Netflix スタンダード 1,590円／U-NE…。実際の価格とレビューをもとに比較しています。#動画配信 #サブスク #固定費見直し #一人暮らし #節約">コピー</button></div>
+</div></li><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="video-streaming::1"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">価格訴求</span><code class="file">video-streaming-price.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">動画配信 3本で年4万円</p><button class="copy" data-copy="動画配信 3本で年4万円">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">動画配信3本で年4万円｜1本ずつは安いのに、積むと効いてくる。Prime年払いは月492円。3本だと年39,980円（Prime年払いを含む）。5つ全部なら年81,608円。 実際の価格とレビューをもとに5商品を比較しました。#動画配信 #サブスク #固定費見直し #一人暮らし #節約</p><button class="copy" data-copy="動画配信3本で年4万円｜1本ずつは安いのに、積むと効いてくる。Prime年払いは月492円。3本だと年39,980円（Prime年払いを含む）。5つ全部なら年81,608円。 実際の価格とレビューをもとに5商品を比較しました。#動画配信 #サブスク #固定費見直し #一人暮らし #節約">コピー</button></div>
+</div></li><li class="pin" data-pin>
+<label class="box"><input type="checkbox" data-id="video-streaming::2"><span class="tick" aria-hidden="true"></span><span class="sr">投稿した</span></label>
+<div class="pinbody">
+<div class="pinmeta"><span class="variant">比較訴求</span><code class="file">video-streaming-compare.png</code></div>
+<div class="field"><span class="flabel">タイトル</span><p class="ftext">動画配信5つ 同じものを売っていない</p><button class="copy" data-copy="動画配信5つ 同じものを売っていない">コピー</button></div>
+<div class="field"><span class="flabel">説明文</span><p class="ftext desc">動画配信5つ同じものを売っていない｜作品数で並べると誤解します。Primeは買い物の会費。YouTubeは広告を消す料金。比べるのは残り3つだけ。 実際の価格とレビューをもとに5商品を比較しました。#動画配信 #サブスク #固定費見直し #一人暮らし #節約</p><button class="copy" data-copy="動画配信5つ同じものを売っていない｜作品数で並べると誤解します。Primeは買い物の会費。YouTubeは広告を消す料金。比べるのは残り3つだけ。 実際の価格とレビューをもとに5商品を比較しました。#動画配信 #サブスク #固定費見直し #一人暮らし #節約">コピー</button></div>
+</div></li></ol>
+</section>
+</div>
+<p class="empty" id="empty">この条件に合う日はありません。</p>
+
+<div class="foot">
+  <p><b>並び順の考え方</b>：既存のボードにそのまま出せるものを先に置いています。ボードを作る手間で止まらないようにするためです。</p>
+  <p><b>Day 1・Day 3 は洗濯クラスタ</b>です。Search Console の表示の4割がこの領域なので、いちばん読まれる見込みがあります。</p>
+  <p><b>Day 6 は2枚だけ</b>です。調味料の記事は価格で順位を付けていないので、コスト一覧のピンを作っていません。</p>
+</div>
+</div>
+
+<script>
+(function(){
+  var KEY="pinledger-v3";
+  var state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){state={}}
+  var boxes=[].slice.call(document.querySelectorAll(".box input"));
+  var days=[].slice.call(document.querySelectorAll(".day"));
+  var filter="all";
+
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+
+  function render(){
+    var total=boxes.length,done=0;
+    boxes.forEach(function(b){
+      var on=!!state[b.dataset.id];
+      b.checked=on;
+      b.closest(".pin").classList.toggle("on",on);
+      if(on)done++;
+    });
+    document.getElementById("done").textContent=done;
+    document.getElementById("barfill").style.width=(total?done/total*100:0)+"%";
+
+    var nextDay=null;
+    days.forEach(function(d){
+      var ins=[].slice.call(d.querySelectorAll(".box input"));
+      var n=ins.filter(function(i){return state[i.dataset.id]}).length;
+      d.querySelector("[data-done]").textContent=n;
+      var full=n===ins.length;
+      d.classList.toggle("done",full);
+      if(!full&&nextDay===null)nextDay=d;
+    });
+
+    var label=document.getElementById("daylabel");
+    var hint=document.getElementById("hint");
+    if(nextDay){
+      var dn=nextDay.dataset.day;
+      var nm=nextDay.querySelector(".daytitle h2").textContent;
+      var bd=nextDay.querySelector(".kv .kval").textContent;
+      var need=nextDay.querySelector(".warnrow")?"　このボードはまだ作っていません。":"";
+      label.textContent="次は Day "+dn;
+      hint.innerHTML="<b>次に出すのは Day "+dn+"（"+nm+"）。</b>ボードは「"+bd+"」です。"+need;
+    }else{
+      label.textContent="全部おわり";
+      hint.innerHTML="<b>"+total+"枚すべて投稿済みです。</b>10月頭に、検証用5枚の保存数だけを見てください。";
+    }
+
+    days.forEach(function(d){
+      var show=true;
+      if(filter==="todo")show=!d.classList.contains("done");
+      if(filter==="next")show=(d===nextDay);
+      d.classList.toggle("hide",!show);
+    });
+    var any=days.some(function(d){return !d.classList.contains("hide")});
+    document.getElementById("empty").classList.toggle("show",!any);
+  }
+
+  boxes.forEach(function(b){
+    b.addEventListener("change",function(){
+      if(b.checked)state[b.dataset.id]=1; else delete state[b.dataset.id];
+      save();render();
+    });
+  });
+
+  document.querySelectorAll(".filters button").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      filter=btn.dataset.f;
+      document.querySelectorAll(".filters button").forEach(function(o){
+        o.setAttribute("aria-pressed",String(o===btn));
+      });
+      render();
+      window.scrollTo({top:0,behavior:"smooth"});
+    });
+  });
+
+  // 埋め込み枠では navigator.clipboard が拒否されることがあるので、
+  // (1)execCommand (2)Clipboard API (3)その場で選択（Cmd+C）の順に落とす。
+  function tryExec(t){
+    try{
+      var ta=document.createElement("textarea");
+      ta.value=t; ta.setAttribute("readonly","");
+      ta.style.cssText="position:fixed;top:0;left:0;width:1px;height:1px;padding:0;border:0;opacity:0;";
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      try{ta.setSelectionRange(0,t.length)}catch(e){}
+      var ok=document.execCommand("copy");
+      document.body.removeChild(ta);
+      return ok===true;
+    }catch(e){ return false; }
+  }
+  function selectSource(btn){
+    var row=btn.closest(".field")||btn.closest(".kv");
+    var el=row&&(row.querySelector(".ftext")||row.querySelector(".kval"));
+    if(!el)return false;
+    try{
+      var r=document.createRange(); r.selectNodeContents(el);
+      var sel=window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      return true;
+    }catch(e){ return false; }
+  }
+  function flash(b,label,cls){
+    var o=b.dataset.orig||b.textContent;
+    b.dataset.orig=o;
+    b.textContent=label; b.classList.add(cls);
+    clearTimeout(b._t);
+    b._t=setTimeout(function(){b.textContent=o;b.classList.remove("ok","warn")},2200);
+  }
+
+  document.addEventListener("click",function(e){
+    var b=e.target.closest(".copy"); if(!b)return;
+    var t=b.getAttribute("data-copy")||"";
+    if(tryExec(t)){ flash(b,"コピー済","ok"); return; }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){
+        flash(b,"コピー済","ok");
+      },function(){
+        if(selectSource(b)) flash(b,"Cmd+C で","warn");
+        else flash(b,"失敗","warn");
+      });
+      return;
+    }
+    if(selectSource(b)) flash(b,"Cmd+C で","warn");
+    else flash(b,"失敗","warn");
+  });
+
+  render();
+})();
+</script>

@@ -80,7 +80,9 @@ export function costTable(slug, override) {
     out.push({
       full,
       name: shortName(full),
-      cost: r[idx].replace(/\s+/g, ""),
+      // 記事の表は最安セルを **6.2円** のように太字にしている。
+      // そのままだとピンの説明文にアスタリスクが出るので落とす。
+      cost: r[idx].replace(/\*\*/g, "").replace(/\s+/g, ""),
       yen: Number(m[1].replace(/,/g, "")),
     });
   }
