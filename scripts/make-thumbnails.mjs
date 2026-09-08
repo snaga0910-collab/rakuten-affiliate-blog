@@ -31,6 +31,7 @@ const THUMB_NOTE = {
   "video-streaming": "料金は各社の公表情報",
   "water-cost": "各比較記事と楽天の実データ",
   "seasoning-allinone": "レシピは各社の公式サイト",
+  "kitchen-paper": "寸法は各社の公表値／楽天の実データ",
 };
 
 const THUMB_COUNT = {
@@ -43,6 +44,7 @@ const THUMB_COUNT = {
   "interdental-brush": "6商品を正直比較",
   "laundry-bleach": "6商品中4つを算出",
   "seasoning-allinone": "公式レシピで比較",
+  "kitchen-paper": "5商品を送料込みで",
   "water-purifier-server": "3社を正直比較",
   "water-server": "3社を正直比較",
   "perfume": "6商品を正直比較",

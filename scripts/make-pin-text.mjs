@@ -44,6 +44,7 @@ const KEYWORDS = {
   "interdental-brush": ["歯間ブラシ", "オーラルケア", "デンタルケア", "口臭対策", "一人暮らし"],
   "laundry-bleach": ["漂白剤", "洗濯", "部屋干し", "生乾き臭", "一人暮らし"],
   "seasoning-allinone": ["調味料", "万能調味料", "自炊", "一人暮らし", "時短ごはん"],
+  "kitchen-paper": ["キッチンペーパー", "キッチン", "節約", "一人暮らし", "暮らしの工夫"],
 };
 
 const BOARD = {
@@ -71,6 +72,7 @@ const BOARD = {
   "interdental-brush": "オーラルケアの選び方",
   "laundry-bleach": "一人暮らしの洗濯えらび",
   "seasoning-allinone": "キッチンの時短",
+  "kitchen-paper": "キッチンの時短",
 };
 
 // 2026-09-07 時点で実在するボード。ここに無いものは投稿前に作る必要がある。
