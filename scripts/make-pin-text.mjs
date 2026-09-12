@@ -73,6 +73,7 @@ const BOARD = {
   "laundry-bleach": "一人暮らしの洗濯えらび",
   "seasoning-allinone": "キッチンの時短",
   "kitchen-paper": "キッチンの時短",
+  "air-fryer": "一人暮らしの買い替えメモ",
 };
 
 // 2026-09-07 時点で実在するボード。ここに無いものは投稿前に作る必要がある。
@@ -90,7 +91,7 @@ const EXISTING_BOARDS = new Set([
 ]);
 
 // 価格で順位を付けない記事。コスト一覧ピンを作らない。
-const NO_PRICE_RANKING = new Set(["seasoning-allinone"]);
+const NO_PRICE_RANKING = new Set(["seasoning-allinone", "air-fryer"]);
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };
 
@@ -132,9 +133,16 @@ function description(slug, variant, copy, count) {
   const tags = kw.map((k) => `#${k}`).join(" ");
   // 説明文は200字以内が扱いやすい
   // 記事に紐づかないトピック（article を持つもの）は「◯商品」と言えないので締めを変える
-  const tail = PIN_COPY[slug]?.article
+  // 記事ごとに締め文を上書きできる（PIN_COPY[slug].tail）。
+  // 「◯商品を比較」と言えない記事に既定の締めを付けると説明文が嘘になる。
+  // 2026-09-11: エアフライヤーの記事で「6商品を比較しました」と出たので追加した。
+  const tail = PIN_COPY[slug]?.tail
+    ? ` ${PIN_COPY[slug].tail}`
+    : PIN_COPY[slug]?.article
     ? " 記事では年間コストの計算根拠も書いています。"
-    : ` 実際の価格とレビューをもとに${count}商品を比較しました。`;
+    : count
+    ? ` 実際の価格とレビューをもとに${count}商品を比較しました。`
+    : " 実際の価格とレビューをもとに比較しました。";
   let text = `${v.head.replace(/\n/g, "")}｜${body}${tail}${tags}`;
   if (text.length > 200) text = text.slice(0, 197) + "…";
   return text;
@@ -174,7 +182,7 @@ for (const slug of slugs) {
   // 「万能調味料5つ｜…」の記事が既定値の6になり、5商品なのに
   // 「6商品を比較しました」という説明文が出ていた。
   const count =
-    (String(data.title).match(/(\d+)\s*(?:商品|サービス|社|通り|つ|選)/) || [])[1] || "6";
+    (String(data.title).match(/(\d+)\s*(?:商品|サービス|社|通り|つ|選)/) || [])[1] || null;
   const board = copy.board ?? BOARD[slug] ?? "未設定";
   const boardNote = EXISTING_BOARDS.has(board) ? "" : "　← **このボードはまだありません。先に作ってください**";
   lines.push(
