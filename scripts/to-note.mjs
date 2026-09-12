@@ -55,6 +55,9 @@ const TAGS = {
 };
 
 /** Markdownテーブルを、note で読める箇条書きブロックに変換する。 */
+// 表から拾った商品リンク。記事ごとに convert() の先頭でリセットする。
+let productLinks = [];
+
 function tableToList(lines) {
   const rows = lines
     .filter((l) => l.trim().startsWith("|"))
@@ -80,6 +83,20 @@ function tableToList(lines) {
   for (const row of body) {
     // 1列目は商品名（リンクを含むことが多い）
     const name = plain(row[0] || "");
+    // 商品URLは本文には出さないが、記事末の「商品ページ」にまとめるため拾っておく。
+    // 2026-09-12: 表にしか商品リンクがない記事で、note版の商品リンクが
+    // 全部消えていた（interdental-brush / kitchen-paper / laundry-bleach /
+    // seasoning-allinone が0本）。買える導線がないまま投稿していた。
+    const href = /\[[^\]]+\]\(([^)]+)\)/.exec(row[0] || "");
+    // A8は掲載サイトの登録が要るので note には絶対に出さない。楽天だけ拾う。
+    if (
+      href &&
+      !isAdUrl(href[1]) &&
+      /hb\.afl\.rakuten/.test(href[1]) &&
+      !productLinks.some((x) => x.url === href[1])
+    ) {
+      productLinks.push({ name, url: href[1] });
+    }
     out.push(`◾️ ${name}`);
     // 2列目以降を「項目: 値」で並べる
     const details = [];
@@ -174,6 +191,7 @@ function convert(slug) {
   // 広告や商品URLを落としたかどうか。落としたときは記事へのリンクで補う。
   let adRemoved = false;
   adFound = false;
+  productLinks = [];
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -270,14 +288,32 @@ function convert(slug) {
   let body = out.join("\n").replace(/\n{3,}/g, "\n\n").trim();
   const hasRakutenLink = body.includes("hb.afl.rakuten");
 
-  // 商品ごとのURLを落としたぶん、記事へのリンクを1本だけ末尾に置く。
-  // note の読者をブログへ送る導線でもある（購入リンクはブログ側にある）。
-  if (adRemoved || adFound || !hasRakutenLink) {
+  // 表から拾った商品リンクを末尾にまとめる。
+  //
+  // 2026-09-12: 本文の表からURLを落とす仕様のせいで、商品リンクが表にしかない
+  // 記事は note版の買える導線が0本になっていた。本文中に生URLを並べると
+  // 読めなくなるので、本文はそのままにして末尾に一覧を置く。
+  // すでに本文に出ているURLは重ねない（本文にリンクを置いた記事がある）。
+  const missing = productLinks.filter((p) => !body.includes(p.url));
+  if (missing.length) {
     body +=
       "\n\n――――――\n\n" +
-      "各社へのリンクと、全項目をそろえた比較表はブログにまとめています。\n\n" +
-      `${SITE_URL}/articles/${slug}\n`;
+      "■ 商品ページ（楽天）\n\n" +
+      missing.map((p) => `◾️ ${p.name}\n${p.url}`).join("\n\n") +
+      "\n";
   }
+
+  // ブログ記事へのリンクは常に置く。
+  //
+  // 2026-09-12: 条件が「楽天リンクが1本も残っていないとき」だったため、
+  // 関連商品のリンクが1本だけ残った記事（air-fryer）で、商品リンクも
+  // ブログへの導線も無い状態になっていた。条件を外して必ず出す。
+  body +=
+    "\n\n――――――\n\n" +
+    (adRemoved || adFound
+      ? "各社へのリンクと、全項目をそろえた比較表はブログにまとめています。\n\n"
+      : "最新の価格と、全項目をそろえた比較表はブログにあります。\n\n") +
+    `${SITE_URL}/articles/${slug}\n`;
 
   const disclosure = hasRakutenLink
     ? "※本記事はアフィリエイト広告（楽天アフィリエイト）を利用しています。\n" +
