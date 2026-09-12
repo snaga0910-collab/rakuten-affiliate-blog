@@ -58,6 +58,26 @@ NOTE_POST_MCP_STATE_PATH="$HOME/.note-state-kaisyainkurashi.json" \
 第3引数を `draft` にすると下書き保存で止まります。
 **必ず下書きで確認してから、note の画面上で公開してください。**
 
+## 投稿済みの下書きを差し替える
+
+本文を直したあと、note側の下書きを消さずに入れ替えられる。
+
+```bash
+cd ../Note投稿くん
+NOTE_POST_MCP_STATE_PATH="$HOME/.note-state-kaisyainkurashi.json" \
+  node scripts/publish-hybrid.js \
+  "/Users/nagakurashota/Documents/rakuten-affiliate-blog/note-out/<slug>.md" \
+  "/Users/nagakurashota/Documents/rakuten-affiliate-blog/public/thumbnails/<slug>.png" \
+  draft "" "" "<noteID>" replace
+```
+
+`<noteID>` は投稿時に出る URL の `notes/` の後ろ（例: `ne221c8f9f982`）。
+**最後の `replace` を忘れるとサムネイルしか更新されない。**
+
+`./scripts/note-post.sh` は同じタイトルがあると止まるので、差し替えには使えない。
+公開済みの記事も同じ方法で入れ替えられるが、公開中の記事を触るので
+一度下書きに戻すかどうかを先に決めること。
+
 ## 公開前チェックリスト
 
 - [ ] 比較表が箇条書きとして読める形になっているか
@@ -65,6 +85,8 @@ NOTE_POST_MCP_STATE_PATH="$HOME/.note-state-kaisyainkurashi.json" \
 - [ ] 冒頭のアフィリエイト表示が消えていないか
 - [ ] `〔実体験: 〕` の記号が残っていないか（オーラルケア記事）
 - [ ] タグが5個前後付いているか
+- [ ] **商品名のすぐ下に楽天のリンクが出ているか**（2026-09-12に落ちていた）
+- [ ] 末尾にブログ記事へのリンクがあるか
 
 ## 重要：ブログと note で同じ記事を出すときの注意
 
