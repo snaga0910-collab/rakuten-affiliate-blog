@@ -58,6 +58,18 @@ NOTE_POST_MCP_STATE_PATH="$HOME/.note-state-kaisyainkurashi.json" \
 第3引数を `draft` にすると下書き保存で止まります。
 **必ず下書きで確認してから、note の画面上で公開してください。**
 
+## 要約版で出している記事（全文をnoteに出さない）
+
+2026-09-15 から、**食材宅配（meal-delivery）はnoteに要約版だけ**を出している。
+
+- 要約版の原稿: `note-summary/meal-delivery.md`（手で書いた。`npm run note` の対象外）
+- noteの下書きID: `n8a277061fa57`
+- 理由: GSCで表示が集まっている唯一の記事で、A8の導線（note には貼れない）がブログ側にしかない。
+  全文をドメインの強いnoteに出すと、検索で選ばれるのがnote側になる恐れがある（確かめてはいない）
+
+**`note-out/meal-delivery.md`（全文版）は `npm run note` で毎回作られるが、投稿しないこと。**
+料金が変わったら、ブログ記事と一緒に `note-summary/meal-delivery.md` の数字も直す。
+
 ## 投稿済みの下書きを差し替える
 
 本文を直したあと、note側の下書きを消さずに入れ替えられる。
