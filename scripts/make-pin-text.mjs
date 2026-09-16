@@ -75,6 +75,7 @@ const BOARD = {
   "kitchen-paper": "キッチンの時短",
   "air-fryer": "一人暮らしの買い替えメモ",
   "sous-vide": "一人暮らしの買い替えメモ",
+  "yoshikei": "食材宅配",
 };
 
 // 2026-09-07 時点で実在するボード。ここに無いものは投稿前に作る必要がある。
@@ -92,7 +93,7 @@ const EXISTING_BOARDS = new Set([
 ]);
 
 // 価格で順位を付けない記事。コスト一覧ピンを作らない。
-const NO_PRICE_RANKING = new Set(["seasoning-allinone", "air-fryer", "sous-vide"]);
+const NO_PRICE_RANKING = new Set(["seasoning-allinone", "air-fryer", "sous-vide", "yoshikei"]);
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };
 
