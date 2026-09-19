@@ -93,7 +93,7 @@ const EXISTING_BOARDS = new Set([
 ]);
 
 // 価格で順位を付けない記事。コスト一覧ピンを作らない。
-const NO_PRICE_RANKING = new Set(["seasoning-allinone", "air-fryer", "sous-vide", "yoshikei"]);
+const NO_PRICE_RANKING = new Set(["seasoning-allinone", "air-fryer", "sous-vide", "yoshikei", "meal-delivery"]);
 
 const VARIANT_LABEL = { table: "コスト一覧", price: "価格訴求", compare: "比較訴求" };
 
