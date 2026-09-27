@@ -327,11 +327,16 @@ function convert(slug) {
       : "最新の価格と、全項目をそろえた比較表はブログにあります。\n\n") +
     `${SITE_URL}/articles/${slug}\n`;
 
+  // 冒頭は広告表記の1行だけにする。
+  // 2026-09-27: それまで2行あり、2行目（価格の但し書き）は広告表記ではないのに
+  // 読み始めの前に並んでいた。但し書きは末尾へ移す。
   const disclosure = hasRakutenLink
-    ? "※本記事はアフィリエイト広告（楽天アフィリエイト）を利用しています。\n" +
-      "※価格・評価は執筆時点の楽天市場のデータです。\n"
-    : "※この記事にはアフィリエイト広告を含むページへのリンクがあります。\n" +
-      "※料金・条件は執筆時点で各社が公表している情報です。\n";
+    ? "※広告（楽天アフィリエイト）を含みます\n"
+    : "※広告（アフィリエイト）を含むページへのリンクがあります\n";
+  const tailNote = hasRakutenLink
+    ? "※価格・評価は執筆時点の楽天市場のデータです。"
+    : "※料金・条件は執筆時点で各社が公表している情報です。";
+  body += `\n\n${tailNote}\n`;
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const outPath = path.join(OUT_DIR, `${slug}.md`);
   fs.writeFileSync(outPath, `${fm}${disclosure}\n${body}\n`, "utf8");

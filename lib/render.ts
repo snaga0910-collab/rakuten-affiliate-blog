@@ -130,6 +130,29 @@ function renderSteps(items: string[]): string {
   return `<div class="pa-steps">${cards.join('<div class="pa-arrow">↓</div>')}</div>`;
 }
 
+
+/** アフィリエイトリンクを含むH2の節に、そのリンクの直前で広告表記を1回入れる。 */
+const AD_NOTICE = "@@AD_NOTICE@@";
+const isAdLink = (l: string) => /px\.a8\.net|hb\.afl\.rakuten/.test(l);
+
+function insertAdNotices(md: string): string {
+  const lines = md.split("\n");
+  const out: string[] = [];
+  let doneInSection = false;
+  for (const line of lines) {
+    if (/^##\s/.test(line)) doneInSection = false;
+    if (!doneInSection && isAdLink(line)) {
+      // 表なら表の先頭まで、段落ならその段落の先頭まで戻して入れる
+      let at = out.length;
+      while (at > 0 && out[at - 1].trim() !== "" && !/^#{1,6}\s/.test(out[at - 1])) at--;
+      out.splice(at, 0, AD_NOTICE, "");
+      doneInSection = true;
+    }
+    out.push(line);
+  }
+  return out.join("\n");
+}
+
 /**
  * 記事本文をA案のHTMLに変換する。
  * chartHtml は「まず結論」の直後に差し込むコスト比較グラフ。
@@ -143,7 +166,14 @@ export function renderArticle(
   nextStepHtml?: string
 ): string {
   const list = products(slug);
-  const lines = md.split("\n");
+  // 景表法（ステマ規制）対応の広告表記。
+  //
+  // 2026-09-27: それまでフッターに1行あるだけだった。消費者庁のQ&Aでは、
+  // 本文から離れた場所の表示は「一般消費者が気付かないおそれがある」とされ、
+  // 一部を見ただけでも広告だと分かる必要がある。
+  // 一方で記事の冒頭に置くと、読む前に広告だと分かって離脱しやすい。
+  // そこで「広告リンクのすぐ手前」に置く。H2の節ごとに1回だけ入れる。
+  const lines = insertAdNotices(md).split("\n");
   const out: string[] = [];
   let buf: string[] = [];       // 通常のMarkdownを溜めるバッファ
   // グラフと導線は「いちばん行数の多い表」＝商品の比較表の直後に置く。
@@ -167,6 +197,13 @@ export function renderArticle(
 
     // HTMLコメント（meta-description）は落とす
     if (/^\s*<!--/.test(line)) continue;
+
+    // 広告表記（リンクの直前に入れたマーカー）
+    if (line.trim() === AD_NOTICE) {
+      flush();
+      out.push('<p class="ad-notice">※広告（アフィリエイト）を含みます</p>');
+      continue;
+    }
 
     // 比較表
     if (line.trim().startsWith("|")) {

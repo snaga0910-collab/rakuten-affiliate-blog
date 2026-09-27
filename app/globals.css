@@ -87,6 +87,8 @@ body {
 .footer-nav a { font-size: 13px; color: var(--pen); text-decoration: none; font-weight: 700; }
 .footer-nav a:hover { text-decoration: underline; }
 .disclosure, .copyright { font-size: 12px; color: var(--ink-2); margin: 0 0 6px; }
+/* 広告リンクの直前に出す表記（ステマ規制対応） */
+.ad-notice { font-size: 12px; color: var(--ink-2); margin: 16px 0 4px; }
 
 /* --- トップ --- */
 .intro { padding: 40px 0 26px; }
