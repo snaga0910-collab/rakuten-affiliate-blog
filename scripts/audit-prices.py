@@ -46,25 +46,32 @@ for f in sorted(glob.glob("content/*.md")):
         written = [int(x.replace(",", "")) for x in re.findall(r"([\d,]{3,9})\s*円", line)]
         rows.append(dict(slug=slug, name=name[:40], path=path, written=written))
 
-print(f"照合対象 {len(rows)}件")
+print(f"照合対象 {len(rows)}件", flush=True)
 os.makedirs("review", exist_ok=True)
-out = []
-for i, r in enumerate(rows, 1):
-    price, err = current_price(r["path"])
-    if err:
-        status = "要確認"
-    elif price in r["written"]:
-        status = "一致"
-    else:
-        status = "ズレ"
-    out.append([r["slug"], r["name"], r["path"], "/".join(map(str, r["written"])), price or "", status, err])
-    print(f'{i:>3}/{len(rows)} {status:4} {r["slug"]:22} 記事{r["written"]} → 現在{price} {err}')
-    time.sleep(1.2)
+CSV = "review/price-audit.csv"
 
-with open("review/price-audit.csv", "w", newline="", encoding="utf-8") as fp:
-    w = csv.writer(fp)
-    w.writerow(["記事", "商品", "商品パス", "記事の金額", "現在の価格", "判定", "備考"])
-    w.writerows(out)
+# 途中で止まっても再開できるよう、1件ずつ追記する。
+done = set()
+if os.path.exists(CSV):
+    with open(CSV, encoding="utf-8") as fp:
+        for row in csv.reader(fp):
+            if len(row) > 2: done.add(row[2])
+    print(f"済み {len(done)}件はとばす", flush=True)
+else:
+    with open(CSV, "w", newline="", encoding="utf-8") as fp:
+        csv.writer(fp).writerow(["記事", "商品", "商品パス", "記事の金額", "現在の価格", "判定", "備考"])
+
+for i, r in enumerate(rows, 1):
+    if r["path"] in done: continue
+    price, err = current_price(r["path"])
+    status = "要確認" if err else ("一致" if price in r["written"] else "ズレ")
+    with open(CSV, "a", newline="", encoding="utf-8") as fp:
+        csv.writer(fp).writerow([r["slug"], r["name"], r["path"],
+                                 "/".join(map(str, r["written"])), price or "", status, err])
+    print(f'{i:>3}/{len(rows)} {status:4} {r["slug"]:22} 記事{r["written"]} → 現在{price} {err}', flush=True)
+    time.sleep(0.6)
+
 from collections import Counter
-c = Counter(r[5] for r in out)
-print("\n=== 集計 ===", dict(c))
+with open(CSV, encoding="utf-8") as fp:
+    rowsv = list(csv.reader(fp))[1:]
+print("\n=== 集計 ===", dict(Counter(x[5] for x in rowsv)), flush=True)

@@ -61,9 +61,11 @@ export type Faq = { question: string; answer: string };
 
 /** 本文の「よくある質問」セクションから Q/A を抜き出す（FAQPage 構造化データ用）。 */
 export function extractFaqs(markdown: string): Faq[] {
-  // 「## よくある質問」から次の H2 までを対象にする
+  // 「よくある質問」を含むH2から、次の H2 までを対象にする。
+  // 2026-10-02: 「低温調理器についてよくある質問」のように前に語が付く見出しを
+  // 拾えず、kotatsu と sous-vide で FAQPage が出ていなかった。
   const section = markdown.match(
-    /^##\s+よくある質問[^\n]*\n([\s\S]*?)(?=^##\s|\Z)/m
+    /^##\s+[^\n]*よくある質問[^\n]*\n([\s\S]*?)(?=^##\s|\Z)/m
   );
   if (!section) return [];
   const faqs: Faq[] = [];
