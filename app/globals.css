@@ -420,6 +420,10 @@ body {
   font-weight: 800; color: var(--ink-2); margin-bottom: 12px; text-align: left;
 }
 .pa-ad img { max-width: 100%; height: auto; display: inline-block; }
+/* A8の計測用1px画像。バナーが横幅いっぱいだと次の行に落ちて余白ができるので、流れから外す */
+.pa-ad { position: relative; }
+.pa-ad > a { display: block; line-height: 0; }
+.pa-ad img[width="1"] { position: absolute; left: 0; bottom: 0; }
 .pa-ad-note { margin: 12px 0 0; font-size: 12.5px; color: var(--ink-2); text-align: left; line-height: 1.7; }
 
 /* 商品リンクを持たない一般の表（用途別の早見表など） */

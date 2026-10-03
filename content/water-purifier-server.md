@@ -152,6 +152,8 @@ keywordAlt: [浄水型, ウォーターサーバー]
 
 → [Loccaの申し込みページで最新のプランと特典を確認する](https://px.a8.net/svt/ejp?a8mat=4BA9HF+CLOCII+4M36+65U41)
 
+<div class="pa-ad"><span class="pa-ad-label">PR</span><a href="https://px.a8.net/svt/ejp?a8mat=4BA9HF+CLOCII+4M36+65U41" rel="nofollow"><img border="0" width="468" height="60" alt="Locca 浄水型ウォーターサーバー" src="https://www29.a8.net/svt/bgt?aid=260819331762&wid=002&eno=01&mid=s00000021525001035000&mc=1"></a><img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4BA9HF+CLOCII+4M36+65U41" alt=""></div>
+
 ## エブリィフレシャス：縛りが短いぶん、月額が高い
 
 **最低利用期間3年は3社でいちばん短い**です。「長い契約はしたくない」という条件なら、ここが第一候補になります。
