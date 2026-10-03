@@ -175,7 +175,7 @@ A. シェフの無添つくりおきは1回の配送量が決まっているの�
 ### 参考文献・情報源
 
 - シェフの無添つくりおきの価格・送料・内容・消費期限・冷凍保存：[シェフの無添つくりおき 公式](https://store.tavenal.com/tsukurioki/)、[ABOUT シェフの無添つくりおき](https://store.tavenal.com/tsukurioki/about)
-- シェフの無添つくりおきの初回割引・内容量（約1kg）・解約条件：[シェフの無添つくりおき 公式LP](https://lp.store.tavenal.com/tsukurioki/)
+- シェフの無添つくりおきの初回割引・内容量（約1kg）・解約条件・スキップ期限：[シェフの無添つくりおき 公式LP](https://lp.store.tavenal.com/tsukurioki/)
 - シェフの無添つくりおきの配送頻度（毎週・隔週）：[FIT FOOD HOME よくある質問](https://store.tavenal.com/question-answer)
 - ヨシケイの1人分のメニュー・地域差：[ヨシケイは一人暮らしで使えるか](/articles/yoshikei) の参考文献を参照
 - ヨシケイのお試し5days：[ヨシケイ公式 お試し5days](https://www.yoshikei-dvlp.co.jp/shishoku/)
