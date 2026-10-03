@@ -5,8 +5,11 @@
  * 商品比較は手で集計した台帳。長い記事に「息継ぎ」を作るのが狙い。
  */
 :root {
-  --paper: #f7f4ec;          /* 少し焼けた紙 */
-  --paper-card: #fffdf7;     /* 貼った紙片 */
+  --paper: #f3f4f6;          /* 外側（2026-10-03 方眼ノートから白基調へ） */
+  --paper-card: #ffffff;     /* 紙面 */
+  --box: #f6f8fa;            /* 計算メモ・目次の地 */
+  --cta: #e8710a;            /* 申し込みボタン */
+  --cta-shadow: #b85a06;
   --grid: #d9e2ea;           /* 方眼の罫 */
   --rule: #c7d3dd;           /* 横罫 */
   --margin-line: #d8877e;    /* ノート左端の赤い縦罫 */
@@ -23,6 +26,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --paper: #191f26; --paper-card: #1f262e; --grid: #232c35; --rule: #2c3742;
+    --box: #252d36; --cta: #d9640a; --cta-shadow: #8f4705;
     --margin-line: #7a4a45; --ink: #e4e0d6; --ink-2: #9aa5b0; --pen: #7fb0d8;
     --pen-deep: #a8cbe6; --marker: #4a4126; --marker-2: #2a3f33;
     --tab: #d2695a; --tape: #3a3529;
@@ -30,11 +34,12 @@
 }
 :root[data-theme="dark"] {
   --paper: #191f26; --paper-card: #1f262e; --grid: #232c35; --rule: #2c3742;
+  --box: #252d36; --cta: #d9640a; --cta-shadow: #8f4705;
   --margin-line: #7a4a45; --ink: #e4e0d6; --ink-2: #9aa5b0; --pen: #7fb0d8;
   --pen-deep: #a8cbe6; --marker: #4a4126; --marker-2: #2a3f33; --tab: #d2695a; --tape: #3a3529;
 }
 :root[data-theme="light"] {
-  --paper: #f7f4ec; --paper-card: #fffdf7; --grid: #d9e2ea; --rule: #c7d3dd;
+  --paper: #f3f4f6; --paper-card: #ffffff; --box: #f6f8fa; --cta: #e8710a; --cta-shadow: #b85a06; --grid: #d9e2ea; --rule: #c7d3dd;
   --margin-line: #d8877e; --ink: #24303b; --ink-2: #5c6a76; --pen: #2d5f8a;
   --pen-deep: #1f4666; --marker: #ffe9a8; --marker-2: #cde9d8; --tab: #c2503f; --tape: #e8dcc0;
 }
@@ -44,10 +49,6 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background-color: var(--paper);
-  background-image:
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 24px 24px;
   color: var(--ink);
   font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
   line-height: 1.95;
@@ -63,12 +64,7 @@ body {
   border-left: 1px solid var(--rule);
   border-right: 1px solid var(--rule);
   position: relative;
-  padding: 0 34px 0 62px;
-}
-.container::before {
-  content: "";
-  position: absolute; left: 46px; top: 0; bottom: 0;
-  width: 1px; background: var(--margin-line); opacity: .55;
+  padding: 0 32px;
 }
 
 /* --- ヘッダー --- */
@@ -110,7 +106,7 @@ body {
 .card-cat {
   display: inline-block; background: var(--tape); color: var(--ink);
   font-size: 11.5px; font-weight: 800; letter-spacing: .1em;
-  padding: 3px 12px; margin-bottom: 11px; transform: rotate(-.8deg);
+  padding: 3px 12px; margin-bottom: 11px;
 }
 .card-title { font-size: 18px; font-weight: 800; margin: 0 0 8px; line-height: 1.55; }
 .card-desc { font-size: 13.5px; color: var(--ink-2); margin: 0 0 10px; line-height: 1.8; }
@@ -156,7 +152,7 @@ body {
 .article-cat {
   display: inline-block; background: var(--tape); color: var(--ink);
   font-size: 11.5px; font-weight: 800; letter-spacing: .12em;
-  padding: 4px 14px; margin-bottom: 16px; transform: rotate(-1.1deg);
+  padding: 4px 14px; margin-bottom: 16px;
 }
 .article-head h1 {
   font-size: clamp(24px, 4.2vw, 33px); font-weight: 800;
@@ -168,10 +164,9 @@ body {
 .article-body p { margin: 0 0 22px; }
 .article-body h2 {
   position: relative; font-size: 21px; font-weight: 800; line-height: 1.5;
-  margin: 54px 0 20px -62px; padding: 9px 18px 9px 62px;
-  background: var(--pen); color: var(--paper-card);
-  width: fit-content; max-width: calc(100% + 62px);
-  box-shadow: 2px 2px 0 rgba(36, 48, 59, .16);
+  margin: 54px -32px 20px; padding: 12px 32px;
+  background: var(--pen); color: #fff;
+  scroll-margin-top: 12px;
 }
 .article-body h3 {
   font-size: 17px; font-weight: 800; margin: 36px 0 12px;
@@ -191,6 +186,51 @@ body {
 .article-body hr { border: 0; border-top: 1px dashed var(--rule); margin: 40px 0; }
 .article-body em { font-style: normal; font-size: 13.5px; color: var(--ink-2); }
 
+/* 計算メモ（```で囲んだ部分）。
+ * 2026-10-03: スタイルが無く、長い行が紙面の外へはみ出してスマホで
+ * ページ全体が縮んで表示されていた。枠の中だけ横にスクロールさせる。 */
+.article-body pre {
+  background: var(--box); border: 1px solid var(--rule); border-left: 4px solid var(--pen);
+  padding: 14px 18px; margin: 0 0 26px; max-width: 100%; overflow-x: auto;
+  font-size: 14px; line-height: 1.8;
+}
+.article-body pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, "Hiragino Kaku Gothic ProN", monospace;
+  white-space: pre;
+}
+.article-body { overflow-wrap: anywhere; }
+.article-body img { max-width: 100%; height: auto; }
+
+/* 目次 */
+.toc {
+  background: var(--box); border: 1px solid var(--rule);
+  padding: 14px 20px; margin: 6px 0 30px;
+}
+.toc summary { font-weight: 800; cursor: pointer; }
+.toc ol { margin: 10px 0 4px; padding-left: 1.5em; font-size: 14.5px; line-height: 1.7; }
+.toc li { margin: 7px 0; }
+.toc a { color: var(--pen); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* 申し込みボタン（「→ [文言](広告リンク)」の段落） */
+.cta { text-align: center; margin: 4px 0 32px; }
+.article-body a.cta-btn {
+  display: inline-block; max-width: 100%;
+  background: var(--cta); color: #fff; font-weight: 800; font-size: 16px; line-height: 1.5;
+  padding: 15px 28px; border-radius: 8px; text-decoration: none;
+  box-shadow: 0 4px 0 var(--cta-shadow);
+}
+.article-body a.cta-btn::after { content: " ›"; }
+.article-body a.cta-btn:hover { filter: brightness(1.06); }
+.article-body a.cta-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--cta-shadow); }
+
+/* まとめ（この記事のポイント） */
+.summary-box {
+  border: 2px solid var(--pen); border-radius: 6px;
+  padding: 4px 20px 2px; margin: 0 0 28px; background: var(--paper-card);
+}
+.article-body .summary-label { font-weight: 800; color: var(--pen); margin: 12px 0 8px; }
+
 /* メモ用紙（引用） */
 .pa-memo {
   background: var(--paper-card); border: 1px solid var(--rule);
@@ -209,7 +249,6 @@ body {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px;
   background: var(--marker-2); border: 1px solid var(--rule);
   padding: 14px 18px; margin: 0 0 30px;
-  transform: rotate(-.35deg);
   box-shadow: 3px 3px 0 rgba(36, 48, 59, .07);
 }
 .pa-next-label {
@@ -315,13 +354,14 @@ body {
     line-height: 1.9;
   }
   /* 左右の余白を揃え、本文の幅を稼ぐ（方眼の赤罫は細く残す） */
-  .container { padding: 0 16px 0 24px; }
-  .container::before { left: 12px; opacity: .38; }
+  .container { padding: 0 16px; }
 
   .article-body h2 {
-    margin-left: -24px; padding: 10px 16px 10px 24px;
+    margin: 46px -16px 18px; padding: 11px 16px;
     font-size: 18.5px; line-height: 1.45;
   }
+  .article-body pre { font-size: 13px; padding: 12px 14px; }
+  .cta-btn { display: block; }
   .article-body h3 { font-size: 17px; }
   .article-body p { margin-bottom: 20px; }
   .pa-fit { grid-template-columns: 1fr; gap: 8px; }
@@ -420,7 +460,7 @@ body {
 .rel-cat {
   justify-self: start; background: var(--tape); color: var(--ink);
   font-size: 11px; font-weight: 800; letter-spacing: .1em;
-  padding: 2px 10px; transform: rotate(-.8deg);
+  padding: 2px 10px;
 }
 .rel-title { font-size: 15px; font-weight: 800; line-height: 1.6; }
 .rel-cost { font-size: 12.5px; color: var(--ink-2); }
@@ -434,3 +474,12 @@ body {
   .pa-ledger td:not(.tcell):not(.tname) { grid-column: 1; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* 一般の表（スマホ）。
+ * 1列目（項目名）が1〜2文字ずつ折れて読めなくなっていた。原因は見出し行の
+ * white-space: nowrap で、長い見出しの列が幅を取り1列目が押しつぶされていた。
+ * 通常の .pa-table 指定より後ろに置かないと上書きされるので、ファイルの末尾に置く。 */
+@media (max-width: 700px) {
+  .pa-table th { white-space: normal; }
+  .pa-table th:first-child, .pa-table td:first-child { width: 8em; }
+}

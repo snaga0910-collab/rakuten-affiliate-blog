@@ -283,13 +283,48 @@ export function renderArticle(
   // 外部リンクは別タブ＋rel（アフィリンクの規約・SEO対応）。
   // ASPの広告タグは rel="nofollow" 付きのHTMLで配布されるため、
   // 既存の rel / target はいったん外してから付け直す（重複属性を作らない）。
+  // 2026-10-03: 広告リンクにだけ sponsored/nofollow を付ける。
+  // 公式サイトや公的機関への出典リンクまで nofollow にする必要はない。
   html = html.replace(
     /<a\s+href="(https?:\/\/(?!rakuten-affiliate-blog)[^"]+)"([^>]*)>/g,
-    (_m, href: string, rest: string) =>
-      `<a href="${href}" target="_blank" rel="sponsored nofollow noopener"${rest.replace(
+    (_m, href: string, rest: string) => {
+      const ad = /a8\.net|hb\.afl\.rakuten/.test(href);
+      return `<a href="${href}" target="_blank" rel="${ad ? "sponsored nofollow noopener" : "noopener"}"${rest.replace(
         /\s*(?:rel|target)="[^"]*"/g,
         ""
-      )}>`
+      )}>`;
+    }
+  );
+  return decorate(html);
+}
+
+/**
+ * 検索上位の記事で一般的な部品を足す（2026-10-03）。
+ *  - 目次：H2から自動で作り、最初のH2の直前に置く
+ *  - 申し込みボタン：「→ [文言](広告リンク)」の段落をボタンにする
+ *  - まとめ：「## まとめ」直後の箇条書きを枠で囲む
+ */
+function decorate(html: string): string {
+  const heads: string[] = [];
+  html = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_m, inner: string) => {
+    heads.push(inner.replace(/<[^>]+>/g, ""));
+    return `<h2 id="s${heads.length}">${inner}</h2>`;
+  });
+  if (heads.length >= 3) {
+    const items = heads.map((t, i) => `<li><a href="#s${i + 1}">${t}</a></li>`).join("");
+    const toc = `<nav class="toc" aria-label="目次"><details open><summary>目次</summary><ol>${items}</ol></details></nav>`;
+    html = html.replace('<h2 id="s1">', `${toc}\n<h2 id="s1">`);
+  }
+
+  html = html.replace(
+    /<p>→\s*(<a\s[^>]*href="https:\/\/(?:px\.a8\.net|hb\.afl\.rakuten)[^"]*"[^>]*>)([\s\S]*?)<\/a>\s*<\/p>/g,
+    (_m, open: string, text: string) =>
+      `<p class="cta">${open.replace("<a ", '<a class="cta-btn" ')}${text}</a></p>`
+  );
+
+  html = html.replace(
+    /(<h2 id="s\d+">まとめ<\/h2>\s*)(<ul>[\s\S]*?<\/ul>)/,
+    '$1<div class="summary-box"><p class="summary-label">この記事のポイント</p>$2</div>'
   );
   return html;
 }
