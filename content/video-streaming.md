@@ -1,6 +1,6 @@
 ---
-title: "動画配信5サービス比較｜乗り換えできないのは1つだけ"
-description: "Netflix・YouTube Premium・Amazon Prime Video・Disney+・U-NEXTの月額を税込の実額で比較。3本契約すると年約4万円でした。5つは同じものを売っておらず、作品が入れ替わらないのはDisney+だけです。何のためにお金を払っているかで分けて整理しました。"
+title: "動画配信5社の月額比較｜492円〜2,189円、3本で年4万円"
+description: "Netflix・U-NEXT・Disney+・Amazon Prime Video・YouTube Premiumの月額を税込で比較すると、月492円〜2,189円。よくある3本の組み合わせで年約4万円でした。1本に絞るならどれか、やめても代わりが見つかるかどうかで整理しています。"
 category: "動画配信"
 date: "2026-08-27"
 updated: "2026-08-27"
