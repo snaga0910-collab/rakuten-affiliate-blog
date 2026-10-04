@@ -93,6 +93,8 @@ Yデリはレンジか湯せんで、10分程度で仕上がるメニューで�
 
 → [お試し5daysの価格と選べるコースを確認する](https://px.a8.net/svt/ejp?a8mat=4BA9HF+DKSX7E+1QM6+IA7ZL)
 
+<div class="pa-ad"><span class="pa-ad-label">PR</span><a href="https://px.a8.net/svt/ejp?a8mat=4BA9HF+DKSX7E+1QM6+I4081" rel="nofollow"><img border="0" width="728" height="90" alt="ヨシケイ お試し5days" src="https://www23.a8.net/svt/bgt?aid=260819331821&wid=002&eno=01&mid=s00000008115003042000&mc=1"></a><img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4BA9HF+DKSX7E+1QM6+I4081" alt=""></div>
+
 ## 一人暮らしで使いやすいケース・使いにくいケース
 
 **使いやすいケース**
