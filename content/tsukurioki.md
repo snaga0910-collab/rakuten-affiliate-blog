@@ -130,6 +130,8 @@ A. 同じ物差しでは比べられませんでした。ヨシケイは料金�
 
 → [公式サイトで食卓サポートプランの最新料金と配送条件を確認する](https://px.a8.net/svt/ejp?a8mat=4BA9HF+CC5EU2+57YO+61Z81)
 
+<div class="pa-ad"><span class="pa-ad-label">PR</span><a href="https://px.a8.net/svt/ejp?a8mat=4BA9HF+CC5EU2+57YO+601S1" rel="nofollow"><img border="0" width="468" height="60" alt="シェフの無添つくりおき" src="https://www26.a8.net/svt/bgt?aid=260819331746&wid=002&eno=01&mid=s00000024360001008000&mc=1"></a><img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4BA9HF+CC5EU2+57YO+601S1" alt=""></div>
+
 ---
 
 ### あわせて読みたい

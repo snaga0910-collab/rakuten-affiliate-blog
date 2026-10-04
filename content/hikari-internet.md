@@ -210,6 +210,8 @@ auスマホを使っているなら、**auスマートバリュー**でスマホ
 
 → [提供エリアと工事費の条件を確認する](https://px.a8.net/svt/ejp?a8mat=4BA9HF+E97P0A+4SHG+5Z6WX)
 
+<div class="pa-ad"><span class="pa-ad-label">PR</span><a href="https://px.a8.net/svt/ejp?a8mat=4BA9HF+E97P0A+4SHG+61RI9" rel="nofollow"><img border="0" width="120" height="60" alt="おてがる光" src="https://www28.a8.net/svt/bgt?aid=260819331862&wid=002&eno=01&mid=s00000022354001016000&mc=1"></a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4BA9HF+E97P0A+4SHG+61RI9" alt=""></div>
+
 ## この記事が役に立たない人
 
 - **戸建てにお住まいの人**：この記事は**賃貸マンション**が前提です。戸建てタイプは月額も工事費も変わります
