@@ -36,6 +36,7 @@ export const THEMES: Theme[] = [
       "laundry-odor",
       "fabric-softener",
       "laundry-detergent",
+      "laundry-bleach",
       "washer-cleaner",
       "clothes-deodorant",
     ],
@@ -47,6 +48,7 @@ export const THEMES: Theme[] = [
     slugs: [
       "dishwasher-detergent",
       "dish-soap",
+      "kitchen-paper",
       "water-cost",
       "water-filter",
       "water-server",
@@ -59,6 +61,28 @@ export const THEMES: Theme[] = [
     note: "上がったあとの足もと",
     slugs: ["diatomite-bathmat"],
   },
+  // 2026-10-06 新設。食材宅配と「〇〇のすすめ」の調理家電を、
+  // 「平日の夕食をどう楽にするか」でひとまとめにする。
+  // 食材宅配のまとめ記事とヨシケイ・つくりおきの個別記事を、関連記事欄でも往復させるため。
+  {
+    id: "dinner",
+    name: "夕食",
+    note: "平日の夜ごはんを楽にする",
+    slugs: [
+      "meal-delivery",
+      "yoshikei",
+      "tsukurioki",
+      "seasoning-allinone",
+      "air-fryer",
+      "sous-vide",
+    ],
+  },
+  {
+    id: "room",
+    name: "部屋",
+    note: "冬の夜の過ごし方",
+    slugs: ["kotatsu"],
+  },
   // 2026-08-18 新設。消耗品ではないが「毎月かかるお金を実データで比べる」という
   // このサイトの軸は同じ。単価がA8案件なので期待値も高い。
   {
@@ -68,7 +92,6 @@ export const THEMES: Theme[] = [
     slugs: [
       "hikari-internet",
       "water-purifier-server",
-      "meal-delivery",
       "video-streaming",
     ],
   },
@@ -98,6 +121,8 @@ const AFFINITY: Record<string, string[]> = {
   "water-purifier-server": ["water-cost", "water-filter", "water-server"],
   "hikari-internet": ["video-streaming", "water-purifier-server", "meal-delivery"],
   "meal-delivery": ["hikari-internet", "coffee-drip"],
+  // 暖房をこたつにした話は、同じ「毎月の固定費を下げる」読者に光回線・浄水型を見せる
+  kotatsu: ["hikari-internet", "water-purifier-server", "air-fryer"],
   // 動画配信は回線がないと始まらないので光回線と、
   // 「毎月の引き落とし」つながりで浄水型サーバーと並べる
   "video-streaming": ["hikari-internet", "water-purifier-server", "coffee-drip"],
