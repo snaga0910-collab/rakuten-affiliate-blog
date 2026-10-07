@@ -92,6 +92,7 @@ export const THEMES: Theme[] = [
     slugs: [
       "hikari-internet",
       "water-purifier-server",
+      "locca",
       "video-streaming",
     ],
   },
@@ -119,6 +120,8 @@ const AFFINITY: Record<string, string[]> = {
   "water-cost": ["water-filter", "water-purifier-server", "water-server"],
   "water-server": ["water-cost", "water-purifier-server", "water-filter"],
   "water-purifier-server": ["water-cost", "water-filter", "water-server"],
+  // Loccaの解約金記事は、浄水型3社の比較（ハブ）と、代わりの選択肢の浄水器へ送る
+  locca: ["water-filter", "water-cost", "water-server"],
   "hikari-internet": ["video-streaming", "water-purifier-server", "meal-delivery"],
   "meal-delivery": ["hikari-internet", "coffee-drip"],
   // 暖房をこたつにした話は、同じ「毎月の固定費を下げる」読者に光回線・浄水型を見せる
