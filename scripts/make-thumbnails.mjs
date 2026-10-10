@@ -32,10 +32,12 @@ const THUMB_NOTE = {
   "water-cost": "各比較記事と楽天の実データ",
   "seasoning-allinone": "レシピは各社の公式サイト",
   "kitchen-paper": "寸法は各社の公表値／楽天の実データ",
+  locca: "料金は公式サイト・利用規約",
 };
 
 const THUMB_COUNT = {
   "hikari-internet": "4社を正直比較",
+  locca: "申込日別に計算",
   "meal-delivery": "一人暮らし／二人暮らし",
   "laundry-odor": "お金をかけない順に",
   "clothes-deodorant": "6商品を正直比較",
