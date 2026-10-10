@@ -70,6 +70,30 @@ NOTE_POST_MCP_STATE_PATH="$HOME/.note-state-kaisyainkurashi.json" \
 **`note-out/meal-delivery.md`（全文版）は `npm run note` で毎回作られるが、投稿しないこと。**
 料金が変わったら、ブログ記事と一緒に `note-summary/meal-delivery.md` の数字も直す。
 
+### 2026-10-10 からは全記事を要約版にする
+
+ブログ全文のnote転載はやめ、これから出す記事はすべて `note-summary/<slug>.md` の要約版にする（ゆうきさんと合意）。
+要約版はブログへのリンクで終える。A8案件の記事は、noteに広告リンクを載せずブログへのリンクだけにする。
+コードブロック（```）は投稿ツールで崩れるおそれがあるので使わない。
+
+| 記事 | 要約版 | noteの下書きID |
+|---|---|---|
+| 食材宅配 | note-summary/meal-delivery.md | n8a277061fa57 |
+| ヨシケイ | note-summary/yoshikei.md | n18cab32f051b |
+| つくりおき | note-summary/tsukurioki.md | na0e5d8d74b62 |
+| こたつ | note-summary/kotatsu.md | na3f9304cb71f |
+| Locca | note-summary/locca.md | n99941ddf670a |
+
+要約版の投稿（下書き）:
+
+```bash
+cd ../Note投稿くん
+NOTE_POST_MCP_STATE_PATH="$HOME/.note-state-kaisyainkurashi.json" \
+  node scripts/publish-hybrid.js \
+  "/Users/nagakurashota/Documents/rakuten-affiliate-blog/note-summary/<slug>.md" \
+  "/Users/nagakurashota/Documents/rakuten-affiliate-blog/public/thumbnails/<slug>.png" draft
+```
+
 ## 投稿済みの下書きを差し替える
 
 本文を直したあと、note側の下書きを消さずに入れ替えられる。
