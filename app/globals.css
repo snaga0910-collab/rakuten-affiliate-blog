@@ -487,3 +487,6 @@ body {
   .pa-table th { white-space: normal; }
   .pa-table th:first-child, .pa-table td:first-child { width: 8em; }
 }
+/* 表の中の数字（111,676 など）が途中で折れていた。原因は .article-body の
+ * overflow-wrap: anywhere。表の中だけ通常の折り返しに戻す（日本語は文字の間で折れる）。 */
+.pa-table th, .pa-table td { overflow-wrap: normal; }
