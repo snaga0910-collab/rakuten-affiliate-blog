@@ -83,6 +83,7 @@ NOTE_POST_MCP_STATE_PATH="$HOME/.note-state-kaisyainkurashi.json" \
 | つくりおき | note-summary/tsukurioki.md | na0e5d8d74b62 |
 | こたつ | note-summary/kotatsu.md | na3f9304cb71f |
 | Locca | note-summary/locca.md | n99941ddf670a |
+| おてがる光の解約 | note-summary/otegal-hikari.md | n702256e94763 |
 
 要約版の投稿（下書き）:
 
