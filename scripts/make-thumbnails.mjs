@@ -34,12 +34,14 @@ const THUMB_NOTE = {
   "kitchen-paper": "寸法は各社の公表値／楽天の実データ",
   locca: "料金は公式サイト・利用規約",
   "otegal-hikari": "重要事項説明書で確認",
+  "ahamo-hikari": "ドコモの公式資料で確認",
 };
 
 const THUMB_COUNT = {
   "hikari-internet": "4社を正直比較",
   locca: "申込日別に計算",
   "otegal-hikari": "工事費の残りを計算",
+  "ahamo-hikari": "ahamoをやめたときの手順",
   "meal-delivery": "一人暮らし／二人暮らし",
   "laundry-odor": "お金をかけない順に",
   "clothes-deodorant": "6商品を正直比較",

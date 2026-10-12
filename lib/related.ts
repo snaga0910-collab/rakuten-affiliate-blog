@@ -92,6 +92,7 @@ export const THEMES: Theme[] = [
     slugs: [
       "hikari-internet",
       "otegal-hikari",
+      "ahamo-hikari",
       "water-purifier-server",
       "locca",
       "video-streaming",
@@ -126,6 +127,7 @@ const AFFINITY: Record<string, string[]> = {
   "hikari-internet": ["video-streaming", "water-purifier-server", "meal-delivery"],
   // おてがる光の解約記事は、比較のハブ（光回線4社）と、同じ固定費の解約金記事へ送る
   "otegal-hikari": ["video-streaming", "locca", "water-purifier-server"],
+  "ahamo-hikari": ["video-streaming", "locca", "water-purifier-server"],
   "meal-delivery": ["hikari-internet", "coffee-drip"],
   // 暖房をこたつにした話は、同じ「毎月の固定費を下げる」読者に光回線・浄水型を見せる
   kotatsu: ["hikari-internet", "water-purifier-server", "air-fryer"],
