@@ -84,6 +84,7 @@ NOTE_POST_MCP_STATE_PATH="$HOME/.note-state-kaisyainkurashi.json" \
 | こたつ | note-summary/kotatsu.md | na3f9304cb71f |
 | Locca | note-summary/locca.md | n99941ddf670a |
 | おてがる光の解約 | note-summary/otegal-hikari.md | n702256e94763 |
+| ahamo光の解約 | note-summary/ahamo-hikari.md | n30d9f105b2fe |
 
 要約版の投稿（下書き）:
 
