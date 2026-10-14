@@ -4,7 +4,7 @@ description: >-
   香水6商品を香りの系統・濃度・価格で比較。せっけん系／シトラス系／フルーティ系／グリーン・ウッディ系の4タイプに分けて、シーン別の選び分けを整理しました。嗅がずにネットで買うときに失敗しにくい絞り方も解説します。
 category: 香水
 date: '2026-08-17'
-updated: '2026-08-17'
+updated: '2026-10-14'
 costLabel: 表示価格
 costMin: '2,990円'
 costMax: '12,100円'
@@ -23,7 +23,7 @@ keyword: 香水
 
 香水売り場で迷うのは、**選択肢が多いからではなく、比べる軸がないから**です。
 
-食器用洗剤なら「1回1.6円か4.3円か」で並べられます。香水にはその物差しがありません。だから多くの人は、**ブランド名か値段**という、香りと関係のないもので選ぶことになります。
+食器用洗剤なら「1回1.8円か4.3円か」で並べられます。香水にはその物差しがありません。だから多くの人は、**ブランド名か値段**という、香りと関係のないもので選ぶことになります。
 
 代わりに使えるのが系統です。香水の香りは、おおまかに次の4つに分かれます。
 
@@ -51,8 +51,8 @@ keyword: 香水
 | [サムライウーマン プレミアム ダズル EDT 40ml](https://hb.afl.rakuten.co.jp/hgc/g00pl3fm.p2w403cb.g00pl3fm.p2w418b0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwish%2F10044577%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fwish%2Fi%2F10044566%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 2,990円 | オードトワレ | フルーティフローラル | 4.43（190件） | 最初の1本 |
 | [ジルスチュアート ホワイトフローラル EDT 50ml](https://hb.afl.rakuten.co.jp/hgc/g00snpom.p2w40055.g00snpom.p2w41a1f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmediva%2F4971710280678%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcosmediva%2Fi%2F10004384%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 4,280円 | オードトワレ | ホワイトフローラル | 4.67（261件） | 職場・日常 |
 | [SHIRO ホワイトリリー オードパルファン 40ml](https://hb.afl.rakuten.co.jp/hgc/g00rdztm.p2w409c8.g00rdztm.p2w4102d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcavatina%2Fparfum-204%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcavatina%2Fi%2F10030196%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 5,780円 | オードパルファム | ホワイトフローラル | 4.86（70件） | 一日もたせたい日 |
-| [ロクシタン ヴェルヴェーヌ EDT 75ml](https://hb.afl.rakuten.co.jp/hgc/g00snpom.p2w40055.g00snpom.p2w41a1f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmediva%2F3253581264362%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcosmediva%2Fi%2F10001407%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 7,990円 | オードトワレ | シトラス・ハーバル | 4.63（115件） | 日中・暑い時期 |
-| [ブルガリ プールオム EDP](https://hb.afl.rakuten.co.jp/hgc/g00pu2mm.p2w40533.g00pu2mm.p2w419b5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmelink%2F0150421327%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcosmelink%2Fi%2F10081644%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 11,980円 | オードパルファム | グリーン・ウッディ | 4.80（30件） | 性別を問わず使う |
+| [ロクシタン ヴェルヴェーヌ EDT 75ml](https://hb.afl.rakuten.co.jp/hgc/g00snpom.p2w40055.g00snpom.p2w41a1f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmediva%2F3253581264362%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcosmediva%2Fi%2F10001407%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 8,130円 | オードトワレ | シトラス・ハーバル | 4.63（115件） | 日中・暑い時期 |
+| [ブルガリ プールオム EDP](https://hb.afl.rakuten.co.jp/hgc/g00pu2mm.p2w40533.g00pu2mm.p2w419b5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmelink%2F0150421327%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcosmelink%2Fi%2F10081644%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 11,600円 | オードパルファム | グリーン・ウッディ | 4.80（30件） | 性別を問わず使う |
 | [ジョー マローン イングリッシュ ペアー ＆ フリージア](https://hb.afl.rakuten.co.jp/hgc/g00sw7hm.p2w4075c.g00sw7hm.p2w417fc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjomalone%2F12553l26k01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjomalone%2Fi%2F10000819%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 12,100円 | ブランド独自表記「コロン」 | フルーティフローラル | 4.55（489件） | 贈り物・特別な日 |
 
 > **表示価格について**：執筆時点の楽天市場の表示価格です。**ジョー マローン（30/50/100mL）とブルガリ（50/100ml）はサイズ選択制**で、ジルスチュアートとロクシタンも本数やタイプを選べる出品です。**選ぶ内容で価格は変わります。** 購入前に商品ページでご確認ください。
@@ -89,7 +89,7 @@ keyword: 香水
 
 柑橘とハーブの系統です。**軽くて抜けが早い**ので、汗ばむ時期や日中に向きます。逆に、夜や冬には物足りなく感じることがあります。
 
-### ロクシタン ヴェルヴェーヌ オードトワレ 75ml（7,990円・評価4.63）
+### ロクシタン ヴェルヴェーヌ オードトワレ 75ml（8,130円・評価4.63）
 
 ヴェルヴェーヌはレモンバーベナのことで、**柑橘とハーブの中間**にあたる香りです。ロクシタンの定番シリーズで、ハンドクリームや石けんでも同じ香りが展開されています。**すでにその香りを知っている人が多い**ので、嗅がずに買うリスクがいちばん低い1本かもしれません。
 
@@ -126,7 +126,7 @@ keyword: 香水
 
 樹木やお茶のような、落ち着いた系統です。**甘さがほとんどない**ので、フローラルが苦手な人の逃げ道になります。
 
-### ブルガリ プールオム オードパルファム（11,980円・評価4.80）
+### ブルガリ プールオム オードパルファム（11,600円・評価4.80）
 
 商品ページに【グリーン・ウッディ系】【メンズ・男性用】と明記されている商品です。ただし**この系統は性別で分かれにくく**、甘い香りを避けたい人であれば選択肢に入ります。
 
@@ -165,9 +165,9 @@ keyword: 香水
 |---|---|---|---|
 | サムライウーマン | 2,990円 | 40ml | 約75円 |
 | ジルスチュアート | 4,280円 | 50ml | 約86円 |
-| ロクシタン | 7,990円 | 75ml | 約107円 |
+| ロクシタン | 8,130円 | 75ml | 約108円 |
 | SHIRO | 5,780円 | 40ml | 約145円 |
-| ブルガリ | 11,980円 | 50ml換算 | 約240円 |
+| ブルガリ | 11,600円 | 50ml | 約232円 |
 | ジョー マローン | 12,100円 | 30mL換算 | 約403円 |
 
 **5倍以上の差がありますが、この数字で選ぶと失敗します。** 理由は2つあります。
@@ -218,7 +218,7 @@ A. 系統で選ぶなら分ける必要はありません。今回のブルガ�
 
 - **まだ1本も持っていないなら** → [サムライウーマン プレミアム ダズル 40ml](https://hb.afl.rakuten.co.jp/hgc/g00pl3fm.p2w403cb.g00pl3fm.p2w418b0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwish%2F10044577%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fwish%2Fi%2F10044566%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（2,990円・評価4.43）。合わなくても損が小さい
 - **職場でも使える1本なら** → [ジルスチュアート ホワイトフローラル 50ml](https://hb.afl.rakuten.co.jp/hgc/g00snpom.p2w40055.g00snpom.p2w41a1f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmediva%2F4971710280678%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcosmediva%2Fi%2F10004384%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（4,280円・レビュー261件）
-- **甘い香りが苦手なら** → [ロクシタン ヴェルヴェーヌ 75ml](https://hb.afl.rakuten.co.jp/hgc/g00snpom.p2w40055.g00snpom.p2w41a1f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmediva%2F3253581264362%2F&m=http%3A%2F%2Fitem.rakuten.co.jp%2Fcosmediva%2Fi%2F10001407%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（7,990円・シトラス系）
+- **甘い香りが苦手なら** → [ロクシタン ヴェルヴェーヌ 75ml](https://hb.afl.rakuten.co.jp/hgc/g00snpom.p2w40055.g00snpom.p2w41a1f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmediva%2F3253581264362%2F&m=http%3A%2F%2Fitem.rakuten.co.jp%2Fcosmediva%2Fi%2F10001407%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（8,130円・シトラス系）
 - **贈り物なら** → [ジョー マローン イングリッシュ ペアー ＆ フリージア](https://hb.afl.rakuten.co.jp/hgc/g00sw7hm.p2w4075c.g00sw7hm.p2w417fc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjomalone%2F12553l26k01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjomalone%2Fi%2F10000819%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（12,100円・公式ショップ・レビュー489件）
 
 **まず系統を1つに決めてください。** そのうえで、その系統のいちばん安いものから始めるのが、**外したときの損がいちばん小さい順序**です。香水は、合う1本を見つけるまでが本番です。

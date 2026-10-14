@@ -4,7 +4,7 @@ description: >-
   歯間ブラシ6商品を1本あたりで比較すると6.2円〜121円。差の中身は個包装とまとめ買いで、性能の差ではありません。毎日自宅で使うならまとめ買いのワイヤータイプ、持ち歩くならキャップ付き、合うサイズが分からないならゴムタイプ。サイズの決め方もまとめました。
 category: 歯間ブラシ
 date: '2026-08-31'
-updated: '2026-10-03'
+updated: '2026-10-14'
 costLabel: 1本あたり
 costMin: 6.2円
 costMax: 121円
@@ -38,8 +38,8 @@ keyword: 歯間ブラシ
 |---|---|---|---|---|---|
 | [スマートイン SSS〜S 60本×5個](https://hb.afl.rakuten.co.jp/hgc/g00tyidm.p2w40efd.g00tyidm.p2w41b82/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fas-store%2Fsumatoin-sss-s-5%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fas-store%2Fi%2F10000329%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 1,850円 | 300本 | **6.2円** | ワイヤー | I字 |
 | [GUM ソフトピック カーブ型 30本×3個](https://hb.afl.rakuten.co.jp/hgc/g00tyidm.p2w40efd.g00tyidm.p2w41b82/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fas-store%2Fgum-soft-pick%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fas-store%2Fi%2F10001342%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 1,160円 | 90本 | 12.9円 | **ゴム** | カーブ |
-| [デンタルプロ I字型 15本×3個](https://hb.afl.rakuten.co.jp/hgc/g00tyidm.p2w40efd.g00tyidm.p2w41b82/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fas-store%2Fdentalpro-sikan-brush%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fas-store%2Fi%2F10001325%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 1,100円 | 45本 | 24.4円 | ワイヤー | I字 |
-| [デンタルプロ L字型 10本×3パック](https://hb.afl.rakuten.co.jp/hgc/g00qk69m.p2w40755.g00qk69m.p2w418ee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Femon-otodoke%2F10000019dens1b3i%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Femon-otodoke%2Fi%2F10012540%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 1,052円 | 30本 | 35.1円 | ワイヤー | L字 |
+| [デンタルプロ I字型 15本×3個](https://hb.afl.rakuten.co.jp/hgc/g00tyidm.p2w40efd.g00tyidm.p2w41b82/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fas-store%2Fdentalpro-sikan-brush%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fas-store%2Fi%2F10001325%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 1,250円 | 45本 | 27.8円 | ワイヤー | I字 |
+| [デンタルプロ L字型 10本×3パック](https://hb.afl.rakuten.co.jp/hgc/g00qk69m.p2w40755.g00qk69m.p2w418ee/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Femon-otodoke%2F10000019dens1b3i%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Femon-otodoke%2Fi%2F10012540%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 1,324円 | 30本 | 44.1円 | ワイヤー | L字 |
 | [GUM プロズ L字型 50本入](https://hb.afl.rakuten.co.jp/hgc/g00r6h3m.p2w405ac.g00r6h3m.p2w41962/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fd-fit%2Fyyyy14%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fd-fit%2Fi%2F10007659%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 2,640円 | 50本 | 52.8円 | ワイヤー | L字 |
 | [ライオン DENT.EX 4本×10](https://hb.afl.rakuten.co.jp/hgc/g00tzu2m.p2w402ae.g00tzu2m.p2w41014/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhanico%2F1816452%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhanico%2Fi%2F10000553%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 4,840円 | 40本 | 121.0円 | ワイヤー | I字 |
 
@@ -47,7 +47,7 @@ keyword: 歯間ブラシ
 >
 > **なぜこの6つか**：楽天市場で「歯間ブラシ」の関連語（ライオン DENT／GUM／デンタルプロ／SSS 極細／まとめ買いなど）を検索し、レビューがあり単品購入できる商品から選定しました。電動タイプ・洗口液は対象外です。
 >
-> **価格は2026年10月3日時点**のものです。変動します。
+> **価格は2026年10月14日時点**のものです。変動します。
 
 ## 6.2円と121円の差は、何を買っているか
 
@@ -132,6 +132,6 @@ A. 今回の6商品では、**300本入りが1本6.2円、40本入りが121円**
 
 - 交換の目安：[歯間ブラシはどれくらいで取り替えたらいいですか？｜サンスター](https://jp.sunstar.com/inquiry/qa-interdental-brush/qa_003.html)（毛が乱れたり、ワイヤーが曲がりやすくなってきたら交換）
 - 繰り返し使えるか：[「システマ歯間用ブラシ」は繰り返し使用することができますか｜ライオン](https://qa.lion.co.jp/faq/show/137?site_domain=default)（繰り返し使用できる。毛が乱れたりワイヤーの弾力がなくなったら取り替え）
-- 価格・本数・レビュー：楽天市場の商品データ（2026年10月3日時点）
+- 価格・本数・レビュー：楽天市場の商品データ（2026年10月14日時点）
 
 *1本あたりの金額は、表示価格を商品名の本数で割った概算です。個数を選べる商品は最小構成で計算しています。価格は変動します。歯ぐきの状態や歯間の大きさには個人差があり、症状がある場合は歯科でご相談ください。*

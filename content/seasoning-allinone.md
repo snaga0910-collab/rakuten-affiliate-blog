@@ -3,7 +3,7 @@ title: 万能調味料5つ｜材料2つで1品になるのはどれか
 description: かけるだけで味が決まる万能調味料5つを、メーカー公式レシピで比較。創味シャンタンは材料2つ・手順1つ、カンタン酢ときゅうりで手順2つ。ほりにしと南の極みは公式にレシピがありません。何が作れるかで選べるように整理しました。
 category: 調味料
 date: '2026-09-05'
-updated: '2026-09-05'
+updated: '2026-10-14'
 keyword: 万能調味料
 keywordAlt: [調味料]
 ---
@@ -24,11 +24,11 @@ keywordAlt: [調味料]
 | [ジェーン クレイジーソルト 100g](https://hb.afl.rakuten.co.jp/hgc/g00q6lsm.p2w40449.g00q6lsm.p2w41738/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkitchen-garden%2F793441%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkitchen-garden%2Fi%2F10000524%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 798円 | クレイジーソルトのおにぎり | 2つ | 2回 |
 | [ミツカン カンタン酢 1L](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2Fe365945h%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F10318308%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 813円 | きゅうりのピクルス | 2つ | 2回（＋漬け30分） |
 | [アウトドアスパイス ほりにし 100g](https://hb.afl.rakuten.co.jp/hgc/g00rynym.p2w4091a.g00rynym.p2w41d56/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhighball%2Fhorinishi-001%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhighball%2Fi%2F10223075%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 864円 | 公式サイトに掲載なし | — | — |
-| [南の極み 天日塩 さらさら小粒 500g](https://hb.afl.rakuten.co.jp/hgc/g00txs3m.p2w40cd7.g00txs3m.p2w41100/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftoppo888%2F10001539%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftoppo888%2Fi%2F10005916%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 928円 | 公式サイトに掲載なし | — | — |
+| [南の極み 天日塩 さらさら小粒 500g](https://hb.afl.rakuten.co.jp/hgc/g00txs3m.p2w40cd7.g00txs3m.p2w41100/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftoppo888%2F10001539%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftoppo888%2Fi%2F10005916%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 888円 | 公式サイトに掲載なし | — | — |
 
 > **材料の数え方**：調味料そのものを1つに数えています。「お好みで」と書かれている具材は数えていません。
 >
-> **価格は2026年9月5日時点**のものです。内容量が商品ごとに違うので、価格をそのまま比べても意味はありません。
+> **価格は2026年10月14日時点**のものです。内容量が商品ごとに違うので、価格をそのまま比べても意味はありません。
 
 ## 創味シャンタン：お湯に入れてかき混ぜるだけ
 
@@ -154,6 +154,6 @@ A. 味付けの手間は減りますが、買う・切る・洗うの手間は�
 - カンタン酢の用途：[カンタン酢｜ミツカングループ](https://www.mizkan.co.jp/kantansu-series/)（てりうまチキン、鶏のさっぱり煮ほか）
 - ほりにしの用途：[アウトドアスパイスほりにし 公式](https://horinishi.jp/)
 - 南の極みの用途と製法：[南の極み｜日仏貿易](https://nbkk.co.jp/minaminokiwami/)（固結防止剤不使用、さらさら小粒はおにぎり・てんぷら向け）
-- 価格・レビュー：楽天市場の商品データ（2026年9月5日時点）
+- 価格・レビュー：楽天市場の商品データ（2026年10月14日時点）
 
 *レシピの材料と分量は各メーカーの公表値です。商品のリニューアルで変わることがあります。この記事が比べているのは手数と時間で、味の評価はしていません。「使ってみて」の欄は、実際に使っているカンタン酢・創味シャンタン・クレイジーソルトの3つにだけ書いています。*

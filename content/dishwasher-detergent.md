@@ -4,7 +4,7 @@ description: >-
   食洗機用洗剤のおすすめ5商品を比較。1回あたりコスト・タブレットと粉末の違い・庫内のにおい対策を正直レビュー。手間とコストのどちらを取るかで選び方が変わります。
 category: 食洗機洗剤
 date: '2026-08-02'
-updated: '2026-08-16'
+updated: '2026-10-14'
 keyword: 食洗機用洗剤
 keywordAlt: [食洗機]
 ---
@@ -57,7 +57,7 @@ keywordAlt: [食洗機]
 |------|------|------|------|------|------|
 | [ecostore オートディッシュウォッシュ パウダー 2kg](https://hb.afl.rakuten.co.jp/hgc/g00thycm.p2w40837.g00thycm.p2w412c2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fecostore%2F9420015011098%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fecostore%2Fi%2F10000914%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 2,090円 | 2kg（粉末） | 約7円 | 粉末・植物由来 | 量を調整したい人 |
 | [キュキュット 食洗機専用 粉末 800g×3](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F404959%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11148567%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 2,574円 | 800g×3袋（粉末） | 約8円 | 粉末・除菌 | 定番ブランドで安く済ませたい人 |
-| [フィニッシュ ビッグパック 150個×3袋](https://hb.afl.rakuten.co.jp/hgc/g00smopm.p2w406e0.g00smopm.p2w41f8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgood-item%2Fco-447%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fgood-item%2Fi%2F10001489%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 5,460円 | 450個（タブレット） | 約12円 | タブレット | タブレットを安く使いたい人 |
+| [フィニッシュ ビッグパック 150個×3袋](https://hb.afl.rakuten.co.jp/hgc/g00smopm.p2w406e0.g00smopm.p2w41f8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgood-item%2Fco-447%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fgood-item%2Fi%2F10001489%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 5,450円 | 450個（タブレット） | 約12円 | タブレット | タブレットを安く使いたい人 |
 | [フィニッシュ タブレット 150粒](https://hb.afl.rakuten.co.jp/hgc/g00ugptm.p2w40b66.g00ugptm.p2w41d14/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcleanwarehouse%2Fcompass1732784882%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcleanwarehouse%2Fi%2F10000138%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 2,680円 | 150粒〜（袋数を選択） | 商品ページ参照 | タブレット | 少量から試したい人 |
 | [フィニッシュ オールインワン 94個×2袋](https://hb.afl.rakuten.co.jp/hgc/g00smopm.p2w406e0.g00smopm.p2w41f8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgood-item%2Fco-687%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fgood-item%2Fi%2F10002184%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 4,380円 | 188個（タブレット） | 約23円 | タブレット・99.9%除菌 | 除菌までまとめたい人 |
 
@@ -91,13 +91,13 @@ keywordAlt: [食洗機]
 
 ## タブレット3つ：手軽さの値段は1回あたり12円〜23円
 
-### フィニッシュ ビッグパック 150個×3袋（5,460円・評価4.8）
+### フィニッシュ ビッグパック 150個×3袋（5,450円・評価4.8）
 
 タブレットの大量セット。450個で**1回あたり約12円**と、タブレットの中では低く抑えられます。毎日1回動かすなら1年以上持つ計算です。
 
 タブレットの利点は、なんといっても計量が要らないこと。庫内に1個入れて回すだけなので、**帰宅が遅い日でも面倒に感じません**。粉が舞うこともありません。
 
-注意点は、総額5,460円と初期の出費が大きいこと。450個の箱は保管スペースも取ります。また、食器が3枚しかない日でも1個使うので、**少量運転が多い人はムダが出ます**。
+注意点は、総額5,450円と初期の出費が大きいこと。450個の箱は保管スペースも取ります。また、食器が3枚しかない日でも1個使うので、**少量運転が多い人はムダが出ます**。
 
 - **向いている人**：毎日食洗機を回す人。手間をゼロにしたい人。
 - **向かない人**：少量運転が多い人。初期費用を抑えたい人。

@@ -3,7 +3,7 @@ title: 衣類用漂白剤6商品比較｜1回9.5円と32.7円、3.4倍
 description: 衣類用漂白剤6商品を1回あたりで比較。9.5円から32.7円まで3.4倍の開きがありました。差は値段ではなく、1回に使う量です。粉末2つは洗濯機に入れる分量が確認できず、算出していません。使い切るまでの年数も出しました。
 category: 洗濯用漂白剤
 date: '2026-09-03'
-updated: '2026-09-03'
+updated: '2026-10-14'
 keyword: 衣類用漂白剤
 keywordAlt: [漂白剤]
 costLabel: 1回あたり
@@ -25,9 +25,9 @@ costMax: 32.7円
 |---|---|---|---|---|---|
 | [ブライトSTRONG 漂白＆抗菌ジェル つめかえ](https://hb.afl.rakuten.co.jp/hgc/g00rbnvm.p2w40e08.g00rbnvm.p2w41209/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftsuruha%2F10164343%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftsuruha%2Fi%2F10099245%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 428円 | 900mL | 水30Lに20mL | **9.5円** | 45回・約10か月 |
 | [シャボン玉 酸素系漂白剤 750g×3](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F27003%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F10819948%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 1,622円 | 2,250g | 水30Lに15g | 10.8円 | 150回・約3年 |
-| [ワイドハイターEXパワー 液体 450mL×5](https://hb.afl.rakuten.co.jp/hgc/g00r4jsm.p2w40fd9.g00r4jsm.p2w41be6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fblois%2Fbrss1165%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fblois%2Fi%2F10064522%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 1,925円 | 2,250mL | 水30Lに20mL | 17.1円 | 112回・約2年2か月 |
+| [ワイドハイターEXパワー 液体 450mL×5](https://hb.afl.rakuten.co.jp/hgc/g00r4jsm.p2w40fd9.g00r4jsm.p2w41be6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fblois%2Fbrss1165%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fblois%2Fi%2F10064522%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 2,200円 | 2,250mL | 水30Lに20mL | 19.6円 | 112回・約2年2か月 |
 | [オキシクリーン つめかえ用 2,000g](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F4571169854644%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F10996597%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 2,178円 | 2,000g | 洗濯時にキャップ1杯・約30g（水量の指定なし） | 32.7円 | 66回・約1年3か月 |
-| [ワイドハイターPRO 粉末 つめかえ 1,300g](https://hb.afl.rakuten.co.jp/hgc/g00ugynm.p2w40726.g00ugynm.p2w41af6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakutensokuhaimart%2F4901301452955%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakutensokuhaimart%2Fi%2F10029026%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 1,334円 | 1,300g | 洗濯機に入れる分量は確認できず | 算出できません | — |
+| [ワイドハイターPRO 粉末 つめかえ 1,300g](https://hb.afl.rakuten.co.jp/hgc/g00ugynm.p2w40726.g00ugynm.p2w41af6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakutensokuhaimart%2F4901301452955%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakutensokuhaimart%2Fi%2F10029026%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 1,335円 | 1,300g | 洗濯機に入れる分量は確認できず | 算出できません | — |
 | [過炭酸ナトリウム 1kg×3袋](https://hb.afl.rakuten.co.jp/hgc/g00quiom.p2w405db.g00quiom.p2w41f82/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fosharecafe%2F6038301-set1%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fosharecafe%2Fi%2F10075428%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 1,880円 | 3,000g | 衣類向けの記載なし | 算出できません | — |
 
 > **1回あたりの計算**：`価格 ÷（内容量 ÷ 1回の使用量）`です。使用量は各メーカーが公表している数値だけを使い、推測していません。
@@ -38,7 +38,7 @@ costMax: 32.7円
 >
 > **なぜこの6つか**：楽天市場で「衣類用漂白剤」の関連語（ワイドハイター／ブライトSTRONG／オキシクリーン／酸素系漂白剤／過炭酸ナトリウム）を検索し、レビューがあり単品購入できる商品から選びました。台所用・トイレ用・カビ取りは対象外です。
 >
-> **価格は2026年9月3日時点**のものです。変動します。
+> **価格は2026年10月14日時点**のものです。変動します。
 
 ## 9.5円と32.7円の差は、1回に使う量
 
@@ -62,7 +62,7 @@ costMax: 32.7円
 ```
 ブライトSTRONG   1回 9.5円  →  45回分  約10か月
 シャボン玉      1回10.8円  → 150回分  約3年
-ワイドハイターEX液体 1回17.1円 → 112回分  約2年2か月
+ワイドハイターEX液体 1回19.6円 → 112回分  約2年2か月
 ```
 
 **1回あたりが安い商品ほど、まとめ買いの形で売られています。** シャボン玉は750gが3個セット。1回あたりは10.8円と安いのですが、週1回のペースだと使い切るまで約3年かかります。
@@ -133,6 +133,6 @@ A. 酸素系なら使えます。ただし**つけおきの分量は洗濯機に
 - ブライトSTRONGの使用量：[ブライトSTRONG｜ライオン](https://www.lion.co.jp/ja/products/283)（30Lの水に20mL）
 - シャボン玉 酸素系漂白剤の使用量：[酸素系漂白剤 750g｜シャボン玉石けん](https://www.shabon.com/shop/item/2223)（水30Lに15g、つけおきは2Lに10g）
 - オキシクリーンの使用量：[よくあるご質問｜オキシクリーン日本公式](https://www.oxicleanjapan.jp/faq)（洗濯時にキャップ1杯・約30g）
-- 価格・内容量・レビュー：楽天市場の商品データ（2026年9月3日時点）
+- 価格・内容量・レビュー：楽天市場の商品データ（2026年10月14日時点）
 
 *1回あたりの金額は、表示価格を各社公表の使用量で割った概算です。価格は変動します。色柄物への使用は、目立たない場所で試してからにしてください。*

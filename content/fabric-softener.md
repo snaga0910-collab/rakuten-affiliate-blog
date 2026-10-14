@@ -3,7 +3,7 @@ title: "部屋干し柔軟剤6商品を比較｜生乾き臭に効くのは1回4
 description: "部屋干し向けの柔軟剤おすすめ6商品を比較。1回あたりコスト・消臭力・香りの強さ・肌へのやさしさを正直レビュー。生乾き臭を抑えたい一人暮らしの人向けに選び方も解説します。"
 category: "柔軟剤"
 date: "2026-08-01"
-updated: "2026-08-16"
+updated: "2026-10-14"
 keyword: 柔軟剤
 keywordAlt: [部屋干し]
 ---
@@ -57,9 +57,9 @@ keywordAlt: [部屋干し]
 | 商品 | 価格 | 内容量 | 1回あたり目安 | 香りの強さ | 部屋干し消臭 | おすすめな人 |
 |------|------|------|------|------|------|------|
 | [レノア 超消臭1WEEK 部屋干し](https://hb.afl.rakuten.co.jp/hgc/g00twmem.p2w40fd5.g00twmem.p2w41623/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsuzu-onlineshop%2F2255-001127%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsuzu-onlineshop%2Fi%2F10000407%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 4,580円 | 2,020ml×6袋 | 約4円 | 中・自然な香り | 部屋干し特化 | 消臭を最優先したい人 |
-| [ハミング消臭実感 部屋干し](https://hb.afl.rakuten.co.jp/hgc/g00u7dvm.p2w40b1f.g00u7dvm.p2w419af/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsuterastar%2Fb0cppc2szc-4%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsuterastar%2Fi%2F10002503%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 5,680円 | 2,600ml×4個 | 約5円 | 中 | 消臭・抗菌重視 | まとめ洗いが多い人 |
+| [ハミング消臭実感 部屋干し](https://hb.afl.rakuten.co.jp/hgc/g00u7dvm.p2w40b1f.g00u7dvm.p2w419af/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsuterastar%2Fb0cppc2szc-4%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsuterastar%2Fi%2F10002503%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 6,680円 | 2,600ml×4個 | 約6円 | 中 | 消臭・抗菌重視 | まとめ洗いが多い人 |
 | [ラボン フレンチマカロン（2倍）](https://hb.afl.rakuten.co.jp/hgc/g00sxiim.p2w404bd.g00sxiim.p2w4138c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnaturelab%2F4582469490586_5%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnaturelab%2Fi%2F10003206%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 6,325円 | 960ml×5個（2倍濃縮） | 約7円 | 中〜強・甘め | 抗菌もうたう | 甘い香りが好きな人 |
-| [ファーファ ファインフレグランス](https://hb.afl.rakuten.co.jp/hgc/g00q7yxm.p2w4003b.g00q7yxm.p2w41f95/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmebox%2Fj4902135670157s6%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcosmebox%2Fi%2F10047463%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 6,600円 | 1,400ml×6個 | 約8円 | 強・香水調 | 標準 | 香りをしっかり楽しみたい人 |
+| [ファーファ ファインフレグランス](https://hb.afl.rakuten.co.jp/hgc/g00q7yxm.p2w4003b.g00q7yxm.p2w41f95/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmebox%2Fj4902135670157s6%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcosmebox%2Fi%2F10047463%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 7,700円 | 1,400ml×6個 | 約9円 | 強・香水調 | 標準 | 香りをしっかり楽しみたい人 |
 | [ソフラン プレミアム消臭 ジャンボ](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F405254%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11245181%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 7,702円 | 約1,250ml×6袋 | 約10円 | 中 | 消臭に定評 | ストック買いしたい人 |
 | [ランドリン ボタニカル](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F519779%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11082393%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 6,325円 | 860ml×5袋 | 約15円 | 中〜強・上品 | 標準 | 香りの質にこだわる人 |
 
@@ -78,7 +78,7 @@ keywordAlt: [部屋干し]
 - **向いている人**：とにかく生乾き臭を抑えたい人。香りは自然で控えめが好みの人。
 - **向かない人**：はっきりした香りを楽しみたい人。収納に余裕がない人。
 
-### ハミング消臭実感 部屋干し（5,680円・評価4.8）
+### ハミング消臭実感 部屋干し（6,680円・評価4.8）
 
 消臭と抗菌に重点を置いたタイプ。部屋干し・つめこみ洗いといった「におい残りしやすい条件」を想定しているのが特徴です。洗濯物をためて一気に洗いがちな人、梅雨どきに悩む人に向いています。2,600ml×4個で1回あたり約5円と、コスト面もレノアに次ぐ水準です。
 
@@ -107,7 +107,7 @@ keywordAlt: [部屋干し]
 - **向いている人**：甘め・華やかな香りが好きな人。香りと抗菌を両取りしたい人。
 - **向かない人**：甘い香りが苦手な人。無難な香りを求める人。
 
-### ファーファ ファインフレグランス（6,600円・評価5.0）
+### ファーファ ファインフレグランス（7,700円・評価5.0）
 
 香水のような本格的な香りが魅力のシリーズ。今回の中でも**香りの強さ・華やかさは随一**で、「洗濯物からいい香りをしっかりまといたい」人に響きます。レビュー評価も高く、香り重視層の満足度がうかがえます。1,400ml×6個で1回あたり約8円です。
 
@@ -174,7 +174,7 @@ A. 毎回でなくても問題ありません。タオルの吸水性が落ち�
 
 - **とにかく生乾き臭を抑えたいなら** → [レノア 超消臭1WEEK](https://hb.afl.rakuten.co.jp/hgc/g00twmem.p2w40fd5.g00twmem.p2w41623/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsuzu-onlineshop%2F2255-001127%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsuzu-onlineshop%2Fi%2F10000407%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1回約4円・部屋干し特化）
 - **香りもコスパも欲しいなら** → [ラボン フレンチマカロン](https://hb.afl.rakuten.co.jp/hgc/g00sxiim.p2w404bd.g00sxiim.p2w4138c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnaturelab%2F4582469490586_5%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnaturelab%2Fi%2F10003206%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1回約7円・2倍濃縮）
-- **香りをしっかり楽しみたいなら** → [ファーファ ファインフレグランス](https://hb.afl.rakuten.co.jp/hgc/g00q7yxm.p2w4003b.g00q7yxm.p2w41f95/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmebox%2Fj4902135670157s6%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcosmebox%2Fi%2F10047463%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1回約8円・香水調）
+- **香りをしっかり楽しみたいなら** → [ファーファ ファインフレグランス](https://hb.afl.rakuten.co.jp/hgc/g00q7yxm.p2w4003b.g00q7yxm.p2w41f95/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcosmebox%2Fj4902135670157s6%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcosmebox%2Fi%2F10047463%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1回約9円・香水調）
 
 どれにするか決めきれないなら、**まずは1回あたり約4円の[レノア 超消臭1WEEK](https://hb.afl.rakuten.co.jp/hgc/g00twmem.p2w40fd5.g00twmem.p2w41623/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsuzu-onlineshop%2F2255-001127%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsuzu-onlineshop%2Fi%2F10000407%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)から試すのがおすすめです。** 部屋干しの悩みに直球で、コストも今回いちばん低く抑えられます。ここを土台にして、香りを楽しみたい日用に1本足していくのが、失敗の少ない組み立て方です。
 
