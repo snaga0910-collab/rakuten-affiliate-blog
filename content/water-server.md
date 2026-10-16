@@ -179,7 +179,7 @@ keyword: ウォーターサーバー
 - チョッパーモデル（SHINY WHITE）
 - チョッパーモデル（PEARL PINK）
 
-<div class="pa-ad"><span class="pa-ad-label">PR</span><a href="https://px.a8.net/svt/ejp?a8mat=4BA5L7+3MZEMY+2B8Y+C164X" rel="nofollow"><img border="0" width="320" height="250" alt="フレシャス ONEPIECEウォーターサーバー" src="https://www24.a8.net/svt/bgt?aid=260814283220&wid=002&eno=01&mid=s00000010789002021000&mc=1"></a><img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4BA5L7+3MZEMY+2B8Y+C164X" alt=""><p class="pa-ad-note">デザインは公式サイトで4種類とも確認できます。サーバーレンタル料・送料は無料、ONEPIECEデザイン代3,121円が初回のみかかります。</p></div>
+4種類のデザインは、[フレシャスの公式サイト](https://www.frecious.jp/onepiece/)で確認できます。サーバーレンタル料・送料は無料で、ONEPIECEデザイン代3,121円が初回のみかかります。
 
 コストは正直に書きます。**7.2Lパック4個で4,668円、1Lあたり約162円**。1Lあたりの単価では3社中もっとも高く、2Lを毎日飲むと年間12万円を超えます。**安さで選ぶ商品ではありません。**
 
@@ -228,7 +228,7 @@ A. 解約金がない会社でも、サーバーの返却費用（送料また�
 
 - **1日1L前後を超える（料理にも使う）** → <a href="https://px.a8.net/svt/ejp?a8mat=4BA5L7+37I4WQ+4K9C+TSYJL" rel="nofollow">アクアバンク</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4BA5L7+37I4WQ+4K9C+TSYJL" alt="">（定額・サービス料金年52,536円＋電気代約12,000円）
 - **飲み水だけ（月12L程度）** → <a href="https://px.a8.net/svt/ejp?a8mat=4BA398+7NNQMY+51J0+67JUA" rel="nofollow">富士おいしい水</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4BA398+7NNQMY+51J0+67JUA" alt="">（都度払い・サービス料金年約23,900円＋電気代）
-- **少量で、デザインも大事** → <a href="https://px.a8.net/svt/ejp?a8mat=4BA5L7+3MZEMY+2B8Y+C164X" rel="nofollow">フレシャス ONEPIECE</a><img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4BA5L7+3MZEMY+2B8Y+C164X" alt="">（サービス料金年約23,300円・電気代は非公表・デザイン4種類）
+- **少量で、デザインも大事** → [フレシャス ONEPIECE](https://www.frecious.jp/onepiece/)（サービス料金年約23,300円・電気代は非公表・デザイン4種類）
 
 **そして、そもそもウォーターサーバーが要るのかも一度考えてみてください。** 水道水の味だけが不満なら、[浄水器カートリッジの比較](/articles/water-filter)で足りる可能性があります。あちらで比べたカートリッジは1個975円〜2,327円、交換目安は3か月ごとなので、**カートリッジ代だけなら年3,900円〜9,308円**です（本体は別に3,630円〜4,191円かかります）。
 
