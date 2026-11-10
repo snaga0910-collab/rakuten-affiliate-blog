@@ -73,6 +73,7 @@ export const THEMES: Theme[] = [
       "yoshikei",
       "tsukurioki",
       "seasoning-allinone",
+      "dashi-pack",
       "air-fryer",
       "sous-vide",
     ],
