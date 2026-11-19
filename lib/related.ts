@@ -82,7 +82,7 @@ export const THEMES: Theme[] = [
     id: "room",
     name: "部屋",
     note: "冬の夜の過ごし方",
-    slugs: ["kotatsu"],
+    slugs: ["kotatsu", "kairo"],
   },
   // 2026-08-18 新設。消耗品ではないが「毎月かかるお金を実データで比べる」という
   // このサイトの軸は同じ。単価がA8案件なので期待値も高い。
