@@ -20,31 +20,31 @@
   <text x="0" y="71" class="lbl">ライオン CHARMY </text>
   <rect x="178" y="58" width="476" height="22" rx="4" class="track"/>
   
-  <rect x="178" y="58" width="177.11627906976747" height="22" rx="4" class="bar hi"/>
-  <text x="365.1162790697675" y="74" class="val valhi">1.6円</text>
+  <rect x="178" y="58" width="231.56756756756755" height="22" rx="4" class="bar hi"/>
+  <text x="419.56756756756755" y="74" class="val valhi">1.8円</text>
   <text x="0" y="111" class="lbl">ジョイ W除菌 超ジャン</text>
   <rect x="178" y="98" width="476" height="22" rx="4" class="track"/>
   
-  <rect x="178" y="98" width="210.32558139534885" height="22" rx="4" class="bar"/>
-  <text x="398.3255813953489" y="114" class="val">1.9円</text>
-  <text x="0" y="151" class="lbl">花王 キュキュット 業務</text>
+  <rect x="178" y="98" width="244.43243243243242" height="22" rx="4" class="bar"/>
+  <text x="432.4324324324324" y="114" class="val">1.9円</text>
+  <text x="0" y="151" class="lbl">緑の魔女 キッチン 5L</text>
   <rect x="178" y="138" width="476" height="22" rx="4" class="track"/>
   
-  <rect x="178" y="138" width="232.46511627906978" height="22" rx="4" class="bar"/>
-  <text x="420.4651162790698" y="154" class="val">2.1円</text>
-  <text x="0" y="191" class="lbl">緑の魔女 キッチン 5L</text>
+  <rect x="178" y="138" width="244.43243243243242" height="22" rx="4" class="bar"/>
+  <text x="432.4324324324324" y="154" class="val">1.9円</text>
+  <text x="0" y="191" class="lbl">ヤシノミ洗剤 野菜・食器</text>
   <rect x="178" y="178" width="476" height="22" rx="4" class="track"/>
   
-  <rect x="178" y="178" width="321.0232558139535" height="22" rx="4" class="bar"/>
-  <text x="509.0232558139535" y="194" class="val">2.9円</text>
-  <text x="0" y="231" class="lbl">除菌ジョイコンパクト 業</text>
+  <rect x="178" y="178" width="257.29729729729723" height="22" rx="4" class="bar"/>
+  <text x="445.29729729729723" y="194" class="val">2円</text>
+  <text x="0" y="231" class="lbl">花王 キュキュット 業務</text>
   <rect x="178" y="218" width="476" height="22" rx="4" class="track"/>
   
-  <rect x="178" y="218" width="409.58139534883725" height="22" rx="4" class="bar"/>
-  <text x="597.5813953488373" y="234" class="val">3.7円</text>
-  <text x="0" y="271" class="lbl">フロッシュ アロエの香り</text>
+  <rect x="178" y="218" width="283.02702702702703" height="22" rx="4" class="bar"/>
+  <text x="471.02702702702703" y="234" class="val">2.2円</text>
+  <text x="0" y="271" class="lbl">除菌ジョイコンパクト 業</text>
   <rect x="178" y="258" width="476" height="22" rx="4" class="track"/>
   
   <rect x="178" y="258" width="476" height="22" rx="4" class="bar"/>
-  <text x="664" y="274" class="val">4.3円</text>
+  <text x="664" y="274" class="val">3.7円</text>
 </svg>

@@ -28,7 +28,7 @@ keywordAlt: [食器洗い]
 
 - **食洗機をメインで使っている人**：手洗い用の洗剤の比較です。食洗機専用洗剤は[別記事](/articles/dishwasher-detergent)にまとめました。成分がまったく違うので、手洗い用を食洗機に入れることはできません。
 - **1回1円を切りたい人**：業務用の大容量でも1回1.8円が下限でした。それ以下を狙うなら希釈して使うことになりますが、洗浄力が落ちるので現実的ではありません。
-- **置き場所に余裕がない人**：1回2円を切る商品は、どれも合計4L以上の大容量です。4Lのボトルか、詰め替え袋5つ分の置き場があるか、先に確認してください。
+- **置き場所に余裕がない人**：1回1.9円以下の商品は、どれも合計4L以上の大容量です。4Lのボトルか、詰め替え袋5つ分の置き場があるか、先に確認してください。
 
 ## 食器用洗剤6商品、1回あたりは1.8円〜3.7円
 
@@ -38,10 +38,10 @@ keywordAlt: [食器洗い]
 |------|------|------|------|------|------|
 | [ライオン CHARMY Magica 除菌＋ プロ 3.8L×3](https://hb.afl.rakuten.co.jp/hgc/g00po93m.p2w40764.g00po93m.p2w416fe/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fi-order%2F10053002%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fi-order%2Fi%2F10053002%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 6,927円 | 11.4L（約3,800回） | 約1.8円 | 業務用・無香料 | 数年分まとめたい人 |
 | [ジョイ W除菌 超ジャンボ 1,550mL×5](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F405030%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11164781%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 4,988円 | 7.75L（約2,583回） | 約1.9円 | 詰め替え5袋・定番 | 実績のある商品がいい人 |
-| [花王 キュキュット 業務用 4.5L](https://hb.afl.rakuten.co.jp/hgc/g00tvoam.p2w40f5b.g00tvoam.p2w41208/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fk-relight%2F003-4901301510778br%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fk-relight%2Fi%2F10000736%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 3,350円 | 4.5L（約1,500回） | 約2.2円 | 業務用・定番ブランド | 総額を抑えたい人 |
+| [花王 キュキュット 業務用 4.5L](https://hb.afl.rakuten.co.jp/hgc/g00tvoam.p2w40f5b.g00tvoam.p2w41208/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fk-relight%2F003-4901301510778br%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fk-relight%2Fi%2F10000736%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 3,350円 | 4.5L（約1,500回） | 約2.2円 | 業務用・定番ブランド | 使い慣れた銘柄がいい人 |
 | [緑の魔女 キッチン 5L](https://hb.afl.rakuten.co.jp/hgc/g00qhoam.p2w40dc5.g00qhoam.p2w4161d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkurashikenkou%2F9847345%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkurashikenkou%2Fi%2F10096123%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 3,170円（送料込） | 5L（約1,667回） | 約1.9円 | 無香料・無着色 | 香りが苦手な人 |
 | [除菌ジョイコンパクト 業務用 4L](https://hb.afl.rakuten.co.jp/hgc/g00t3ztm.p2w40e52.g00t3ztm.p2w41ab9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firisplaza-r%2F7269456%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Firisplaza-r%2Fi%2F10159343%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 4,981円 | 4L（約1,333回） | 約3.7円 | 濃縮・除菌 | 少量で洗いたい人 |
-| [ヤシノミ洗剤 野菜・食器用 本体 500mL](https://hb.afl.rakuten.co.jp/hgc/g00qydvm.p2w4002f.g00qydvm.p2w4132c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkenko-depart%2F414760%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkenko-depart%2Fi%2F10010837%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 333円 | 500mL（約166回） | 約2.0円 | 無香料・少量 | まず試したい人 |
+| [ヤシノミ洗剤 野菜・食器用 本体 500mL](https://hb.afl.rakuten.co.jp/hgc/g00qydvm.p2w4002f.g00qydvm.p2w4132c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkenko-depart%2F414760%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkenko-depart%2Fi%2F10010837%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39) | 333円（送料別） | 500mL（約166回） | 約2.0円 | 無香料・少量 | 置き場所が限られる人 |
 
 > **1回あたりの計算について**：**1回の食器洗いで3mL使う**として、容量を割った概算です。スポンジに直接出す使い方を想定しています。実際の使用量は洗う量やスポンジの種類で前後します。
 >
@@ -75,13 +75,13 @@ keywordAlt: [食器洗い]
 
 ### 花王 キュキュット 業務用 4.5L（3,350円・評価4.35）
 
-**総額3,350円で4.5L**。1回あたり約2.2円で、**総額をいちばん抑えられる大容量**がこれです。
+**総額3,350円で4.5L**。1回あたり約2.2円です。
 
 キュキュットは市販でも定番なので、使ったことがある人は多いはずです。「知っている洗剤を、安い形で買う」という選び方ができます。
 
 デメリットは、4.5Lのボトル1本という形。詰め替えのたびに重いボトルを持ち上げることになるので、**小さめの空きボトルに小分けしておく**と扱いやすくなります。レビュー46件は中位です。
 
-- **向いている人**：使い慣れた洗剤を安く買いたい人。初期費用を抑えたい人。
+- **向いている人**：使い慣れた洗剤を安く買いたい人。
 - **向かない人**：重いボトルの扱いが負担な人。
 
 ## 個性で選ぶ3つ：1回1.9円〜3.7円
@@ -90,7 +90,7 @@ keywordAlt: [食器洗い]
 
 **無香料・無着色**の業務用5L。送料込みで1回あたり約1.9円と、業務用の3つと並ぶ安さです。レビューは143件あります。
 
-香料が入っていないので、洗剤のにおいが食器やスポンジに残るのが苦手な人に向いています。**排水後に配管の汚れを分解する**という設計も打ち出しています。
+香料が入っていないので、洗剤のにおいが食器やスポンジに残るのが苦手な人に向いています。
 
 - **向いている人**：香りのある洗剤が苦手な人。無添加系を選びたい人。
 - **向かない人**：5Lのボトルを置く場所がない人。
@@ -110,11 +110,11 @@ keywordAlt: [食器洗い]
 
 **333円で500mL**、約166回分です。1回あたり約2.0円で、**総額がいちばん安い**のもこれです。
 
-無香料の小さなボトルなので、**業務用の4Lを買う前に、洗い心地を確かめたい**という使い方に向いています。
+無香料の小さなボトルなので、大きなボトルを置けない部屋でも使えます。
 
-デメリットは、1日2回使うと3か月もたないこと。このお店は税込3,980円以上で送料無料なので、1本だけだと送料がかかります。レビュー8件と判断材料も少なめです。
+デメリットは送料です。このお店は税込3,980円未満だと送料765円がかかり、1本だけなら合計1,098円になります。北海道・沖縄・東北6県には発送していません。1日2回使うと3か月もたず、レビュー8件と判断材料も少なめです。
 
-- **向いている人**：まず少量で試したい人。置き場所が限られている人。
+- **向いている人**：置き場所が限られている人。ほかの日用品とまとめて買う人。
 - **向かない人**：買いに行く回数を減らしたい人。
 
 ## 手荒れは、洗剤より「お湯の温度」で決まる
@@ -167,7 +167,6 @@ A. すすぎの水と時間が減ります。1回10秒短くなるだけでも�
 - **置き場所があるなら** → [CHARMY Magica プロ 11.4L](https://hb.afl.rakuten.co.jp/hgc/g00po93m.p2w40764.g00po93m.p2w416fe/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fi-order%2F10053002%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fi-order%2Fi%2F10053002%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1回約1.8円・無香料・評価4.8）
 - **収納を分散したいなら** → [ジョイ W除菌 超ジャンボ 5袋](https://hb.afl.rakuten.co.jp/hgc/g00r136m.p2w40bcb.g00r136m.p2w41b76/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2F405030%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F11164781%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1回約1.9円・レビュー861件）
 - **香りが苦手なら** → [緑の魔女 キッチン 5L](https://hb.afl.rakuten.co.jp/hgc/g00qhoam.p2w40dc5.g00qhoam.p2w4161d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkurashikenkou%2F9847345%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkurashikenkou%2Fi%2F10096123%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1回約1.9円・無香料無着色）
-- **まず試すなら** → [ヤシノミ洗剤 500mL](https://hb.afl.rakuten.co.jp/hgc/g00qydvm.p2w4002f.g00qydvm.p2w4132c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkenko-depart%2F414760%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkenko-depart%2Fi%2F10010837%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)（1回約2.0円・333円）
 
 シンク下に置ける人には[業務用の大容量](https://hb.afl.rakuten.co.jp/hgc/g00tvoam.p2w40f5b.g00tvoam.p2w41208/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fk-relight%2F003-4901301510778br%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fk-relight%2Fi%2F10000736%2F&rafcid=wsc_i_is_eba6f22c-fbb8-45a0-b880-b4616efeee39)をおすすめします。**節約になるからではなく、買い足すことを数年考えなくて済むから**です。そのほうが、年1,500円よりずっと価値があります。
 
