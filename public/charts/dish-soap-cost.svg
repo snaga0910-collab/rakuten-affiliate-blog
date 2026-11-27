@@ -20,18 +20,18 @@
   <text x="0" y="71" class="lbl">ライオン CHARMY </text>
   <rect x="178" y="58" width="476" height="22" rx="4" class="track"/>
   
-  <rect x="178" y="58" width="231.56756756756755" height="22" rx="4" class="bar hi"/>
-  <text x="419.56756756756755" y="74" class="val valhi">1.8円</text>
+  <rect x="178" y="58" width="244.43243243243242" height="22" rx="4" class="bar hi"/>
+  <text x="432.4324324324324" y="74" class="val valhi">1.9円</text>
   <text x="0" y="111" class="lbl">ジョイ W除菌 超ジャン</text>
   <rect x="178" y="98" width="476" height="22" rx="4" class="track"/>
   
-  <rect x="178" y="98" width="244.43243243243242" height="22" rx="4" class="bar"/>
-  <text x="432.4324324324324" y="114" class="val">1.9円</text>
+  <rect x="178" y="98" width="244.43243243243242" height="22" rx="4" class="bar hi"/>
+  <text x="432.4324324324324" y="114" class="val valhi">1.9円</text>
   <text x="0" y="151" class="lbl">緑の魔女 キッチン 5L</text>
   <rect x="178" y="138" width="476" height="22" rx="4" class="track"/>
   
-  <rect x="178" y="138" width="244.43243243243242" height="22" rx="4" class="bar"/>
-  <text x="432.4324324324324" y="154" class="val">1.9円</text>
+  <rect x="178" y="138" width="244.43243243243242" height="22" rx="4" class="bar hi"/>
+  <text x="432.4324324324324" y="154" class="val valhi">1.9円</text>
   <text x="0" y="191" class="lbl">ヤシノミ洗剤 野菜・食器</text>
   <rect x="178" y="178" width="476" height="22" rx="4" class="track"/>
   
